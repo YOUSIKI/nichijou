@@ -2,18 +2,58 @@
   description = "Daily configuration based on Nix and Flake";
 
   inputs = {
+    nixpkgs.follows = "nixpkgs-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-23.05-darwin";
     nixpkgs-unfree.url = "github:numtide/nixpkgs-unfree";
     nixpkgs-unfree.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    nixpkgs.follows = "nixpkgs-unstable";
+
+    nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     std.url = "github:divnix/std";
+    std.inputs.devshell.follows = "devshell";
+    std.inputs.nixago.follows = "nixago";
+    std.inputs.nixpkgs.follows = "nixpkgs";
+    std.inputs.paisano.follows = "paisano";
+
     hive.url = "github:divnix/hive";
+    hive.inputs.colmena.follows = "colmena";
+    hive.inputs.disko.follows = "disko";
+    hive.inputs.home-manager.follows = "home-manager";
+    hive.inputs.nixos-generators.follows = "nixos-generators";
+    hive.inputs.nixpkgs.follows = "nixpkgs";
+    hive.inputs.paisano.follows = "paisano";
+
+    haumea.url = "github:nix-community/haumea?ref=v0.2.2";
+    haumea.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixago.url = "github:nix-community/nixago";
+    nixago.inputs.nixpkgs.follows = "nixpkgs";
+
+    paisano.url = "github:paisano-nix/core";
+    paisano.inputs.nixpkgs.follows = "nixpkgs";
+
+    colmena.url = "github:zhaofengli/colmena";
+    colmena.inputs.nixpkgs.follows = "nixpkgs";
+    colmena.inputs.stable.follows = "nixpkgs-stable";
+
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-utils.url = "github:numtide/flake-utils";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -37,20 +77,73 @@
       cellsFrom = ./cells;
 
       cellBlocks = with blockTypes; [
-        (installables "packages")
+        # Repo utils
+        (devshells "devshells")
+        (functions "formatter")
+
+        # Packages
+        # (installables "packages")
+
+        # Overlays
+        # (functions "overlays")
+
+        # Modules
+        (functions "nixosModules")
+        (functions "darwinModules")
+        # (functions "homeModules")
+        # (functions "devshellModules")
+
+        # Profiles
+        # (functions "nixosProfiles")
+        # (functions "darwinProfiles")
+        # (functions "homeProfiles")
+        # (functions "devshellProfiles")
+
+        # Configurations
+        # homeConfigurations
+        # nixosConfigurations
+        darwinConfigurations
       ];
     }
     {
-      packages = std.harvest inputs.self [
+      devShells = std.harvest self [
         [
-          "nixos"
-          "packages"
+          "repo"
+          "devshells"
         ]
       ];
+
+      formatter = std.harvest self [
+        [
+          "repo"
+          "formatter"
+        ]
+      ];
+
+      nixosModules = std.pick self [
+        [
+          "modules"
+          "nixosModules"
+        ]
+      ];
+
+      darwinModules = std.pick self [
+        [
+          "modules"
+          "darwinModules"
+        ]
+      ];
+
+      # homeModules = std.harvest self [
+      #   "modules"
+      #   "home"
+      # ];
+
+      darwinConfigurations = hive.collect self "darwinConfigurations";
     };
 
   nixConfig = {
-    extra-substituters = [
+    extra-trusted-substituters = [
       "https://cache.garnix.io"
       "https://cachix.org/api/v1/cache/emacs"
       "https://colmena.cachix.org"
