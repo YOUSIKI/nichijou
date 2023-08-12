@@ -132,9 +132,24 @@
         "commonModules"
       ];
 
+      nixosModules = std.pick self [
+        "nixos"
+        "nixosModules"
+      ];
+
       darwinModules = std.pick self [
         "darwin"
         "darwinModules"
+      ];
+
+      homeModules = std.pick self [
+        "home"
+        "homeModules"
+      ];
+
+      devshellModules = std.pick self [
+        "devshell"
+        "devshellModules"
       ];
     }
     # Profiles
@@ -144,9 +159,24 @@
         "commonProfiles"
       ];
 
+      nixosProfiles = std.pick self [
+        "nixos"
+        "nixosProfiles"
+      ];
+
       darwinProfiles = std.pick self [
         "darwin"
         "darwinProfiles"
+      ];
+
+      homeProfiles = std.pick self [
+        "home"
+        "homeProfiles"
+      ];
+
+      devshellProfiles = std.pick self [
+        "devshell"
+        "devshellProfiles"
       ];
     }
     # Configurations
