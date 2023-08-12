@@ -24,10 +24,16 @@
 This repository stands on the shoulders of giants:
 
 - Awesome dotfiles
+  - [truelecter/hive](https://github.com/truelecter/hive)
+  - [GTrunSec/hive](https://github.com/GTrunSec/hive)
   - [Ruixi-rebirth/flakes](https://github.com/Ruixi-rebirth/flakes)
   - [rxyhn/yuki](https://github.com/rxyhn/yuki)
   - [Misterio77/nix-config](https://github.com/Misterio77/nix-config)
+  - and more ...
 - Awesome flake tools
-  - [hercules-ci/flake-parts](https://github.com/hercules-ci/flake-parts)
+  - [divnix/hive](https://github.com/divnix/hive)
+  - [divnix/std](https://github.com/divnix/std)
   - [nix-community/haumea](https://github.com/nix-community/haumea)
-  - [srid/nixos-flake](https://github.com/srid/nixos-flake)
+  - [numtide/treefmt-nix](https://github.com/numtide/treefmt-nix)
+  - [hercules-ci/flake-parts](https://github.com/hercules-ci/flake-parts)
+  - and more ...
