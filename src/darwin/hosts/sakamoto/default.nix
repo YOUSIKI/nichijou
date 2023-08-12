@@ -19,5 +19,9 @@ in {
     overlays = [];
   };
 
-  imports = [];
+  imports = [
+    cell.darwinProfiles.base
+    cell.darwinProfiles.fonts
+    cell.darwinProfiles.homebrew
+  ];
 }

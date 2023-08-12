@@ -9,8 +9,6 @@
     nixpkgs-unfree.url = "github:numtide/nixpkgs-unfree";
     nixpkgs-unfree.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
@@ -65,81 +63,97 @@
     self,
     std,
     hive,
+    haumea,
     ...
-  } @ inputs: let
-    blockTypes = std.blockTypes // hive.blockTypes;
-  in
+  } @ inputs:
     std.growOn {
       inherit inputs;
 
       systems = import inputs.default-systems;
 
-      cellsFrom = ./cells;
+      cellsFrom = ./src;
 
-      cellBlocks = with blockTypes; [
-        # Repo utils
+      cellBlocks = with std.blockTypes // hive.blockTypes; [
+        # Repo utilities
         (devshells "devshells")
         (functions "formatter")
+        (functions "lib")
 
         # Packages
-        # (installables "packages")
+        (installables "packages")
 
         # Overlays
-        # (functions "overlays")
+        (functions "overlays")
 
         # Modules
+        (functions "commonModules")
         (functions "nixosModules")
         (functions "darwinModules")
-        # (functions "homeModules")
-        # (functions "devshellModules")
+        (functions "homeModules")
+        (functions "devshellModules")
 
         # Profiles
-        # (functions "nixosProfiles")
-        # (functions "darwinProfiles")
-        # (functions "homeProfiles")
-        # (functions "devshellProfiles")
+        (functions "commonProfiles")
+        (functions "nixosProfiles")
+        (functions "darwinProfiles")
+        (functions "homeProfiles")
+        (functions "devshellProfiles")
 
         # Configurations
-        # homeConfigurations
-        # nixosConfigurations
+        homeConfigurations
+        nixosConfigurations
         darwinConfigurations
       ];
     }
+    # Utilities
     {
+      # Run `nix develop` to enter the devshell
       devShells = std.harvest self [
-        [
-          "repo"
-          "devshells"
-        ]
+        "utils"
+        "devshells"
       ];
 
+      # Run `nix fmt` to format the repo
       formatter = std.harvest self [
-        [
-          "repo"
-          "formatter"
-        ]
+        "utils"
+        "formatter"
       ];
 
-      nixosModules = std.pick self [
-        [
-          "modules"
-          "nixosModules"
-        ]
+      # Useful functions
+      lib = std.pick self [
+        "utils"
+        "lib"
+      ];
+    }
+    # Modules
+    {
+      commonModules = std.pick self [
+        "common"
+        "commonModules"
       ];
 
       darwinModules = std.pick self [
-        [
-          "modules"
-          "darwinModules"
-        ]
+        "darwin"
+        "darwinModules"
+      ];
+    }
+    # Profiles
+    {
+      commonProfiles = std.pick self [
+        "common"
+        "commonProfiles"
       ];
 
-      # homeModules = std.harvest self [
-      #   "modules"
-      #   "home"
-      # ];
-
-      darwinConfigurations = hive.collect self "darwinConfigurations";
+      darwinProfiles = std.pick self [
+        "darwin"
+        "darwinProfiles"
+      ];
+    }
+    # Configurations
+    {
+      nixosConfigurations = self.lib.collect self "nixosConfigurations";
+      darwinConfigurations = self.lib.collect self "darwinConfigurations";
+      homeConfigurations = self.lib.collect self "homeConfigurations";
     };
 
   nixConfig = {

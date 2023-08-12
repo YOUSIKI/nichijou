@@ -4,12 +4,12 @@
   ...
 }: let
   inherit (inputs) std;
-  inherit (inputs.nixpkgs-lib.lib) mapAttrs;
+  inherit (inputs.nixpkgs) lib;
 
-  devshells = mapAttrs (_: std.lib.dev.mkShell) {
+  devshells = lib.mapAttrs (name: std.lib.dev.mkShell) {
     default = {
-      extraModulesPath,
       pkgs,
+      extraModulesPath,
       ...
     }: {
       name = "develop";
