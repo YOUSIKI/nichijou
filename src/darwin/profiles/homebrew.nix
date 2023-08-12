@@ -46,6 +46,7 @@ with builtins // inputs.nixpkgs.lib; {
       itsycal
       keepingyouawake
       keka
+      kitty
       logitech-options
       maccy
       macfuse
@@ -62,6 +63,7 @@ with builtins // inputs.nixpkgs.lib; {
       qq
       raycast
       rectangle
+      sioyek
       spotify
       surge4
       tailscale

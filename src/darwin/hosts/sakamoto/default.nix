@@ -2,22 +2,11 @@
   inputs,
   cell,
   ...
-}: let
-  system = "x86_64-darwin";
-in {
-  bee.system = system;
-  bee.home = inputs.home-manager;
-  bee.darwin = inputs.darwin;
-  bee.pkgs = import inputs.nixpkgs {
-    inherit system;
+}: {
+  bee.system = "x86_64-darwin";
 
-    config.allowUnfree = true;
-    config.allowBroken = false;
-    config.allowUnsupportedSystem = false;
-    config.permittedInsecurePackages = [];
-
-    overlays = [];
-  };
+  networking.hostName = "sakamoto";
+  networking.computerName = "YouSiki MacBook Pro";
 
   imports = [
     cell.darwinProfiles.base

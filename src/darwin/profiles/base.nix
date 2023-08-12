@@ -31,6 +31,7 @@ with builtins // inputs.nixpkgs.lib; {
   system.defaults.finder.QuitMenuItem = true;
   system.defaults.finder.ShowPathbar = true;
   system.defaults.finder.ShowStatusBar = true;
+  system.defaults.trackpad.Clicking = true;
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
   # Default shells

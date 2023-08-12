@@ -20,6 +20,7 @@
 
       packages = with pkgs; [
         helix
+        home-manager
       ];
 
       commands = [];

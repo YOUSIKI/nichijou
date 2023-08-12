@@ -9,8 +9,18 @@
   ...
 }:
 with builtins // inputs.nixpkgs.lib; {
-  imports = [
-  ];
+  bee.home = inputs.home-manager;
+  bee.darwin = inputs.darwin;
+  bee.pkgs = import inputs.nixpkgs {
+    system = config.bee.system;
+
+    config.allowUnfree = true;
+    config.allowBroken = false;
+    config.allowUnsupportedSystem = false;
+    config.permittedInsecurePackages = [];
+
+    overlays = [];
+  };
 
   # Basic nix configuration for both NixOS and Darwin.
   nix = {
