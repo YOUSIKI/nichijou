@@ -5,8 +5,11 @@
 }: let
   inherit (inputs) haumea;
 in
-  haumea.lib.load {
-    src = ./modules;
-    inputs = {inherit inputs cell;};
-    transformer = haumea.lib.transformers.liftDefault;
-  }
+  if builtins.pathExists ./modules
+  then
+    haumea.lib.load {
+      src = ./modules;
+      inputs = {inherit inputs cell;};
+      transformer = haumea.lib.transformers.liftDefault;
+    }
+  else {}
