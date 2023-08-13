@@ -193,7 +193,6 @@ with builtins // inputs.nixpkgs.lib; {
 
   home.packages = with pkgs; [
     alejandra
-    cachix
     home-manager
     nil
     thefuck
