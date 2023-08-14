@@ -35,6 +35,7 @@ with builtins // inputs.nixpkgs.lib; {
       adobe-creative-cloud
       alt-tab
       bilibili
+      clashx
       cloudflare-warp
       cyberduck
       element
@@ -44,6 +45,7 @@ with builtins // inputs.nixpkgs.lib; {
       hiddenbar
       iina
       itsycal
+      jetbrains-toolbox
       keepingyouawake
       keka
       kitty
@@ -73,6 +75,7 @@ with builtins // inputs.nixpkgs.lib; {
       visual-studio-code
       warp
       wechat
+      wezterm
       zed
       zotero
     ''
