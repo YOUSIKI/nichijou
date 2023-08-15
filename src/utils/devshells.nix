@@ -21,7 +21,9 @@
       packages = with pkgs; [
         helix
         home-manager
+        neovim
         nvfetcher
+        vim
       ];
 
       commands = [];

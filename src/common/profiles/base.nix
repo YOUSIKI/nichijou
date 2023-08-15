@@ -90,6 +90,12 @@ with builtins // inputs.nixpkgs.lib; {
   };
 
   environment.systemPackages = with pkgs; [
+    cachix
+    curl
+    git
+    helix
     home-manager
+    vim
+    wget
   ];
 }

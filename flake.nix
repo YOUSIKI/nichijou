@@ -75,6 +75,10 @@
     std.growOn {
       inherit inputs;
 
+      nixpkgsConfig = {
+        allowUnfree = true;
+      };
+
       systems = import inputs.default-systems;
 
       cellsFrom = ./src;
