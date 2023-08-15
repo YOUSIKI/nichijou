@@ -34,6 +34,7 @@ with builtins // inputs.nixpkgs.lib; {
       1password
       adobe-creative-cloud
       alt-tab
+      applite
       bilibili
       clashx
       cloudflare-warp
@@ -83,4 +84,12 @@ with builtins // inputs.nixpkgs.lib; {
       (splitString "\n")
       (filter (s: s != ""))
     ];
+
+  environment.systemPath =
+    if pkgs.system == "aarch64-darwin"
+    then [
+      "/opt/homebrew/bin"
+      "/opt/homebrew/sbin"
+    ]
+    else [];
 }
