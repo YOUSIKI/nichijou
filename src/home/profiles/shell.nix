@@ -189,6 +189,7 @@ with builtins // inputs.nixpkgs.lib; {
 
   home.packages = with pkgs; [
     alejandra
+    comma
     home-manager
     neofetch
     nil
