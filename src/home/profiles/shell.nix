@@ -11,6 +11,7 @@
 with builtins // inputs.nixpkgs.lib; {
   imports = [
     cell.homeModules.catppuccin
+    inputs.nix-index-database.hmModules.nix-index
   ];
 
   programs.bash = {
@@ -96,6 +97,7 @@ with builtins // inputs.nixpkgs.lib; {
   programs.jq.enable = true;
   programs.lazygit.enable = true;
   programs.neovim.enable = true;
+  programs.nix-index-database.comma.enable = true;
   programs.ripgrep.enable = true;
   programs.starship = {
     enable = true;
@@ -189,7 +191,6 @@ with builtins // inputs.nixpkgs.lib; {
 
   home.packages = with pkgs; [
     alejandra
-    comma
     home-manager
     neofetch
     nil
