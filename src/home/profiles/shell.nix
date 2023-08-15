@@ -194,6 +194,7 @@ with builtins // inputs.nixpkgs.lib; {
     home-manager
     neofetch
     nil
+    nodejs
     rnix-lsp
     thefuck
   ];
