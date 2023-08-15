@@ -19,7 +19,9 @@ with builtins // inputs.nixpkgs.lib; {
     config.allowUnsupportedSystem = false;
     config.permittedInsecurePackages = [];
 
-    overlays = [];
+    overlays = [
+      inputs.fenix.overlays.default
+    ];
   };
 
   home.homeDirectory =

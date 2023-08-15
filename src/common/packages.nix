@@ -8,7 +8,17 @@
   sources = {}; # TODO: Add sources from nvfetcher.
 in
   {
-    # Add std as package so that we can build and push to cachix.
+    # Add other packages so that we can build and push to cachix.
+    rust-all = nixpkgs.symlinkJoin {
+      name = "rust-all";
+      paths = [
+        inputs.fenix.packages.rust-analyzer
+        inputs.fenix.packages.complete.toolchain
+        inputs.fenix.packages.default.toolchain
+        inputs.fenix.packages.latest.toolchain
+        inputs.fenix.packages.minimal.toolchain
+      ];
+    };
     std = inputs.std.packages.std;
   }
   // nixpkgs.lib.mapAttrs (

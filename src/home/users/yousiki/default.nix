@@ -12,6 +12,7 @@
 
   imports = [
     cell.homeProfiles.base
+    cell.homeProfiles.rust
     cell.homeProfiles.shell
   ];
 }
