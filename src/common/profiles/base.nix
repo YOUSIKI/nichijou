@@ -92,11 +92,14 @@ with builtins // inputs.nixpkgs.lib; {
   environment.systemPackages = with pkgs; [
     cachix
     curl
-    git
+    exa
     gh
+    git
     helix
     home-manager
+    unzip
     vim
     wget
+    zoxide
   ];
 }
