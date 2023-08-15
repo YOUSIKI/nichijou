@@ -93,6 +93,7 @@ with builtins // inputs.nixpkgs.lib; {
     cachix
     curl
     git
+    gh
     helix
     home-manager
     vim
