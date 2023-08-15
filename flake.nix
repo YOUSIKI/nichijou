@@ -63,6 +63,8 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     default-systems.url = "github:nix-systems/default";
+
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
   outputs = {
@@ -77,6 +79,8 @@
 
       nixpkgsConfig = {
         allowUnfree = true;
+        allowBroken = false;
+        allowUnsupportedSystem = false;
       };
 
       systems = import inputs.default-systems;

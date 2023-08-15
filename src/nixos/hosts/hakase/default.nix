@@ -39,5 +39,6 @@ in {
     cell.nixosProfiles.fonts
     cell.nixosProfiles.nvidia
     cell.nixosProfiles.virtualisation
+    cell.nixosProfiles.vscode-server
   ];
 }
