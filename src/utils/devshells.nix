@@ -21,6 +21,7 @@
       packages = with pkgs; [
         helix
         home-manager
+        nvfetcher
       ];
 
       commands = [];

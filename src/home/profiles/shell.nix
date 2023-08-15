@@ -97,10 +97,6 @@ with builtins // inputs.nixpkgs.lib; {
   programs.lazygit.enable = true;
   programs.neovim.enable = true;
   programs.ripgrep.enable = true;
-  programs.sioyek = {
-    enable = true;
-    bindings = {};
-  };
   programs.starship = {
     enable = true;
     settings = {};
@@ -194,7 +190,9 @@ with builtins // inputs.nixpkgs.lib; {
   home.packages = with pkgs; [
     alejandra
     home-manager
+    neofetch
     nil
+    rnix-lsp
     thefuck
   ];
 

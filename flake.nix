@@ -125,6 +125,15 @@
         "lib"
       ];
     }
+    # Packages
+    {
+      packages = std.harvest self [
+        [
+          "common"
+          "packages"
+        ]
+      ];
+    }
     # Modules
     {
       commonModules = std.pick self [
