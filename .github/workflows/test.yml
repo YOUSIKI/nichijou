@@ -16,4 +16,14 @@ jobs:
           extra_nix_config: |
             auto-optimise-store = true
             experimental-features = nix-command flakes
+      - name: Use cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
       - run: nix flake check --all-systems
+      
+  flake-checker:
+    name: flake-checker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check Nix flake Nixpkgs inputs
+        uses: DeterminateSystems/flake-checker-action@main
