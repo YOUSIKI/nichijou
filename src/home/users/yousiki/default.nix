@@ -13,6 +13,7 @@
   imports = [
     cell.homeProfiles.base
     cell.homeProfiles.cc
+    cell.homeProfiles.python
     cell.homeProfiles.rust
     cell.homeProfiles.shell
   ];

@@ -36,7 +36,6 @@ in
     then
       haumea.lib.load {
         src = ./packages;
-        inputs = {inherit inputs cell;};
         loader = haumea.lib.loaders.path;
         transformer = haumea.lib.transformers.liftDefault;
       }
