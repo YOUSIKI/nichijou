@@ -65,6 +65,9 @@
     default-systems.url = "github:nix-systems/default";
 
     vscode-server.url = "github:nix-community/nixos-vscode-server";
+
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
