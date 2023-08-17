@@ -97,6 +97,8 @@ with builtins // inputs.nixpkgs.lib; {
     git
     helix
     home-manager
+    neofetch
+    nodejs
     unzip
     vim
     wget
