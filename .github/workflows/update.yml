@@ -1,4 +1,4 @@
-name: update-flake-lock
+name: Update
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ jobs:
       - name: Use cache
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@vX
+        uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-title: "Update flake.lock"
           pr-labels: |
