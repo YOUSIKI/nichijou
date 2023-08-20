@@ -9,8 +9,8 @@
 in
   {
     # Add other packages so that we can build and push to cachix.
-    rust-all = nixpkgs.symlinkJoin {
-      name = "rust-all";
+    fenix = nixpkgs.symlinkJoin {
+      name = "fenix";
       paths = [
         inputs.fenix.packages.rust-analyzer
         inputs.fenix.packages.complete.toolchain

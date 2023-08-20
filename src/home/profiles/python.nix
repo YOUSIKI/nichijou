@@ -18,8 +18,8 @@ with builtins // inputs.nixpkgs.lib; let
     ruff-lsp
   ];
 
-  linuxPackages = [
-    inputs.cells.common.packages.conda
+  linuxPackages = with pkgs; [
+    conda
   ];
 in {
   home.packages =
