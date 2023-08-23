@@ -38,6 +38,7 @@ with builtins // inputs.nixpkgs.lib; {
       bilibili
       clashx
       cloudflare-warp
+      cursor
       cyberduck
       element
       feishu

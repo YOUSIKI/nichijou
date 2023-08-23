@@ -6,7 +6,7 @@
   bee.system = "x86_64-darwin";
 
   networking.hostName = "sakamoto";
-  networking.computerName = "YouSiki MacBook Pro";
+  networking.computerName = "YouSiki MacBookPro";
 
   imports = [
     cell.darwinProfiles.base
