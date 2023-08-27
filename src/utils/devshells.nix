@@ -22,7 +22,6 @@
         helix
         home-manager
         neovim
-        nvfetcher
         vim
       ];
 
