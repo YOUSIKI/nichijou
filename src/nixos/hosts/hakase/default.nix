@@ -27,18 +27,32 @@ in {
   users.users.yousiki = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker" "yousiki"];
-    packages = with nixpkgs; [];
+    packages = [];
     shell = nixpkgs.zsh;
   };
+
+  environment.systemPackages = with nixpkgs; [
+    cloudflare-warp
+  ];
 
   imports = [
     ./_hardware-configuration.nix
 
     cell.nixosProfiles.base
-    cell.nixosProfiles.clash
     cell.nixosProfiles.fonts
     cell.nixosProfiles.nvidia
     cell.nixosProfiles.virtualisation
     cell.nixosProfiles.vscode-server
+
+    inputs.home-manager.nixosModules.home-manager
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users.yousiki = _: {
+        imports = [
+          inputs.cells.home.homeConfigurations."yousiki@hakase"
+        ];
+      };
+    }
   ];
 }

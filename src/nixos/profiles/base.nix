@@ -11,6 +11,7 @@
 with builtins // inputs.nixpkgs.lib; {
   imports = [
     inputs.cells.common.commonProfiles.base
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   programs.fish.enable = true;
