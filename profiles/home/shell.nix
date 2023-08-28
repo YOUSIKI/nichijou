@@ -14,6 +14,7 @@ with builtins // lib; {
     enable = true;
     enableCompletion = true;
   };
+
   programs.bat = {
     enable = true;
     extraPackages = with pkgs.bat-extras; [
@@ -25,14 +26,18 @@ with builtins // lib; {
       prettybat
     ];
   };
+
   programs.bottom.enable = true;
+
   programs.btop.enable = true;
+
   programs.exa = {
     enable = true;
     enableAliases = true;
     icons = true;
     git = true;
   };
+
   programs.fzf = {
     enable = true;
     tmux.enableShellIntegration = true;
@@ -40,6 +45,7 @@ with builtins // lib; {
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
+
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;
@@ -51,6 +57,7 @@ with builtins // lib; {
       gh-markdown-preview
     ];
   };
+
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -72,7 +79,9 @@ with builtins // lib; {
         (filter (s: s != "" && !hasPrefix "#" s))
       ];
   };
+
   programs.gitui.enable = true;
+
   programs.helix = {
     enable = true;
     languages = {
@@ -91,12 +100,19 @@ with builtins // lib; {
       lsp.display-messages = true;
     };
   };
+
   programs.htop.enable = true;
+
   programs.jq.enable = true;
+
   programs.lazygit.enable = true;
+
   programs.neovim.enable = true;
+
   programs.nix-index-database.comma.enable = true;
+
   programs.ripgrep.enable = true;
+
   programs.starship = {
     enable = true;
     settings = {};
@@ -107,6 +123,7 @@ with builtins // lib; {
     enableNushellIntegration = true;
     enableTransience = true;
   };
+
   programs.tmux = {
     enable = true;
     extraConfig = let
@@ -122,7 +139,9 @@ with builtins // lib; {
         (readFile (gpakosz-tmux + "/.tmux.conf.local"))
       ];
   };
+
   programs.vim.enable = true;
+
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
@@ -130,6 +149,7 @@ with builtins // lib; {
     enableFishIntegration = true;
     enableNushellIntegration = true;
   };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;

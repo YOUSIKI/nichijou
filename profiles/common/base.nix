@@ -81,18 +81,10 @@ with builtins // lib; {
   };
 
   environment.systemPackages = with pkgs; [
-    cachix
     curl
     exa
-    gh
     git
-    helix
-    home-manager
-    neofetch
-    nodejs
-    unzip
     vim
     wget
-    zoxide
   ];
 }
