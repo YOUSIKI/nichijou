@@ -15,5 +15,6 @@ with builtins // lib; {
   nixpkgs.overlays = [
     flake.inputs.fenix.overlays.default
     flake.inputs.nvfetcher.overlays.default
+    flake.outputs.overlays.default
   ];
 }

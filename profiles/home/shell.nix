@@ -218,9 +218,9 @@ with builtins // lib; {
   home.packages = with pkgs; [
     alejandra
     home-manager
-    neofetch
     nil
     nodejs
+    nvfetcher
     rnix-lsp
     thefuck
   ];

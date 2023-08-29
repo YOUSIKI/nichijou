@@ -6,6 +6,7 @@
 }:
 with builtins // lib; {
   fonts.packages = with pkgs; [
+    delugia-code
     nerdfonts
     noto-fonts
     noto-fonts-cjk
