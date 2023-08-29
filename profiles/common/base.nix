@@ -1,3 +1,4 @@
+# Basic configurations shared by NixOS and Nix-darwin
 {flake, ...}: {
   config,
   lib,

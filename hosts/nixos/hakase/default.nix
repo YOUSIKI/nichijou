@@ -1,3 +1,4 @@
+# NixOS configuration for hakase
 {flake, ...}:
 flake.inputs.nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";

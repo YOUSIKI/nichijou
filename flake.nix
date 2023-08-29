@@ -2,13 +2,11 @@
   description = "Daily configuration based on Nix and Flake";
 
   inputs = {
-    nixpkgs.follows = "nixpkgs-unfree";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-unfree.url = "github:numtide/nixpkgs-unfree";
-    nixpkgs-unfree.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nixpkgs.follows = "nixpkgs-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -62,6 +60,7 @@
     };
   in
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      # Import flake-parts modules
       imports = [
         inputs.devshell.flakeModule
         inputs.flake-parts.flakeModules.easyOverlay
@@ -69,8 +68,10 @@
         inputs.treefmt-nix.flakeModule
       ];
 
+      # Define systems (e.g. x86_64-linux, x86_64-darwin, etc.)
       systems = import (inputs.default-systems);
 
+      # Flake outputs that are not system-specific
       flake = inputs.haumea.lib.load {
         src = flake.root + /flake-parts/flake;
         inputs = {
@@ -78,6 +79,7 @@
         };
       };
 
+      # Flake outputs that are system-specific
       perSystem = {
         config,
         self',

@@ -1,3 +1,4 @@
+# Install my favorite fonts
 {flake, ...}: {
   config,
   lib,

@@ -1,3 +1,4 @@
+# Basic configurations for Nix-darwin
 {flake, ...}: {
   config,
   lib,
@@ -8,6 +9,11 @@ with builtins // lib; {
   imports = [
     flake.outputs.commonProfiles.base
   ];
+
+  users.users.yousiki = {
+    name = "yousiki";
+    home = "/Users/yousiki";
+  };
 
   # Default shells
   programs.bash.enable = true;

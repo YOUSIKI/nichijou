@@ -11,4 +11,9 @@ with builtins // lib; {
     else "/home/${config.home.username}";
 
   home.stateVersion = "23.05";
+
+  nixpkgs.overlays = [
+    flake.inputs.fenix.overlays.default
+    flake.inputs.nvfetcher.overlays.default
+  ];
 }

@@ -1,3 +1,4 @@
+# Manage applications using Homebrew
 {flake, ...}: {
   config,
   lib,

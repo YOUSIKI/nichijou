@@ -1,3 +1,4 @@
+# Nix-darwin configurations
 {flake, ...}:
 flake.inputs.haumea.lib.load {
   src = flake.root + /hosts/darwin;

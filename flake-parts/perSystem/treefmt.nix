@@ -1,3 +1,4 @@
+# Code formatter based on treefmt
 {
   config,
   self',

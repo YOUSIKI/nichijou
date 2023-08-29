@@ -1,3 +1,4 @@
+# Nix-darwin configuration for sakamoto
 {flake, ...}:
 flake.inputs.darwin.lib.darwinSystem {
   system = "x86_64-darwin";
