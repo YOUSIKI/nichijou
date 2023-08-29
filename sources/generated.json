@@ -1,0 +1,22 @@
+{
+  "delugia-code": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "delugia-code",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "adam7",
+      "repo": "delugia-code",
+      "rev": "v2111.01.2",
+      "sha256": "sha256-A+PzsHxjM7jS5Ec3ot79T2Pn1DmsMc5BbDgOJ5COCA4=",
+      "type": "github"
+    },
+    "version": "v2111.01.2"
+  }
+}

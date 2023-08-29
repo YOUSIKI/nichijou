@@ -17,6 +17,7 @@
       helix
       vim
       wget
+      inputs'.nvfetcher.packages.default
     ];
   };
 }
