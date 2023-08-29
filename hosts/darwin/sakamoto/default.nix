@@ -1,19 +1,15 @@
 {flake, ...}:
-flake.inputs.nixpkgs.lib.nixosSystem {
-  system = "x86_64-linux";
+flake.inputs.darwin.lib.darwinSystem {
+  system = "x86_64-darwin";
   specialArgs = {inherit flake;};
   modules = [
     ./_configuration.nix
-    ./_hardware-configuration.nix
 
-    flake.outputs.nixosProfiles.base
-    flake.outputs.nixosProfiles.applications
-    flake.outputs.nixosProfiles.fonts
-    flake.outputs.nixosProfiles.nvidia
-    flake.outputs.nixosProfiles.virtualisation
-    flake.outputs.nixosProfiles.vscode-server
+    flake.outputs.darwinProfiles.applications
+    flake.outputs.darwinProfiles.base
+    flake.outputs.darwinProfiles.fonts
 
-    flake.inputs.home-manager.nixosModules.home-manager
+    flake.inputs.home-manager.darwinModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
