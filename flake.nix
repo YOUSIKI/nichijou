@@ -2,45 +2,20 @@
   description = "Daily configuration based on Nix and Flake";
 
   inputs = {
-    nixpkgs.follows = "nixpkgs-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-23.05-darwin";
-    nixpkgs-unfree.url = "github:numtide/nixpkgs-unfree";
-    nixpkgs-unfree.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nixpkgs.follows = "nixpkgs-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
-
-    std.url = "github:divnix/std";
-    std.inputs.devshell.follows = "devshell";
-    std.inputs.nixago.follows = "nixago";
-    std.inputs.nixpkgs.follows = "nixpkgs";
-    std.inputs.paisano.follows = "paisano";
-
-    hive.url = "github:divnix/hive";
-    hive.inputs.colmena.follows = "colmena";
-    hive.inputs.disko.follows = "disko";
-    hive.inputs.home-manager.follows = "home-manager";
-    hive.inputs.nixos-generators.follows = "nixos-generators";
-    hive.inputs.nixpkgs.follows = "nixpkgs";
-    hive.inputs.paisano.follows = "paisano";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     haumea.url = "github:nix-community/haumea?ref=v0.2.2";
     haumea.inputs.nixpkgs.follows = "nixpkgs";
 
     nixago.url = "github:nix-community/nixago";
     nixago.inputs.nixpkgs.follows = "nixpkgs";
-
-    paisano.url = "github:paisano-nix/core";
-    paisano.inputs.nixpkgs.follows = "nixpkgs";
-
-    colmena.url = "github:zhaofengli/colmena";
-    colmena.inputs.nixpkgs.follows = "nixpkgs";
-    colmena.inputs.stable.follows = "nixpkgs-stable";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -57,7 +32,11 @@
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
 
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     flake-utils.url = "github:numtide/flake-utils";
+
+    flake-root.url = "github:srid/flake-root";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -68,148 +47,53 @@
 
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    self,
-    std,
-    hive,
-    haumea,
-    ...
-  } @ inputs:
-    std.growOn {
-      inherit inputs;
+  outputs = {self, ...} @ inputs: let
+    flake = {
+      inherit self inputs;
+      inherit (self) outputs;
+      root = ./.;
+    };
+  in
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      # Import flake-parts modules
+      imports = [
+        inputs.devshell.flakeModule
+        inputs.flake-parts.flakeModules.easyOverlay
+        inputs.flake-root.flakeModule
+        inputs.treefmt-nix.flakeModule
+      ];
 
-      nixpkgsConfig = {
-        allowUnfree = true;
-        allowBroken = false;
-        allowUnsupportedSystem = false;
+      # Define systems (e.g. x86_64-linux, x86_64-darwin, etc.)
+      systems = import (inputs.default-systems);
+
+      # Flake outputs that are not system-specific
+      flake = inputs.haumea.lib.load {
+        src = flake.root + /flake-parts/flake;
+        inputs = {
+          inherit flake;
+        };
       };
 
-      systems = import inputs.default-systems;
-
-      cellsFrom = ./src;
-
-      cellBlocks = with std.blockTypes // hive.blockTypes; [
-        # Repo utilities
-        (devshells "devshells")
-        (functions "formatter")
-        (functions "lib")
-
-        # Packages
-        (installables "packages")
-
-        # Overlays
-        (functions "overlays")
-
-        # Modules
-        (functions "commonModules")
-        (functions "nixosModules")
-        (functions "darwinModules")
-        (functions "homeModules")
-        (functions "devshellModules")
-
-        # Profiles
-        (functions "commonProfiles")
-        (functions "nixosProfiles")
-        (functions "darwinProfiles")
-        (functions "homeProfiles")
-        (functions "devshellProfiles")
-
-        # Configurations
-        homeConfigurations
-        nixosConfigurations
-        darwinConfigurations
-      ];
-    }
-    # Utilities
-    {
-      # Run `nix develop` to enter the devshell
-      devShells = std.harvest self [
-        "utils"
-        "devshells"
-      ];
-
-      # Run `nix fmt` to format the repo
-      formatter = std.harvest self [
-        "utils"
-        "formatter"
-      ];
-
-      # Useful functions
-      lib = std.pick self [
-        "utils"
-        "lib"
-      ];
-    }
-    # Packages
-    {
-      packages = std.harvest self [
-        [
-          "common"
-          "packages"
-        ]
-      ];
-    }
-    # Modules
-    {
-      commonModules = std.pick self [
-        "common"
-        "commonModules"
-      ];
-
-      nixosModules = std.pick self [
-        "nixos"
-        "nixosModules"
-      ];
-
-      darwinModules = std.pick self [
-        "darwin"
-        "darwinModules"
-      ];
-
-      homeModules = std.pick self [
-        "home"
-        "homeModules"
-      ];
-
-      devshellModules = std.pick self [
-        "devshell"
-        "devshellModules"
-      ];
-    }
-    # Profiles
-    {
-      commonProfiles = std.pick self [
-        "common"
-        "commonProfiles"
-      ];
-
-      nixosProfiles = std.pick self [
-        "nixos"
-        "nixosProfiles"
-      ];
-
-      darwinProfiles = std.pick self [
-        "darwin"
-        "darwinProfiles"
-      ];
-
-      homeProfiles = std.pick self [
-        "home"
-        "homeProfiles"
-      ];
-
-      devshellProfiles = std.pick self [
-        "devshell"
-        "devshellProfiles"
-      ];
-    }
-    # Configurations
-    {
-      nixosConfigurations = self.lib.collect self "nixosConfigurations";
-      darwinConfigurations = self.lib.collect self "darwinConfigurations";
-      homeConfigurations = self.lib.collect self "homeConfigurations";
+      # Flake outputs that are system-specific
+      perSystem = {
+        config,
+        self',
+        inputs',
+        pkgs,
+        system,
+        ...
+      }:
+        inputs.haumea.lib.load {
+          src = flake.root + /flake-parts/perSystem;
+          inputs = {
+            inherit flake config self' inputs' pkgs system;
+          };
+        };
     };
 
   nixConfig = {
