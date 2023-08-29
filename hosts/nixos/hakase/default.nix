@@ -7,8 +7,8 @@ flake.inputs.nixpkgs.lib.nixosSystem {
     ./_configuration.nix
     ./_hardware-configuration.nix
 
-    flake.outputs.nixosProfiles.base
     flake.outputs.nixosProfiles.applications
+    flake.outputs.nixosProfiles.base
     flake.outputs.nixosProfiles.fonts
     flake.outputs.nixosProfiles.nvidia
     flake.outputs.nixosProfiles.virtualisation

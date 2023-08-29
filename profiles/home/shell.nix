@@ -13,6 +13,9 @@ with builtins // lib; {
   programs.bash = {
     enable = true;
     enableCompletion = true;
+    initExtra = ''
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+    '';
   };
 
   programs.bat = {
@@ -30,6 +33,8 @@ with builtins // lib; {
   programs.bottom.enable = true;
 
   programs.btop.enable = true;
+
+  programs.command-not-found.enable = false;
 
   programs.exa = {
     enable = true;
@@ -109,6 +114,8 @@ with builtins // lib; {
 
   programs.neovim.enable = true;
 
+  programs.nix-index.enable = true;
+
   programs.nix-index-database.comma.enable = true;
 
   programs.ripgrep.enable = true;
@@ -179,6 +186,7 @@ with builtins // lib; {
     initExtra = ''
       bindkey "\e[1;3D" backward-word # ⌥←
       bindkey "\e[1;3C" forward-word # ⌥→
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     '';
   };
 

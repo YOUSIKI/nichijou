@@ -15,7 +15,6 @@
       gh
       git
       helix
-      neovim
       vim
       wget
     ];
