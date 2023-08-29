@@ -13,6 +13,7 @@ with builtins // lib; {
   };
   nixpkgs.overlays = [
     flake.inputs.fenix.overlays.default
+    flake.inputs.nvfetcher.overlays.default
   ];
 
   # Basic nix configuration for both NixOS and Darwin.
