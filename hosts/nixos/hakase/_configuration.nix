@@ -23,7 +23,7 @@
 
   users.users.yousiki = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "yousiki"];
+    extraGroups = ["wheel" "docker" "lxd" "yousiki"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };

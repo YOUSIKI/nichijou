@@ -16,6 +16,15 @@ with builtins // lib; {
   services.openssh.openFirewall = true;
   programs.mosh.enable = true;
 
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [22];
+  networking.firewall.allowedUDPPortRanges = [
+    {
+      from = 60000;
+      to = 61000;
+    }
+  ];
+
   time.timeZone = "Asia/Shanghai";
 
   i18n.defaultLocale = "en_US.UTF-8";
