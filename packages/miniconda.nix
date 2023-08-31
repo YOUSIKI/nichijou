@@ -16,6 +16,7 @@
   condaDeps ? [stdenv.cc xorg.libSM xorg.libICE xorg.libX11 xorg.libXau xorg.libXi xorg.libXrender libselinux libGL zlib],
   # Any extra nixpkgs you'd like available in the FHS env for Conda to use
   extraPkgs ? [],
+  ...
 }:
 # How to use this package?
 #
@@ -31,10 +32,10 @@
 # $ conda-shell
 # $ conda install spyder
 let
-  version = "23.5.2";
+  version = "23.5.2-0";
   src = fetchurl {
     url = "https://repo.continuum.io/miniconda/Miniconda3-py311_${version}-Linux-x86_64.sh";
-    sha256 = "";
+    sha256 = "sha256-Y012315InESt5AhVUrl768eG1JJF7RqDACKwtAbeWBc=";
   };
   conda = (
     let
@@ -84,7 +85,7 @@ in
       source ${installationPath}/etc/profile.d/conda.sh
     '';
 
-    runScript = "$SHELL";
+    runScript = "bash --login";
 
     meta = {
       description = "Conda is a package manager for Python";

@@ -24,7 +24,7 @@ stdenvNoCC.mkDerivation rec {
     description = "Cascadia Code + Nerd Fonts";
     homepage = "https://github.com/adam7/delugia-code";
     license = licenses.mit;
-    maintainers = [];
+    maintainers = with maintainers; [yousiki];
     platforms = platforms.all;
   };
 }
