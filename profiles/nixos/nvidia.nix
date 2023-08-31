@@ -9,7 +9,7 @@ with builtins // lib; {
   hardware.nvidia.nvidiaSettings = true;
   hardware.nvidia.modesetting.enable = true;
   hardware.opengl.enable = true;
-  hardware.opengl.driSupport32Bit = true; # required by nvidia-docker.
+  hardware.opengl.driSupport32Bit = mkForce true; # required by nvidia-docker.
   virtualisation.docker = {
     enableNvidia = true;
     daemon.settings.default-runtime = "nvidia";
