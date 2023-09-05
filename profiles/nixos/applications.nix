@@ -10,5 +10,7 @@ with builtins // lib; {
     firefox
     google-chrome
     jetbrains.pycharm-professional
+    cloudflare-warp
+    vscode-fhs
   ];
 }
