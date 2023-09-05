@@ -15,7 +15,6 @@ with builtins // lib; let
   ];
 
   linuxPackages = with pkgs; [
-    miniconda
   ];
 in {
   home.packages =
