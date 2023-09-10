@@ -13,6 +13,7 @@ with builtins // lib; {
   home.stateVersion = "23.05";
 
   nixpkgs.overlays = [
+    flake.inputs.emacs-overlay.overlays.default
     flake.inputs.fenix.overlays.default
     flake.inputs.nvfetcher.overlays.default
     flake.outputs.overlays.default

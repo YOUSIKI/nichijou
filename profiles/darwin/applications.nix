@@ -22,6 +22,7 @@ with builtins // lib; {
     "homebrew/command-not-found"
     "homebrew/core"
     "homebrew/services"
+    "railwaycat/emacsmacport"
   ];
 
   # Add casks.
@@ -32,12 +33,14 @@ with builtins // lib; {
       adobe-creative-cloud
       alt-tab
       applite
+      arc
       bilibili
       clashx
       cloudflare-warp
       cursor
       cyberduck
       element
+      emacs-mac
       feishu
       github
       google-chrome
