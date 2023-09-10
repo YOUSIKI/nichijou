@@ -86,7 +86,7 @@ with builtins // lib; {
 
   environment.systemPackages = with pkgs; [
     curl
-    exa
+    eza
     git
     vim
     wget

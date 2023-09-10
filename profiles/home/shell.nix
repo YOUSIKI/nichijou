@@ -36,13 +36,6 @@ with builtins // lib; {
 
   programs.command-not-found.enable = false;
 
-  programs.exa = {
-    enable = true;
-    enableAliases = true;
-    icons = true;
-    git = true;
-  };
-
   programs.fzf = {
     enable = true;
     tmux.enableShellIntegration = true;
@@ -217,6 +210,7 @@ with builtins // lib; {
 
   home.packages = with pkgs; [
     alejandra
+    eza
     home-manager
     nil
     nodejs

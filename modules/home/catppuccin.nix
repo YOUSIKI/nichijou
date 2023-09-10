@@ -141,30 +141,6 @@ in {
             programs.helix.settings.theme = "catppuccin";
           }
       )
-      ( # lazygit
-        let
-          github = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "lazygit";
-            rev = "main";
-            sha256 = "sha256-9BBmWRcjNaJE9T0RKVEJaSnkrbMom0CLYE8PzAT6yFw=";
-          };
-        in
-          mkIf config.programs.lazygit.enable {
-            home.file.".config/lazygit/config.yml".text =
-              "gui:\n"
-              + (
-                pipe
-                (github + "/themes/${cfg.palette}.yml")
-                [
-                  readFile
-                  (splitString "\n")
-                  (map (s: "  " + s))
-                  (concatStringsSep "\n")
-                ]
-              );
-          }
-      )
       ( # kitty
         let
           github = pkgs.fetchFromGitHub {
