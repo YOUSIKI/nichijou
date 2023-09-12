@@ -175,6 +175,10 @@ with builtins // lib; {
       ];
     };
     shellAliases = {
+      l = "eza -l";
+      ls = "eza";
+      ll = "eza -l";
+      la = "eza -la";
     };
     initExtra = ''
       bindkey "\e[1;3D" backward-word # ⌥←
