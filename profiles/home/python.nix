@@ -13,17 +13,8 @@ with builtins // lib; let
     ruff
     ruff-lsp
   ];
-
-  linuxPackages = with pkgs; [
-  ];
 in {
-  home.packages =
-    packages
-    ++ (
-      if pkgs.system == "x86_64-linux"
-      then linuxPackages
-      else []
-    );
+  home.packages = packages;
 
   home.file.".config/pip/pip.conf".text = ''
     [global]
@@ -36,7 +27,7 @@ in {
       - defaults
     show_channel_urls: true
     default_channels:
-      - https://mirrors.pku.edu.cn/anaconda/pkgs/main
+     - https://mirrors.pku.edu.cn/anaconda/pkgs/main
       - https://mirrors.pku.edu.cn/anaconda/pkgs/r
     custom_channels:
       conda-forge: https://mirrors.pku.edu.cn/anaconda/cloud
