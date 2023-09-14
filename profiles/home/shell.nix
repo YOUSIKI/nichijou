@@ -213,13 +213,11 @@ with builtins // lib; {
   programs.catppuccin.palette = "frappe";
 
   home.packages = with pkgs; [
-    alejandra
+    du-dust
+    duf
     eza
     home-manager
-    nil
     nodejs
-    nvfetcher
-    rnix-lsp
     thefuck
   ];
 

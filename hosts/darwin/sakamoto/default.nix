@@ -18,6 +18,7 @@ flake.inputs.darwin.lib.darwinSystem {
       home-manager.users.yousiki = {
         imports = [
           flake.outputs.homeProfiles.base
+          flake.outputs.homeProfiles.nix
           flake.outputs.homeProfiles.python
           flake.outputs.homeProfiles.rust
           flake.outputs.homeProfiles.shell

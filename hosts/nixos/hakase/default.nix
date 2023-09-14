@@ -23,6 +23,7 @@ flake.inputs.nixpkgs.lib.nixosSystem {
         imports = [
           flake.outputs.homeProfiles.base
           flake.outputs.homeProfiles.cc
+          flake.outputs.homeProfiles.nix
           flake.outputs.homeProfiles.python
           flake.outputs.homeProfiles.rust
           flake.outputs.homeProfiles.shell
