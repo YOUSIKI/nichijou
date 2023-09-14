@@ -36,6 +36,13 @@ with builtins // lib; {
 
   programs.command-not-found.enable = false;
 
+  programs.eza = {
+    enable = true;
+    enableAliases = true;
+    icons = true;
+    git = true;
+  };
+
   programs.fzf = {
     enable = true;
     tmux.enableShellIntegration = true;
@@ -174,11 +181,8 @@ with builtins // lib; {
         "zsh-interactive-cd"
       ];
     };
-    shellAliases = {
-      l = "eza -l";
-      ls = "eza";
-      ll = "eza -l";
-      la = "eza -la";
+    sessionVariables = {
+      EDITOR = "nvim";
     };
     initExtra = ''
       bindkey "\e[1;3D" backward-word # ⌥←
@@ -215,7 +219,6 @@ with builtins // lib; {
   home.packages = with pkgs; [
     du-dust
     duf
-    eza
     home-manager
     nodejs
     thefuck
