@@ -85,7 +85,7 @@ in {
             '';
           };
         in
-          mkIf config.programs.exa.enable {
+          mkIf config.programs.eza.enable {
             home.sessionVariables = {
               EXA_COLORS = catppuccin-dict.${cfg.palette};
             };

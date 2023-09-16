@@ -10,6 +10,7 @@ flake.inputs.nixpkgs.lib.nixosSystem {
     flake.outputs.nixosProfiles.applications
     flake.outputs.nixosProfiles.base
     flake.outputs.nixosProfiles.fonts
+    flake.outputs.nixosProfiles.hyprland
     flake.outputs.nixosProfiles.virtualisation
     flake.outputs.nixosProfiles.vscode-server
 
@@ -22,6 +23,7 @@ flake.inputs.nixpkgs.lib.nixosSystem {
         imports = [
           flake.outputs.homeProfiles.base
           flake.outputs.homeProfiles.cc
+          flake.outputs.homeProfiles.hyprland
           flake.outputs.homeProfiles.nix
           flake.outputs.homeProfiles.python
           flake.outputs.homeProfiles.rust
