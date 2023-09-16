@@ -8,13 +8,15 @@
 
   services.autosuspend.enable = false;
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.xterm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
   services.xserver = {
     layout = "cn";
     xkbVariant = "";

@@ -222,6 +222,7 @@ with builtins // lib; {
     home-manager
     nodejs
     thefuck
+    unzip
   ];
 
   home.sessionPath = [

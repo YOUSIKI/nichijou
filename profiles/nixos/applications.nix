@@ -10,7 +10,6 @@ with builtins // lib; {
     cloudflare-warp
     firefox
     google-chrome
-    jetbrains.pycharm-professional
     neovide
     spotify
     vscode-fhs
