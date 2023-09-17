@@ -16,7 +16,7 @@ in {
     enableNvidia = true;
     daemon.settings.default-runtime = "nvidia";
   };
-  programs.hyprland.nvidiaPatches = true;
+  programs.hyprland.enableNvidiaPatches = true;
   environment.systemPackages = with pkgs; [
     nvitop
     nvtop
