@@ -31,4 +31,7 @@
   environment.systemPackages = with pkgs; [
     cloudflare-warp
   ];
+
+  # VM on this machine uses port 2222 for SSH.
+  networking.firewall.allowedTCPPorts = [2222];
 }
