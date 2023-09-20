@@ -33,6 +33,7 @@ with builtins // lib; {
       alt-tab
       applite
       arc
+      baidunetdisk
       bilibili
       clashx
       cloudflare-warp
