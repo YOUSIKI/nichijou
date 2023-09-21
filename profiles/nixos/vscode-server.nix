@@ -7,6 +7,7 @@
 with builtins // lib; {
   imports = [
     flake.inputs.vscode-server.nixosModules.default
+    flake.inputs.nix-ld.nixosModules.nix-ld
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -15,5 +16,7 @@ with builtins // lib; {
 
   services.vscode-server.enable = true;
   services.vscode-server.enableFHS = true;
-  services.vscode-server.installPath = "$HOME/.vscode-server";
+  # services.vscode-server.installPath = "$HOME/.vscode-server";
+
+  programs.nix-ld.dev.enable = true;
 }
