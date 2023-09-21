@@ -15,4 +15,5 @@ with builtins // lib; {
 
   services.vscode-server.enable = true;
   services.vscode-server.enableFHS = true;
+  services.vscode-server.installPath = "$HOME/.vscode-server";
 }
