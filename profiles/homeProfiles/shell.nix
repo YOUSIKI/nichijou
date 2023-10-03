@@ -10,9 +10,6 @@ with builtins // lib; {
     global.outputs.homeModules.catppuccin
   ];
 
-  programs.catppuccin.enable = true;
-  programs.catppuccin.palette = "frappe";
-
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -23,6 +20,7 @@ with builtins // lib; {
 
   programs.bat = {
     enable = true;
+    config.theme = "catppuccin-mocha";
     extraPackages = with pkgs.bat-extras; [
       batdiff
       batgrep
@@ -33,9 +31,15 @@ with builtins // lib; {
     ];
   };
 
-  programs.bottom.enable = true;
+  programs.bottom = {
+    enable = true;
+    theme = "catppuccin-mocha";
+  };
 
-  programs.btop.enable = true;
+  programs.btop = {
+    enable = true;
+    settings.color_scheme = "catppuccin-mocha";
+  };
 
   programs.command-not-found.enable = false;
 
@@ -88,7 +92,10 @@ with builtins // lib; {
       ];
   };
 
-  programs.gitui.enable = true;
+  programs.gitui = {
+    enable = true;
+    theme = config.programs.gitui.themes.catppuccin-mocha;
+  };
 
   programs.helix = {
     enable = true;
@@ -210,6 +217,7 @@ with builtins // lib; {
       enableFishIntegration = true;
       enableZshIntegration = true;
     };
+    theme = "Catppuccin-Mocha";
     extraConfig = ''
       font_family                 CaskaydiaCove Nerd Font Propo
       font_size                   12.0
