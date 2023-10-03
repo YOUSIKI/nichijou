@@ -62,10 +62,23 @@
   };
 
   outputs = {self, ...} @ inputs: let
-    flake = {
+    global = {
       inherit self inputs;
       inherit (self) outputs;
       root = ./.;
+      nixpkgsConfig = {
+        config = {
+          allowUnfree = true;
+          allowBroken = true;
+          allowUnsupportedSystem = false;
+        };
+        overlays = [
+          inputs.emacs-overlay.overlays.default
+          inputs.fenix.overlays.default
+          inputs.nvfetcher.overlays.default
+          self.outputs.overlays.default
+        ];
+      };
     };
   in
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
@@ -81,11 +94,24 @@
       systems = import (inputs.default-systems);
 
       # Flake outputs that are not system-specific
-      flake = inputs.haumea.lib.load {
-        src = flake.root + /flake-parts/flake;
-        inputs = {
-          inherit flake;
+      flake = let
+        modules = inputs.haumea.lib.load {
+          src = global.root + /modules;
+          inputs = {inherit global;};
         };
+        profiles = inputs.haumea.lib.load {
+          src = global.root + /profiles;
+          inputs = {inherit global;};
+        };
+        configurations = inputs.haumea.lib.load {
+          src = global.root + /configurations;
+          inputs = {inherit global;};
+          transformer = [inputs.haumea.lib.transformers.liftDefault];
+        };
+      in {
+        inherit (modules) homeModules;
+        inherit (profiles) commonProfiles nixosProfiles darwinProfiles homeProfiles;
+        inherit (configurations) nixosConfigurations darwinConfigurations;
       };
 
       # Flake outputs that are system-specific
@@ -96,20 +122,58 @@
         pkgs,
         system,
         ...
-      }:
-        inputs.haumea.lib.load {
-          src = flake.root + /flake-parts/perSystem;
-          inputs = {
-            inherit flake config self' inputs' pkgs system;
-          };
+      }: rec {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          inherit (global.nixpkgsConfig) config overlays;
         };
+
+        treefmt.config = {
+          inherit (config.flake-root) projectRootFile;
+          package = pkgs.treefmt;
+          programs.alejandra.enable = true;
+          programs.prettier.enable = true;
+          programs.stylua.enable = true;
+        };
+
+        packages = let
+          sources =
+            if builtins.pathExists (global.root + /sources/generated.nix)
+            then pkgs.callPackage (global.root + /sources/generated.nix) {}
+            else {};
+          localPkgs =
+            builtins.mapAttrs (
+              n: v: pkgs.callPackage v {source = sources.${n} or {};}
+            )
+            (
+              inputs.haumea.lib.load {
+                src = global.root + /packages;
+                loader = inputs.haumea.lib.loaders.path;
+              }
+            );
+          remotePkgs = {
+            nvfetcher = inputs'.nvfetcher.packages.default;
+          };
+        in
+          localPkgs // remotePkgs;
+
+        overlayAttrs = packages;
+
+        devshells.default = {
+          packages = with pkgs; [
+            alejandra
+            gh
+            git
+            helix
+            nvfetcher
+          ];
+        };
+      };
     };
 
   nixConfig = {
     extra-trusted-substituters = [
       "https://cache.garnix.io"
-      "https://cachix.org/api/v1/cache/emacs"
-      "https://colmena.cachix.org"
       "https://hyprland.cachix.org"
       "https://microvm.cachix.org"
       "https://mirrors.ustc.edu.cn/nix-channels/store"
@@ -121,7 +185,6 @@
     ];
     extra-trusted-public-keys = [
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-      "colmena.cachix.org-1:7BzpDnjjH8ki2CT3f6GdOk7QAzPOl+1t3LvTLXqYcSg="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "microvm.cachix.org-1:oXnBc6hRE3eX5rSYdRyMYXnfzcCxC7yKPTbZXALsqys="
       "nichijou.cachix.org-1:rbaTU9nLgVW9BK/HSV41vsag6A7/A/caBpcX+cR/6Ps="
