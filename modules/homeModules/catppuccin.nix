@@ -10,5 +10,6 @@ with builtins // lib; {
     ./_catppuccin_modules/bottom.nix
     ./_catppuccin_modules/btop.nix
     ./_catppuccin_modules/gitui.nix
+    ./_catppuccin_modules/starship.nix
   ];
 }

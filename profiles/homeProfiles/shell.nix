@@ -122,6 +122,14 @@ with builtins // lib; {
 
   programs.lazygit.enable = true;
 
+  programs.mcfly = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    fuzzySearchFactor = 3;
+  };
+
   programs.neovim.enable = true;
 
   programs.nix-index.enable = true;
@@ -132,7 +140,7 @@ with builtins // lib; {
 
   programs.starship = {
     enable = true;
-    settings = {};
+    theme = "catppuccin-mocha";
     enableBashIntegration = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
@@ -158,6 +166,15 @@ with builtins // lib; {
   };
 
   programs.vim.enable = true;
+
+  programs.zellij = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    settings = {
+      theme = "catppuccin-mocha";
+    };
+  };
 
   programs.zoxide = {
     enable = true;
@@ -228,6 +245,7 @@ with builtins // lib; {
     du-dust
     duf
     home-manager
+    mc
     nodejs
     thefuck
     unzip
