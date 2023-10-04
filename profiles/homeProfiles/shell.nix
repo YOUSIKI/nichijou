@@ -168,7 +168,7 @@ with builtins // lib; {
   programs.vim.enable = true;
 
   programs.zellij = {
-    enable = true;
+    enable = false;
     enableBashIntegration = true;
     enableZshIntegration = true;
     settings = {
