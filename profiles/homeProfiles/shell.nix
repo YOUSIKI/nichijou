@@ -105,10 +105,12 @@ with builtins // lib; {
         command = "''${typescript-language-server}/bin/typescript-language-server";
         args = ["--stdio" "--tsserver-path=''${typescript}/lib/node_modules/typescript/lib"];
       };
-      language = map (name: {
-        name = name;
-        auto-format = true;
-      }) ["rust" "python" "nix"];
+      language =
+        map
+        (name: {
+          name = name;
+          auto-format = true;
+        }) ["rust" "python" "nix"];
     };
     settings.editor = {
       line-number = "relative";
@@ -242,11 +244,16 @@ with builtins // lib; {
   };
 
   home.packages = with pkgs; [
+    alejandra
+    code-minimap
+    deadnix
     du-dust
     duf
+    gnumake
     home-manager
     mc
     nodejs
+    statix
     thefuck
     unzip
   ];
