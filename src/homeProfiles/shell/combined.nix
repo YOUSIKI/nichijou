@@ -20,6 +20,7 @@ with builtins // lib; {
     mcfly
     nix-index
     nvfetcher
+    ssh
     starship
     tmux
     zoxide
