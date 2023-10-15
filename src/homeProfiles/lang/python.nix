@@ -1,11 +1,10 @@
-{global, ...}: {
+{globals, ...}: {
   config,
   lib,
   pkgs,
   ...
-}:
-with builtins // lib; let
-  packages = with pkgs; [
+}: {
+  home.packages = with pkgs; [
     black
     isort
     poetry
@@ -13,25 +12,8 @@ with builtins // lib; let
     ruff
     ruff-lsp
   ];
-in {
-  home.packages = packages;
 
-  home.file.".config/pip/pip.conf".text = ''
-    [global]
-    index-url = https://mirrors.pku.edu.cn/pypi/simple
-  '';
+  xdg.configFile."pip/pip.conf".source = globals.root + /static/configs/pip/pip.conf;
 
-  home.file.".condarc".text = ''
-    changeps1: false
-    channels:
-      - defaults
-    show_channel_urls: true
-    default_channels:
-     - https://mirrors.pku.edu.cn/anaconda/pkgs/main
-      - https://mirrors.pku.edu.cn/anaconda/pkgs/r
-    custom_channels:
-      conda-forge: https://mirrors.pku.edu.cn/anaconda/cloud
-      pytorch: https://mirrors.pku.edu.cn/anaconda/cloud
-      bioconda: https://mirrors.pku.edu.cn/anaconda/cloud
-  '';
+  home.file.".condarc".source = globals.root + /static/configs/conda/condarc;
 }

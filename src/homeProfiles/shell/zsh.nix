@@ -33,4 +33,9 @@
       bindkey "\e[1;3C" forward-word # ⌥→
     '';
   };
+
+  home.packages = with pkgs; [
+    fzf
+    thefuck
+  ];
 }
