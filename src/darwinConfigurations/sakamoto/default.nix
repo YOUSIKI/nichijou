@@ -1,14 +1,13 @@
+# Nix-darwin configuration for sakamoto
 {globals, ...}: let
   modules = [
     ./_configuration.nix
-    ./_hardware-configuration.nix
     globals.outputs.commonProfiles.nix
     globals.outputs.commonProfiles.packages
-    globals.outputs.nixosProfiles.base
-    globals.outputs.nixosProfiles.desktop.applications
-    globals.outputs.nixosProfiles.desktop.fonts
-    globals.outputs.nixosProfiles.virtualisation
-    globals.inputs.home-manager.nixosModules.home-manager
+    globals.outputs.darwinProfiles.base
+    globals.outputs.darwinProfiles.desktop.applications
+    globals.outputs.darwinProfiles.desktop.fonts
+    globals.inputs.home-manager.darwinModules.home-manager
     {
       home-manager = {
         useGlobalPkgs = true;
@@ -30,8 +29,8 @@
     }
   ];
 in
-  globals.inputs.nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
+  globals.inputs.darwin.lib.darwinSystem {
+    system = "x86_64-darwin";
     specialArgs = {inherit globals;};
     inherit modules;
   }

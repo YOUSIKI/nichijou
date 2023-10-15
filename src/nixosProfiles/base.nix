@@ -4,9 +4,6 @@
   pkgs,
   ...
 }: {
-  programs.fish.enable = true;
-  programs.zsh.enable = true;
-
   services.openssh.enable = true;
   services.openssh.openFirewall = true;
   programs.mosh.enable = true;

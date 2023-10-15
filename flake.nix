@@ -2,7 +2,7 @@
   description = "Daily configuration based on Nix and Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +21,9 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
     default-systems.url = "github:nix-systems/default";
 
@@ -81,7 +84,15 @@
           transformer = [inputs.haumea.lib.transformers.liftDefault];
         };
       in {
-        inherit (src) commonProfiles nixosProfiles nixosConfigurations;
+        inherit
+          (src)
+          commonProfiles
+          darwinConfigurations
+          darwinProfiles
+          homeProfiles
+          nixosConfigurations
+          nixosProfiles
+          ;
       };
     };
 

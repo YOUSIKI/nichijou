@@ -24,7 +24,7 @@ with builtins // lib; {
       # The garbage collector will keep the outputs of non-garbage derivations.
       keep-outputs = true;
       # Builds will be performed in a sandboxed environment.
-      sandbox = true;
+      sandbox = false;
       # These users will have additional rights when connecting to the Nix daemon.
       trusted-users = ["root" "@wheel" "@admin"];
       # Never warn about dirty Git/Mercurial trees.

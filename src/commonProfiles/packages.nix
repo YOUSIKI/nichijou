@@ -3,54 +3,27 @@
   lib,
   pkgs,
   ...
-}: {
-  environment.systemPackages = with pkgs; [
-    _1password
-    bash
-    bat
-    bottom
-    btop
-    busybox
-    cachix
-    clang
-    clang-tools
-    clash
-    cloudflare-warp
-    cmake
-    curl
-    duf
-    eza
-    fd
-    fenix.default.toolchain
-    fish
-    gcc
-    gh
-    git
-    gnumake
-    go
-    helix
-    htop
-    jq
-    lua
-    luajit
-    micro
-    neofetch
-    nettools
-    nim
-    ninja
-    nitch
-    nodejs
-    nushell
-    perl
-    python3
-    rclone
-    ripgrep
-    rsync
-    tmux
-    vim
-    wget
-    xonsh
-    zoxide
-    zsh
-  ];
+}:
+with builtins // lib; {
+  environment.systemPackages =
+    (with pkgs; [
+      cachix
+      clash
+      curl
+      duf
+      eza
+      fish
+      gh
+      git
+      helix
+      nettools
+      tmux
+      vim
+      wget
+      zsh
+    ])
+    ++ (optional pkgs.stdenv.isLinux (with pkgs; [
+      busybox
+      cloudflare-warp
+    ]));
 }
