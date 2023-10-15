@@ -6,6 +6,7 @@
 }:
 with builtins // lib; {
   imports = with globals.outputs.homeProfiles.shell; [
+    astronvim
     bash
     bat
     bottom
@@ -19,7 +20,6 @@ with builtins // lib; {
     mcfly
     nix-index
     nvfetcher
-    nvim
     starship
     tmux
     zoxide

@@ -27,7 +27,7 @@ in {
   };
 
   xdg.configFile."nvim/lua/user" = {
-    source = ./_astronvim;
+    source = globals.root + /static/configs/astronvim;
     recursive = true;
   };
 }
