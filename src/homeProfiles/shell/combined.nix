@@ -54,8 +54,7 @@ with builtins // lib; {
       wget
       zip
     ])
-    ++ (optional pkgs.stdenv.isLinux (with pkgs; [
-      busybox
+    ++ (optionals pkgs.stdenv.isLinux (with pkgs; [
       cloudflare-warp
       nitch
     ]));

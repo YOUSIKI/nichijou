@@ -22,8 +22,7 @@ with builtins // lib; {
       wget
       zsh
     ])
-    ++ (optional pkgs.stdenv.isLinux (with pkgs; [
-      busybox
+    ++ (optionals pkgs.stdenv.isLinux (with pkgs; [
       cloudflare-warp
     ]));
 }
