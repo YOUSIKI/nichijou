@@ -6,13 +6,13 @@
   pkgs,
   ...
 }: {
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "mai"; # Define your hostname.
+  networking.hostName = "hakase"; # Define your hostname.
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -33,4 +33,7 @@
   };
 
   programs.zsh.enable = true;
+
+  # Disable automatic suspend.
+  services.autosuspend.enable = false;
 }

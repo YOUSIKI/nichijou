@@ -4,8 +4,11 @@
   pkgs,
   ...
 }: {
+  # Enable ssh.
   services.openssh.enable = true;
   services.openssh.openFirewall = true;
+
+  # Enable mosh.
   programs.mosh.enable = true;
 
   # networking.wireless.enable = true;
@@ -42,6 +45,11 @@
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
+
+  services.xserver = {
+    layout = "cn";
+    xkbVariant = "";
+  };
 
   services.printing.enable = true;
 
