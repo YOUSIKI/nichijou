@@ -7,6 +7,8 @@
   programs.kitty = {
     enable = true;
     settings = {
+      font_family = "CaskaydiaCove Nerd Font Propo";
+      font_size = 12;
       tab_bar_min_tabs = 1;
       tab_bar_edge = "bottom";
       tab_bar_style = "powerline";
@@ -21,9 +23,5 @@
       enableZshIntegration = true;
     };
     theme = "Catppuccin-Mocha";
-    extraConfig = ''
-      font_family                 CaskaydiaCove Nerd Font Propo
-      font_size                   12.0
-    '';
   };
 }
