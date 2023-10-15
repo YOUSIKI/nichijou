@@ -21,13 +21,13 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yousiki = {
     isNormalUser = true;
-    extraGroups = ["wheel" "sudo" "docker"];
-    packages = with pkgs; [
-    ];
+    extraGroups = ["wheel" "sudo" "docker" "lxd"];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
 }

@@ -7,6 +7,7 @@
     globals.outputs.nixosProfiles.base
     globals.outputs.nixosProfiles.desktop.applications
     globals.outputs.nixosProfiles.desktop.fonts
+    globals.outputs.nixosProfiles.desktop.hyprland
     globals.outputs.nixosProfiles.virtualisation
     globals.inputs.home-manager.nixosModules.home-manager
     {
@@ -17,6 +18,7 @@
         users.yousiki = {
           imports = [
             globals.outputs.homeProfiles.base
+            globals.outputs.homeProfiles.desktop.hyprland
             globals.outputs.homeProfiles.desktop.kitty
             globals.outputs.homeProfiles.lang.c
             globals.outputs.homeProfiles.lang.latex

@@ -12,7 +12,6 @@ with builtins // lib; {
       curl
       duf
       eza
-      fish
       gh
       git
       helix
@@ -20,9 +19,10 @@ with builtins // lib; {
       tmux
       vim
       wget
-      zsh
     ])
     ++ (optionals pkgs.stdenv.isLinux (with pkgs; [
       cloudflare-warp
     ]));
+
+  programs.zsh.enable = true;
 }
