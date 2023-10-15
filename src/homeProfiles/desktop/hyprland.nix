@@ -23,9 +23,9 @@ with builtins // lib; {
     # source = ~/.config/hypr/myColors.conf
 
     # Environment variables
+    # env = NIXOS_OZONE_WL,1
     env = XCURSOR_SIZE,24
     env = KITTY_ENABLE_WAYLAND,1
-    env = NIXOS_OZONE_WL,1
     env = XDG_DATA_DIRS,$HOME/.local/share:$XDG_DATA_DIRS
 
     # For all categories, see https://wiki.hyprland.org/Configuring/Variables/

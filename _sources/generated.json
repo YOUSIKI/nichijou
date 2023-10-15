@@ -1,0 +1,22 @@
+{
+  "astronvim": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "astronvim",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "AstroNvim",
+      "repo": "AstroNvim",
+      "rev": "v3.37.6",
+      "sha256": "sha256-LHGH6kAxiBQwy1uA8oSa8cuI+OBQF0b+cTtmLPNbgvs=",
+      "type": "github"
+    },
+    "version": "v3.37.6"
+  }
+}

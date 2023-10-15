@@ -18,6 +18,8 @@ with builtins // lib; {
     helix
     mcfly
     nix-index
+    nvfetcher
+    nvim
     starship
     tmux
     zoxide
@@ -40,6 +42,7 @@ with builtins // lib; {
       du-dust
       duf
       fd
+      gdu
       home-manager
       mc
       mosh

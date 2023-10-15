@@ -19,11 +19,17 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland.inputs.nixpkgs.follows = "nixpkgs";
 
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
     default-systems.url = "github:nix-systems/default";
 
@@ -39,8 +45,9 @@
         config = {
           allowUnfree = true;
         };
-        overlays = with inputs; [
-          fenix.overlays.default
+        overlays = [
+          inputs.fenix.overlays.default
+          inputs.neovim-nightly-overlay.overlay
         ];
       };
       inherit self inputs;
@@ -73,6 +80,7 @@
           package = pkgs.treefmt;
           programs.alejandra.enable = true;
           programs.prettier.enable = true;
+          programs.stylua.enable = true;
         };
       };
 
