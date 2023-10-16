@@ -43,6 +43,7 @@ with builtins // lib; {
       du-dust
       duf
       fd
+      fh
       gdu
       home-manager
       mc

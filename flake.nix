@@ -31,6 +31,10 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
+    fh.url = "github:DeterminateSystems/fh";
+    fh.inputs.nixpkgs.follows = "nixpkgs";
+    fh.inputs.fenix.follows = "fenix";
+
     default-systems.url = "github:nix-systems/default";
 
     flake-root.url = "github:srid/flake-root";
@@ -47,6 +51,7 @@
         };
         overlays = [
           inputs.fenix.overlays.default
+          inputs.fh.overlays.default
           inputs.neovim-nightly-overlay.overlay
         ];
       };
