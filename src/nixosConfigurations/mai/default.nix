@@ -18,6 +18,7 @@
         users.yousiki = {
           imports = [
             globals.outputs.homeProfiles.base
+            globals.outputs.homeProfiles.desktop.fcitx5
             globals.outputs.homeProfiles.desktop.hyprland
             globals.outputs.homeProfiles.desktop.kitty
             globals.outputs.homeProfiles.lang.c

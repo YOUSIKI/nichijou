@@ -30,5 +30,5 @@ return {
 	{ import = "astrocommunity.test.neotest" },
 	{ import = "astrocommunity.utility.neodim" },
 	{ import = "astrocommunity.utility.noice-nvim" },
-	{ import = "astrocommunity.workflow.hardtime-nvim" },
+	-- { import = "astrocommunity.workflow.hardtime-nvim" },
 }

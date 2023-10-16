@@ -4,21 +4,8 @@
   pkgs,
   ...
 }: let
-  dracula = {
-    src = pkgs.fetchFromGitHub {
-      owner = "dracula";
-      repo = "sublime"; # Bat uses sublime syntax for its themes
-      rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
-      sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
-    };
-    file = "Dracula.tmTheme";
-  };
-  catppuccin-src = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "bat";
-    rev = "main";
-    sha256 = "sha256-6WVKQErGdaqb++oaXnY3i6/GuH2FhTgK0v4TN4Y0Wbw=";
-  };
+  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
+  catppuccin-src = sources.catppuccin-bat.src;
   catppuccin-latte = {
     src = catppuccin-src;
     file = "Catppuccin-latte.tmTheme";
@@ -49,7 +36,6 @@ in {
     config.theme = "catppuccin-mocha";
     themes = {
       inherit
-        dracula
         catppuccin-latte
         catppuccin-frappe
         catppuccin-macchiato

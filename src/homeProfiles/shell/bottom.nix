@@ -5,12 +5,8 @@
   ...
 }:
 with builtins // lib; let
-  catppuccin-src = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "bottom";
-    rev = "main";
-    sha256 = "sha256-VaHX2I/Gn82wJWzybpWNqU3dPi3206xItOlt0iF6VVQ=";
-  };
+  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
+  catppuccin-src = sources.catppuccin-bottom.src;
   themeSettings = fromTOML (readFile (catppuccin-src + "/themes/mocha.toml"));
 in {
   programs.bottom = {

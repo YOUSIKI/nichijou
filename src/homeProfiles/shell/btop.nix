@@ -4,12 +4,8 @@
   pkgs,
   ...
 }: let
-  catppuccin-src = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "btop";
-    rev = "main";
-    sha256 = "sha256-jodJl4f2T9ViNqsY9fk8IV62CrpC5hy7WK3aRpu70Cs=";
-  };
+  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
+  catppuccin-src = sources.catppuccin-btop.src;
 in {
   programs.btop = {
     enable = true;

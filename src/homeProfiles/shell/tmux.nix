@@ -5,12 +5,8 @@
   ...
 }:
 with builtins // lib; let
-  gpakosz-tmux-src = pkgs.fetchFromGitHub {
-    owner = "gpakosz";
-    repo = ".tmux";
-    rev = "master";
-    sha256 = "sha256-LkoRWds7PHsteJCDvsBpZ80zvlLtFenLU3CPAxdEHYA=";
-  };
+  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
+  gpakosz-tmux-src = sources.gpakosz-tmux.src;
 in {
   programs.tmux = {
     enable = true;

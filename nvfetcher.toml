@@ -1,3 +1,35 @@
 [astronvim]
 src.github = "AstroNvim/AstroNvim"
 fetch.github = "AstroNvim/AstroNvim"
+
+[rime-ice]
+src.git = "https://github.com/iDvel/rime-ice"
+fetch.github = "iDvel/rime-ice"
+
+[gpakosz-tmux]
+src.git = "https://github.com/gpakosz/.tmux"
+fetch.github = "gpakosz/.tmux"
+
+[catppuccin-bat]
+src.git = "https://github.com/catppuccin/bat"
+fetch.github = "catppuccin/bat"
+
+[catppuccin-bottom]
+src.git = "https://github.com/catppuccin/bottom"
+fetch.github = "catppuccin/bottom"
+
+[catppuccin-btop]
+src.git = "https://github.com/catppuccin/btop"
+fetch.github = "catppuccin/btop"
+
+[catppuccin-fcitx5]
+src.git = "https://github.com/catppuccin/fcitx5"
+fetch.github = "catppuccin/fcitx5"
+
+[catppuccin-gitui]
+src.git = "https://github.com/catppuccin/gitui"
+fetch.github = "catppuccin/gitui"
+
+[catppuccin-starship]
+src.git = "https://github.com/catppuccin/starship"
+fetch.github = "catppuccin/starship"

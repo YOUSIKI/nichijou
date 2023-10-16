@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-with builtins // lib; {
+}: {
   services.activate-system.enable = true;
   services.nix-daemon.enable = true;
 

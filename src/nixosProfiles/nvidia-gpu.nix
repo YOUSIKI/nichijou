@@ -5,6 +5,11 @@
   ...
 }:
 with builtins // lib; {
+  imports = [
+    globals.inputs.hyprland.nixosModules.default
+  ];
+
+  nixpkgs.config.cudaSupport = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.nvidiaSettings = true;
   hardware.nvidia.modesetting.enable = true;
@@ -14,11 +19,10 @@ with builtins // lib; {
     enableNvidia = true;
     daemon.settings.default-runtime = "nvidia";
   };
-  programs.hyprland.enableNvidiaPatches = true;
   environment.systemPackages = with pkgs; [
     nvitop
     nvtop
     python311Packages.gpustat
   ];
-  nixpkgs.config.cudaSupport = true;
+  programs.hyprland.enableNvidiaPatches = true;
 }

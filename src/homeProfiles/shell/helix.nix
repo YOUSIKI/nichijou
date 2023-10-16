@@ -20,9 +20,12 @@ with builtins // lib; {
           auto-format = true;
         }) ["rust" "python" "nix"];
     };
-    settings.editor = {
-      line-number = "relative";
-      lsp.display-messages = true;
+    settings = {
+      editor = {
+        line-number = "relative";
+        lsp.display-messages = true;
+      };
+      theme = "catppuccin_mocha";
     };
   };
 }

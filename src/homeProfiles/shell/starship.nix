@@ -5,12 +5,8 @@
   ...
 }:
 with builtins // lib; let
-  catppuccin-src = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "starship";
-    rev = "main";
-    sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
-  };
+  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
+  catppuccin-src = sources.catppuccin-starship.src;
   catppuccin-latte = fromTOML (readFile (catppuccin-src + "/palettes/latte.toml"));
   catppuccin-frappe = fromTOML (readFile (catppuccin-src + "/palettes/frappe.toml"));
   catppuccin-macchiato = fromTOML (readFile (catppuccin-src + "/palettes/macchiato.toml"));
