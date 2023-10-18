@@ -5,7 +5,6 @@
     globals.outputs.commonProfiles.nix
     globals.outputs.commonProfiles.packages
     globals.outputs.nixosProfiles.base
-    globals.outputs.nixosProfiles.desktop.applications
     globals.outputs.nixosProfiles.desktop.fonts
     globals.outputs.nixosProfiles.desktop.hyprland
     globals.outputs.nixosProfiles.nvidia-gpu
@@ -19,6 +18,7 @@
         users.yousiki = {
           imports = [
             globals.outputs.homeProfiles.base
+            globals.outputs.homeProfiles.desktop.applications
             globals.outputs.homeProfiles.desktop.fcitx5
             globals.outputs.homeProfiles.desktop.hyprland
             globals.outputs.homeProfiles.desktop.kitty
