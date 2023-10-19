@@ -35,6 +35,12 @@
     fh.inputs.nixpkgs.follows = "nixpkgs";
     fh.inputs.fenix.follows = "fenix";
 
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+
     default-systems.url = "github:nix-systems/default";
 
     flake-root.url = "github:srid/flake-root";

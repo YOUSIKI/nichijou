@@ -9,6 +9,7 @@
     globals.outputs.nixosProfiles.desktop.hyprland
     globals.outputs.nixosProfiles.nvidia-gpu
     globals.outputs.nixosProfiles.virtualisation
+    globals.outputs.nixosProfiles.vscode-server
     globals.inputs.home-manager.nixosModules.home-manager
     {
       home-manager = {
