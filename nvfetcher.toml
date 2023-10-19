@@ -33,3 +33,7 @@ fetch.github = "catppuccin/gitui"
 [catppuccin-starship]
 src.git = "https://github.com/catppuccin/starship"
 fetch.github = "catppuccin/starship"
+
+[miniconda]
+src.manual = "latest"
+fetch.url = "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"

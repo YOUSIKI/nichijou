@@ -67,6 +67,7 @@
   in
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       imports = with inputs; [
+        flake-parts.flakeModules.easyOverlay
         flake-root.flakeModule
         treefmt-nix.flakeModule
       ];
@@ -80,7 +81,7 @@
         pkgs,
         system,
         ...
-      }: {
+      }: rec {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           inherit (globals.nixpkgs) config overlays;
@@ -93,6 +94,12 @@
           programs.prettier.enable = true;
           programs.stylua.enable = true;
         };
+
+        packages = import (globals.root + /src/packages) {
+          inherit globals config self' inputs' pkgs system;
+        };
+
+        overlayAttrs = packages;
       };
 
       flake = let

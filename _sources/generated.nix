@@ -7,13 +7,13 @@
 }: {
   astronvim = {
     pname = "astronvim";
-    version = "v3.37.6";
+    version = "v3.37.7";
     src = fetchFromGitHub {
       owner = "AstroNvim";
       repo = "AstroNvim";
-      rev = "v3.37.6";
+      rev = "v3.37.7";
       fetchSubmodules = false;
-      sha256 = "sha256-LHGH6kAxiBQwy1uA8oSa8cuI+OBQF0b+cTtmLPNbgvs=";
+      sha256 = "sha256-BP0Cj9CKg4JJ7s5KWxcydDRLzIv5ppaaM9o82IGGRVU=";
     };
   };
   catppuccin-bat = {
@@ -100,16 +100,24 @@
     };
     date = "2023-04-15";
   };
+  miniconda = {
+    pname = "miniconda";
+    version = "latest";
+    src = fetchurl {
+      url = "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh";
+      sha256 = "sha256-Y012315InESt5AhVUrl768eG1JJF7RqDACKwtAbeWBc=";
+    };
+  };
   rime-ice = {
     pname = "rime-ice";
-    version = "649f4935b8f32d06890b0228f3c448b498af5140";
+    version = "764a0f180ee2fb9a06a37cbb2f62a30677507053";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "649f4935b8f32d06890b0228f3c448b498af5140";
+      rev = "764a0f180ee2fb9a06a37cbb2f62a30677507053";
       fetchSubmodules = false;
-      sha256 = "sha256-Bb1Kr+KNpAC5BtYME5VSl/Kn0DkljqXqsG4MBWJ2lsU=";
+      sha256 = "sha256-zs0SFufWUOeCMfKExdfuL5NXLaxewXfJ4mBOS0mVFao=";
     };
-    date = "2023-10-14";
+    date = "2023-10-19";
   };
 }
