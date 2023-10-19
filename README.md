@@ -19,13 +19,16 @@
   <a href="https://nichijou.fandom.com/wiki/Sakamoto"><img src="static/images/sakamoto.gif" width="500px" alt="Sakamoto"/></a>
 </p>
 
-## Usage as a flake
+## 🧭 Usage
 
 Add nichijou to your `flake.nix`:
 
 ```nix
 {
-  inputs.nichijou.url = "https://flakehub.com/f/YOUSIKI/nichijou/*.tar.gz";
+  inputs = {
+    nichijou.url = "github:yousiki/nichijou";
+    nichijou.inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   outputs = { self, nichijou }: {
     # Use in your outputs
