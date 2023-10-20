@@ -5,6 +5,6 @@
   ...
 }: {
   home.packages = [
-    globals.inputs.nvfetcher.packages.${pkgs.system}.default
+    globals.outputs.packages.${pkgs.system}.nvfetcher
   ];
 }
