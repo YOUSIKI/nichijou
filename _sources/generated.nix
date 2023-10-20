@@ -108,6 +108,17 @@
       sha256 = "sha256-Y012315InESt5AhVUrl768eG1JJF7RqDACKwtAbeWBc=";
     };
   };
+  pytorch = {
+    pname = "pytorch";
+    version = "v2.1.0";
+    src = fetchFromGitHub {
+      owner = "pytorch";
+      repo = "pytorch";
+      rev = "v2.1.0";
+      fetchSubmodules = true;
+      sha256 = "sha256-4Ha9hQ+0o+ZQp0QdmtugYfaXSzZIzpA6HFhwWJzVLhk=";
+    };
+  };
   rime-ice = {
     pname = "rime-ice";
     version = "764a0f180ee2fb9a06a37cbb2f62a30677507053";

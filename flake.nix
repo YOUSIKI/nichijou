@@ -41,6 +41,9 @@
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
     nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops.url = "github:Mic92/sops-nix";
+    sops.inputs.nixpkgs.follows = "nixpkgs";
+
     default-systems.url = "github:nix-systems/default";
 
     flake-root.url = "github:srid/flake-root";
@@ -95,8 +98,13 @@
           programs.stylua.enable = true;
         };
 
-        packages = import (globals.root + /src/packages) {
-          inherit globals config self' inputs' pkgs system;
+        packages = inputs.haumea.lib.load {
+          src = globals.root + /src/packages;
+          inputs = {inherit globals config self' inputs' pkgs system;};
+          transformer = _: mod:
+            if builtins.isAttrs mod
+            then pkgs.lib.filterAttrs (n: v: v != null) mod
+            else mod;
         };
 
         overlayAttrs = packages;

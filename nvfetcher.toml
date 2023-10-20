@@ -37,3 +37,8 @@ fetch.github = "catppuccin/starship"
 [miniconda]
 src.manual = "latest"
 fetch.url = "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+
+[pytorch]
+src.github = "pytorch/pytorch"
+fetch.github = "pytorch/pytorch"
+git.fetchSubmodules = true
