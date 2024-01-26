@@ -33,6 +33,8 @@ with builtins // lib; {
       trusted-substituters = [
         "https://cache.garnix.io"
         "https://hyprland.cachix.org"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        "https://mirrors.ustc.edu.cn/nix-channels/store"
         "https://nichijou.cachix.org"
         "https://nix-community.cachix.org"
         "https://nixpkgs-wayland.cachix.org"

@@ -5,24 +5,19 @@
   ...
 }:
 with builtins // lib; {
-  environment.systemPackages =
-    (with pkgs; [
-      cachix
-      clash-meta
-      curl
-      duf
-      eza
-      gh
-      git
-      helix
-      nettools
-      tmux
-      vim
-      wget
-    ])
-    ++ (optionals pkgs.stdenv.isLinux (with pkgs; [
-      cloudflare-warp
-    ]));
+  environment.systemPackages = with pkgs; [
+    curl
+    duf
+    eza
+    gh
+    git
+    helix
+    tmux
+    vim
+    wget
+  ];
 
+  programs.fish.enable = true;
   programs.zsh.enable = true;
+
 }

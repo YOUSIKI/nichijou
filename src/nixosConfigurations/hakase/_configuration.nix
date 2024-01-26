@@ -20,7 +20,6 @@
   # Enable the Desktop Environments.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
 
   # Enable xwayland.
   programs.xwayland.enable = true;
@@ -29,4 +28,8 @@
 
   # Disable automatic suspend.
   services.autosuspend.enable = false;
+
+  # Configure network proxy.
+  networking.proxy.default = "http://satoshi.mck.cn.yousiki.top:7890";
+  networking.proxy.noProxy = "127.0.0.1,localhost,yousiki.top,ybh1998.space,pku.edu.cn";
 }

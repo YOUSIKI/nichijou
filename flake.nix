@@ -1,75 +1,16 @@
 {
   description = "Daily configuration based on Nix and Flake";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    haumea.url = "github:nix-community/haumea";
-    haumea.inputs.nixpkgs.follows = "nixpkgs";
-
-    fenix.url = "github:nix-community/fenix";
-    fenix.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
-
-    nvfetcher.url = "github:berberman/nvfetcher";
-    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
-
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
-
-    fh.url = "github:DeterminateSystems/fh";
-    fh.inputs.nixpkgs.follows = "nixpkgs";
-    fh.inputs.fenix.follows = "fenix";
-
-    nix-ld.url = "github:Mic92/nix-ld";
-    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
-    nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
-
-    agenix.url = "github:ryantm/agenix";
-    agenix.inputs.darwin.follows = "darwin";
-    agenix.inputs.home-manager.follows = "home-manager";
-    agenix.inputs.nixpkgs.follows = "nixpkgs";
-
-    arion.url = "github:hercules-ci/arion";
-    arion.inputs.nixpkgs.follows = "nixpkgs";
-
-    default-systems.url = "github:nix-systems/default";
-
-    flake-root.url = "github:srid/flake-root";
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-  };
-
   outputs = {self, ...} @ inputs: let
     globals = {
       root = ./.;
-      nixpkgs = {
-        config = {
-          allowUnfree = true;
-        };
-        overlays = [
-          inputs.agenix.overlays.default
-          inputs.arion.overlays.default
-          inputs.fenix.overlays.default
-          inputs.fh.overlays.default
-          inputs.neovim-nightly-overlay.overlay
-        ];
+      nixpkgs.overlays = [
+        inputs.agenix.overlays.default
+        inputs.arion.overlays.default
+        inputs.fenix.overlays.default
+      ];
+      nixpkgs.config = {
+        allowUnfree = true;
       };
       inherit self inputs;
       inherit (self) outputs;
@@ -94,7 +35,8 @@
       }: rec {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
-          inherit (globals.nixpkgs) config overlays;
+          inherit (globals.nixpkgs) config;
+          inherit (globals.nixpkgs) overlays;
         };
 
         treefmt.config = {
@@ -137,10 +79,60 @@
       };
     };
 
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    haumea.url = "github:nix-community/haumea";
+    haumea.inputs.nixpkgs.follows = "nixpkgs";
+
+    fenix.url = "github:nix-community/fenix";
+    fenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.darwin.follows = "darwin";
+    agenix.inputs.home-manager.follows = "home-manager";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    arion.url = "github:hercules-ci/arion";
+    arion.inputs.nixpkgs.follows = "nixpkgs";
+
+    default-systems.url = "github:nix-systems/default";
+
+    flake-root.url = "github:srid/flake-root";
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+  };
+
   nixConfig = {
     extra-trusted-substituters = [
       "https://cache.garnix.io"
       "https://hyprland.cachix.org"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://nichijou.cachix.org"
       "https://nix-community.cachix.org"
       "https://nixpkgs-wayland.cachix.org"

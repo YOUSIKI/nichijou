@@ -15,5 +15,6 @@ in {
     xwayland.enable = true;
     package = hyprlandPkgs.hyprland;
     portalPackage = hyprlandPkgs.xdg-desktop-portal-hyprland;
+    enableNvidiaPatches = nixpkgs.config.cudaSupport;
   };
 }

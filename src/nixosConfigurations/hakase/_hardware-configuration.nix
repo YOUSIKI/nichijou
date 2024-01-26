@@ -17,28 +17,16 @@
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/f4dd6d7c-e625-4a74-9325-85691ff9c351";
-    fsType = "btrfs";
-    options = ["subvol=@" "compress=zstd"];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/4ABE-0CAF";
-    fsType = "vfat";
-  };
-
-  fileSystems."/mnt/ssd" = {
-    device = "/dev/disk/by-uuid/11db0944-b7ae-4e84-8dbd-13de8537efd1";
-    fsType = "btrfs";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/facf9680-93f9-4799-9277-54aee06a418b";
+      fsType = "btrfs";
     options = ["compress=zstd"];
-  };
+    };
 
-  fileSystems."/mnt/hdd" = {
-    device = "/dev/disk/by-uuid/0c2264ed-46f9-4868-bab0-2efa61c7bb1f";
-    fsType = "btrfs";
-    options = ["compress=zstd"];
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/899E-B417";
+      fsType = "vfat";
+    };
 
   swapDevices = [
     {

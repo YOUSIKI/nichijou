@@ -20,5 +20,4 @@ with builtins // lib; {
     nvtop
     python311Packages.gpustat
   ];
-  programs.hyprland.enableNvidiaPatches = mkForce true;
 }
