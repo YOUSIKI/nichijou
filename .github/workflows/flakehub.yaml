@@ -1,4 +1,5 @@
 name: "Publish to FlakeHub"
+
 on:
   push:
     tags:
@@ -9,6 +10,7 @@ on:
         description: "The existing tag to publish to FlakeHub"
         type: "string"
         required: true
+
 jobs:
   flakehub-publish:
     runs-on: "ubuntu-latest"

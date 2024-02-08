@@ -11,7 +11,7 @@
 <!-- nixos-unstable -->
 <a href="https://github.com/nixos/nixpkgs"><img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4"></a>
 <!-- build -->
-<a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build.yml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build.yml/badge.svg"></a>
+<a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build.yml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build.yaml/badge.svg"></a>
 <!-- flakehub -->
 <a href="https://flakehub.com/flake/YOUSIKI/nichijou"><img src="https://img.shields.io/endpoint?url=https://flakehub.com/f/YOUSIKI/nichijou/badge"></a>
 </p>
