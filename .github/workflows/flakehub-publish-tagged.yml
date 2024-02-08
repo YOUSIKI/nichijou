@@ -1,4 +1,4 @@
-name: "Publish tags to FlakeHub"
+name: "Publish to FlakeHub"
 on:
   push:
     tags:
@@ -16,7 +16,7 @@ jobs:
       id-token: "write"
       contents: "read"
     steps:
-      - uses: "actions/checkout@v3"
+      - uses: "actions/checkout@main"
         with:
           ref: "${{ (inputs.tag != null) && format('refs/tags/{0}', inputs.tag) || '' }}"
       - uses: "DeterminateSystems/nix-installer-action@main"

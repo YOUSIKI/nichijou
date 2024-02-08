@@ -1,0 +1,23 @@
+name: "Build"
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    environment: cachix
+    steps:
+      - uses: actions/checkout@main
+      - uses: DeterminateSystems/flake-checker-action@main
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: cachix/cachix-action@master
+        with:
+            name: nichijou
+            authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - run: nix flake check --all-systems
+      - run: nix build
