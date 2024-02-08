@@ -1,5 +1,5 @@
 {
-  description = "Daily configuration based on Nix and Flake";
+  description = "nix configurations for daily life";
 
   outputs = {self, ...} @ inputs: let
     # The global variables that can be accessed from every module.
