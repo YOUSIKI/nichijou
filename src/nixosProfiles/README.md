@@ -1,0 +1,3 @@
+# nixosProfiles
+
+Profiles for NixOS.
