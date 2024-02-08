@@ -47,6 +47,8 @@
           programs.prettier.enable = true; # *.json, *.yaml, *.yml
           programs.stylua.enable = true; # *.lua
         };
+
+        packages.default = pkgs.hello;
       };
 
       flake = let
