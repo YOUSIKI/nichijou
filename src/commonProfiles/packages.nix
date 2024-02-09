@@ -16,6 +16,7 @@ with builtins // lib; {
     fzf
     gdu
     gh
+    git
     helix
     jq
     man
@@ -27,8 +28,6 @@ with builtins // lib; {
   ];
 
   programs.fish.enable = true;
-  programs.git.enable = true;
-  programs.git.lfs.enable = true;
   programs.tmux.enable = true;
   programs.zsh.enable = true;
 }

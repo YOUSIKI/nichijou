@@ -32,10 +32,12 @@ in {
       trusted-users = ["root" "@wheel" "@admin"];
       # Never warn about dirty Git/Mercurial trees.
       warn-dirty = false;
+      # Substituters.
+      substituters = mkForce flake.nixConfig.substituters;
       # Trusted substituters
-      trusted-substituters = flake.nixConfig.extra-trusted-substituters;
+      trusted-substituters = mkForce flake.nixConfig.trusted-substituters;
       # Trusted public keys
-      trusted-public-keys = flake.nixConfig.extra-trusted-public-keys;
+      trusted-public-keys = mkForce flake.nixConfig.trusted-public-keys;
     };
 
     # Garbage collector
