@@ -1,12 +1,13 @@
 # Configuration for sakamoto, which is an intel MacbookPro.
 {globals, ...}: let
-  darwinModules = [
+  darwinModules = with globals.outputs; [
     # Host-specific modules
     ./_configuration.nix
 
     # Host specific profiles
-    globals.outputs.commonProfiles.nix
-    globals.outputs.commonProfiles.packages
+    commonProfiles.nix
+    commonProfiles.packages
+    darwinProfiles.applications
   ];
 in
   globals.inputs.darwin.lib.darwinSystem {

@@ -63,6 +63,7 @@
           (src)
           commonProfiles
           darwinConfigurations
+          darwinProfiles
           nixosConfigurations
           nixosProfiles
           ;
