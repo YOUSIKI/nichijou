@@ -7,21 +7,22 @@
 }:
 with builtins // lib; {
   environment.systemPackages = with pkgs; [
-    bat
-    bottom
-    btop
     curl
     duf
     eza
+    fd
     fzf
     gdu
     gh
     git
     helix
+    home-manager
+    htop
     jq
     man
     neofetch
     ripgrep
+    rsync
     vim
     wget
     zellij

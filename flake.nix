@@ -64,6 +64,8 @@
           commonProfiles
           darwinConfigurations
           darwinProfiles
+          homeConfigurations
+          homeProfiles
           nixosConfigurations
           nixosProfiles
           ;
