@@ -35,6 +35,27 @@
         "type": "github"
       }
     },
+    "fenix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src"
+      },
+      "locked": {
+        "lastModified": 1706941198,
+        "narHash": "sha256-t6/qloMYdknVJ9a3QzjylQIZnQfgefJ5kMim50B7dwA=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "28dbd8b43ea328ee708f7da538c63e03d5ed93c8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -185,6 +206,7 @@
       "inputs": {
         "darwin": "darwin",
         "default-systems": "default-systems",
+        "fenix": "fenix",
         "flake-parts": "flake-parts",
         "flake-root": "flake-root",
         "haumea": "haumea",
@@ -192,6 +214,23 @@
         "nixos-vscode-server": "nixos-vscode-server",
         "nixpkgs": "nixpkgs",
         "treefmt-nix": "treefmt-nix"
+      }
+    },
+    "rust-analyzer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706875368,
+        "narHash": "sha256-KOBXxNurIU2lEmO6lR2A5El32X9x8ITt25McxKZ/Ew0=",
+        "owner": "rust-lang",
+        "repo": "rust-analyzer",
+        "rev": "8f6a72871ec87ed53cfe43a09fb284168a284e7e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-lang",
+        "ref": "nightly",
+        "repo": "rust-analyzer",
+        "type": "github"
       }
     },
     "systems": {

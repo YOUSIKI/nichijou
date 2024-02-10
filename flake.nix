@@ -5,7 +5,8 @@
     # The global variables that can be accessed from every module.
     globals = {
       root = ./.;
-      nixpkgs.overlays = [
+      nixpkgs.overlays = with inputs; [
+        fenix.overlays.default
       ];
       nixpkgs.config = {
         allowUnfree = true;
@@ -95,6 +96,9 @@
 
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
     nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+
+    fenix.url = "github:nix-community/fenix";
+    fenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = rec {

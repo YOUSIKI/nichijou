@@ -1,3 +1,4 @@
+# Install macOS applications with homebrew.
 {globals, ...}: {
   config,
   lib,

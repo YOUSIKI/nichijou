@@ -1,3 +1,4 @@
+# Basic configurations for Home-manager.
 {globals, ...}: {
   config,
   lib,

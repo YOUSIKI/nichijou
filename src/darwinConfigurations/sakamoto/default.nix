@@ -17,8 +17,9 @@
         useUserPackages = true;
         extraSpecialArgs = {inherit globals;};
         users.yousiki = {
-          imports = [
-            globals.outputs.homeProfiles.base
+          imports = with homeProfiles; [
+            base
+            lang.complete
           ];
         };
       };
