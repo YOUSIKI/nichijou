@@ -11,6 +11,22 @@
     commonProfiles.nix
     commonProfiles.packages
     nixosProfiles.vscode-server
+
+    # Home-manager module
+    globals.inputs.home-manager.nixosModules.home-manager
+    {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = {inherit globals;};
+        users.yousiki = {
+          imports = with homeProfiles; [
+            base
+            lang.complete
+          ];
+        };
+      };
+    }
   ];
 in
   globals.inputs.nixpkgs.lib.nixosSystem {
