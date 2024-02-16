@@ -7,6 +7,7 @@
       root = ./.;
       nixpkgs.overlays = with inputs; [
         fenix.overlays.default
+        nvfetcher.overlays.default
       ];
       nixpkgs.config = {
         allowUnfree = true;
@@ -49,7 +50,15 @@
           programs.stylua.enable = true; # *.lua
         };
 
-        packages.default = pkgs.hello;
+        # Packages.
+        packages.nvfetcher = pkgs.nvfetcher;
+        packages.all = pkgs.symlinkJoin {
+          name = "all";
+          paths = with packages; [
+            nvfetcher
+          ];
+        };
+        packages.default = packages.all;
       };
 
       flake = let
@@ -98,6 +107,19 @@
 
     fenix.url = "github:nix-community/fenix";
     fenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+
+    base16.url = "github:SenchoPens/base16.nix";
+
+    schemes.url = "github:tinted-theming/schemes";
+    schemes.flake = false;
+
+    stylix.url = "github:danth/stylix";
+    stylix.inputs.base16.follows = "base16";
+    stylix.inputs.home-manager.follows = "home-manager";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = rec {

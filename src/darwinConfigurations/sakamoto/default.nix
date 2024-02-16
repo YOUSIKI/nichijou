@@ -20,6 +20,7 @@
           imports = with homeProfiles; [
             base
             lang.complete
+            stylix
           ];
         };
       };

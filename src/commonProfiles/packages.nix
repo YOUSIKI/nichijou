@@ -7,6 +7,7 @@
 }:
 with builtins // lib; {
   environment.systemPackages = with pkgs; [
+    alejandra
     curl
     duf
     eza
@@ -21,6 +22,7 @@ with builtins // lib; {
     jq
     man
     neofetch
+    nvfetcher
     ripgrep
     rsync
     vim
