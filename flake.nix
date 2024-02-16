@@ -20,6 +20,7 @@
   in
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       imports = with inputs; [
+        flake-parts.flakeModules.easyOverlay
         flake-root.flakeModule
         treefmt-nix.flakeModule
       ];
@@ -51,14 +52,16 @@
         };
 
         # Packages.
-        packages.nvfetcher = pkgs.nvfetcher;
-        packages.all = pkgs.symlinkJoin {
-          name = "all";
-          paths = with packages; [
-            nvfetcher
-          ];
+        packages = inputs.haumea.lib.load {
+          src = globals.root + /src/packages;
+          inputs = {inherit globals config self' inputs' pkgs system;};
+          transformer = _: mod:
+            if builtins.isAttrs mod
+            then pkgs.lib.filterAttrs (n: v: v != null) mod
+            else mod;
         };
-        packages.default = packages.all;
+
+        overlayAttrs = packages;
       };
 
       flake = let
@@ -93,6 +96,8 @@
     haumea.url = "github:nix-community/haumea";
     haumea.inputs.nixpkgs.follows = "nixpkgs";
 
+    flake-utils.url = "github:numtide/flake-utils";
+
     default-systems.url = "github:nix-systems/default";
 
     flake-root.url = "github:srid/flake-root";
@@ -110,16 +115,6 @@
 
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
-
-    base16.url = "github:SenchoPens/base16.nix";
-
-    schemes.url = "github:tinted-theming/schemes";
-    schemes.flake = false;
-
-    stylix.url = "github:danth/stylix";
-    stylix.inputs.base16.follows = "base16";
-    stylix.inputs.home-manager.follows = "home-manager";
-    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = rec {
