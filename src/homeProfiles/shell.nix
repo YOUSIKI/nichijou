@@ -136,8 +136,8 @@ with builtins // lib; {
     # zellij
     zellij = {
       enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
+      enableBashIntegration = false;
+      enableZshIntegration = false;
     };
 
     # zoxide
