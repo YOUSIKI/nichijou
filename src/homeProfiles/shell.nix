@@ -10,9 +10,6 @@ with builtins // lib; {
     globals.outputs.homeProfiles.catppuccin
   ];
 
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
-
   programs = {
     # bash
     bash = {
@@ -178,14 +175,27 @@ with builtins // lib; {
           "history"
           "python"
           "rust"
+          "shell-proxy"
           "thefuck"
+          "zoxide"
           "zsh-interactive-cd"
         ];
       };
       initExtra = ''
         bindkey "\e[1;3D" backward-word # ⌥←
         bindkey "\e[1;3C" forward-word # ⌥→
+
+        if [[ -f ~/.orbstack/shell/init.zsh ]]; then
+          source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+        fi
       '';
+      sessionVariables = {
+        SHELLPROXY_URL =
+          if hasSuffix "-darwin" pkgs.system
+          then "http://127.0.0.1:6152" # Surge
+          else "http://127.0.0.1:7890"; # Clash
+        SHELLPROXY_NO_PROXY = "localhost,127.0.0.1,pku.edu.cn,yousiki.top,ybh1998.space";
+      };
     };
   };
 

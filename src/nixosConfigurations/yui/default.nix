@@ -23,6 +23,7 @@
           imports = with homeProfiles; [
             base
             lang.complete
+            shell
           ];
         };
       };
