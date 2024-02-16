@@ -1,0 +1,162 @@
+{
+    "catppuccin-bat": {
+        "cargoLocks": null,
+        "date": "2022-11-10",
+        "extract": null,
+        "name": "catppuccin-bat",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "bat",
+            "rev": "ba4d16880d63e656acced2b7d4e034e4a93f74b1",
+            "sha256": "sha256-6WVKQErGdaqb++oaXnY3i6/GuH2FhTgK0v4TN4Y0Wbw=",
+            "type": "github"
+        },
+        "version": "ba4d16880d63e656acced2b7d4e034e4a93f74b1"
+    },
+    "catppuccin-bottom": {
+        "cargoLocks": null,
+        "date": "2022-12-30",
+        "extract": null,
+        "name": "catppuccin-bottom",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "bottom",
+            "rev": "c0efe9025f62f618a407999d89b04a231ba99c92",
+            "sha256": "sha256-VaHX2I/Gn82wJWzybpWNqU3dPi3206xItOlt0iF6VVQ=",
+            "type": "github"
+        },
+        "version": "c0efe9025f62f618a407999d89b04a231ba99c92"
+    },
+    "catppuccin-btop": {
+        "cargoLocks": null,
+        "date": "2023-10-07",
+        "extract": null,
+        "name": "catppuccin-btop",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "btop",
+            "rev": "c6469190f2ecf25f017d6120bf4e050e6b1d17af",
+            "sha256": "sha256-jodJl4f2T9ViNqsY9fk8IV62CrpC5hy7WK3aRpu70Cs=",
+            "type": "github"
+        },
+        "version": "c6469190f2ecf25f017d6120bf4e050e6b1d17af"
+    },
+    "catppuccin-fcitx5": {
+        "cargoLocks": null,
+        "date": "2022-10-05",
+        "extract": null,
+        "name": "catppuccin-fcitx5",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "fcitx5",
+            "rev": "ce244cfdf43a648d984719fdfd1d60aab09f5c97",
+            "sha256": "sha256-uFaCbyrEjv4oiKUzLVFzw+UY54/h7wh2cntqeyYwGps=",
+            "type": "github"
+        },
+        "version": "ce244cfdf43a648d984719fdfd1d60aab09f5c97"
+    },
+    "catppuccin-gitui": {
+        "cargoLocks": null,
+        "date": "2023-11-13",
+        "extract": null,
+        "name": "catppuccin-gitui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "gitui",
+            "rev": "39978362b2c88b636cacd55b65d2f05c45a47eb9",
+            "sha256": "sha256-kWaHQ1+uoasT8zXxOxkur+QgZu1wLsOOrP/TL+6cfII=",
+            "type": "github"
+        },
+        "version": "39978362b2c88b636cacd55b65d2f05c45a47eb9"
+    },
+    "catppuccin-starship": {
+        "cargoLocks": null,
+        "date": "2023-07-13",
+        "extract": null,
+        "name": "catppuccin-starship",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "starship",
+            "rev": "5629d2356f62a9f2f8efad3ff37476c19969bd4f",
+            "sha256": "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=",
+            "type": "github"
+        },
+        "version": "5629d2356f62a9f2f8efad3ff37476c19969bd4f"
+    },
+    "lporg": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lporg",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "blacktop",
+            "repo": "lporg",
+            "rev": "v20.4.31",
+            "sha256": "sha256-A/OE67qAn9RHSCveiRwG5lPYNTMdrbUWVfQOP3XjkdU=",
+            "type": "github"
+        },
+        "version": "v20.4.31"
+    },
+    "rime-ice": {
+        "cargoLocks": null,
+        "date": "2024-02-15",
+        "extract": null,
+        "name": "rime-ice",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "iDvel",
+            "repo": "rime-ice",
+            "rev": "8a2a06ecc64283650435c74490d1af1eb2b72633",
+            "sha256": "sha256-gZIAdwDXMkr9/GsNPhZWOFDaNsLHOeCk9+rQkG2rLGQ=",
+            "type": "github"
+        },
+        "version": "8a2a06ecc64283650435c74490d1af1eb2b72633"
+    }
+}
