@@ -11,7 +11,7 @@ with builtins // lib; {
   # Upgrade and uninstall homebrew casks automatically.
   homebrew.onActivation.autoUpdate = true;
   homebrew.onActivation.upgrade = true;
-  # homebrew.onActivation.cleanup = "uninstall";
+  homebrew.onActivation.cleanup = "uninstall";
 
   # Set environment variables.
   environment.variables = {
@@ -50,7 +50,6 @@ with builtins // lib; {
     "adrive"
     "alt-tab"
     "altserver"
-    "applite"
     "arc"
     "baidunetdisk"
     "balenaetcher"
@@ -89,7 +88,6 @@ with builtins // lib; {
     "mos"
     "motrix"
     "mounty"
-    "neovide"
     "neteasemusic"
     "obs"
     "obsidian"
