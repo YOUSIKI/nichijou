@@ -6,6 +6,13 @@
   ...
 }:
 with builtins // lib; {
+  imports = [
+    globals.outputs.homeProfiles.catppuccin
+  ];
+
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
+
   programs = {
     # bash
     bash = {
@@ -126,6 +133,7 @@ with builtins // lib; {
       enableIonIntegration = true;
       enableNushellIntegration = true;
       enableTransience = true;
+      settings.format = "$all";
     };
 
     # tmux
