@@ -21,7 +21,6 @@
             base
             lang.complete
             shell
-            stylix
           ];
         };
       };
