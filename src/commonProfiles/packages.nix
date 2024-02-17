@@ -22,6 +22,7 @@ with builtins // lib; {
     jq
     man
     neofetch
+    nodejs
     nvfetcher
     ripgrep
     rsync
