@@ -77,6 +77,17 @@
     };
     date = "2023-07-13";
   };
+  clash-meta = {
+    pname = "clash-meta";
+    version = "v1.18.1";
+    src = fetchFromGitHub {
+      owner = "MetaCubeX";
+      repo = "mihomo";
+      rev = "v1.18.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-ezOkDrpytZQdc+Txe4eUyuWY6oipn9jIrmu7aO8lNlQ=";
+    };
+  };
   lporg = {
     pname = "lporg";
     version = "v20.4.31";
@@ -90,14 +101,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "8a2a06ecc64283650435c74490d1af1eb2b72633";
+    version = "6d438fb8f4de5e54e0fb2e1daf0635d729277493";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "8a2a06ecc64283650435c74490d1af1eb2b72633";
+      rev = "6d438fb8f4de5e54e0fb2e1daf0635d729277493";
       fetchSubmodules = false;
-      sha256 = "sha256-gZIAdwDXMkr9/GsNPhZWOFDaNsLHOeCk9+rQkG2rLGQ=";
+      sha256 = "sha256-bKwzulM6Xl3+Xr0Nk9jNKXKfbDJyPr8u90jHceCVwo8=";
     };
-    date = "2024-02-15";
+    date = "2024-02-18";
   };
 }

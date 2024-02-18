@@ -119,6 +119,26 @@
     },
     "version": "5629d2356f62a9f2f8efad3ff37476c19969bd4f"
   },
+  "clash-meta": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "clash-meta",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "MetaCubeX",
+      "repo": "mihomo",
+      "rev": "v1.18.1",
+      "sha256": "sha256-ezOkDrpytZQdc+Txe4eUyuWY6oipn9jIrmu7aO8lNlQ=",
+      "type": "github"
+    },
+    "version": "v1.18.1"
+  },
   "lporg": {
     "cargoLocks": null,
     "date": null,
@@ -141,7 +161,7 @@
   },
   "rime-ice": {
     "cargoLocks": null,
-    "date": "2024-02-15",
+    "date": "2024-02-18",
     "extract": null,
     "name": "rime-ice",
     "passthru": null,
@@ -153,10 +173,10 @@
       "name": null,
       "owner": "iDvel",
       "repo": "rime-ice",
-      "rev": "8a2a06ecc64283650435c74490d1af1eb2b72633",
-      "sha256": "sha256-gZIAdwDXMkr9/GsNPhZWOFDaNsLHOeCk9+rQkG2rLGQ=",
+      "rev": "6d438fb8f4de5e54e0fb2e1daf0635d729277493",
+      "sha256": "sha256-bKwzulM6Xl3+Xr0Nk9jNKXKfbDJyPr8u90jHceCVwo8=",
       "type": "github"
     },
-    "version": "8a2a06ecc64283650435c74490d1af1eb2b72633"
+    "version": "6d438fb8f4de5e54e0fb2e1daf0635d729277493"
   }
 }

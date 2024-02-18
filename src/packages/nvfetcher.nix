@@ -6,11 +6,7 @@
   pkgs,
   system,
   ...
-}: let
-  package = globals.inputs.nvfetcher.packages.${pkgs.system}.default;
-
-  systems = import globals.inputs.default-systems;
-in
-  if builtins.elem system systems
-  then package
-  else null
+}:
+if pkgs.lib.hasAttr system globals.inputs.nvfetcher.packages
+then globals.inputs.nvfetcher.packages.${system}.default
+else null

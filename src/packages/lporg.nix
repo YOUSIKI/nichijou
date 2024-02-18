@@ -13,20 +13,22 @@
     buildGoModule,
     fetchFromGitHub,
     installShellFiles,
-    sources ? {},
+    sources,
+    platforms,
   }:
     buildGoModule rec {
       inherit (sources.lporg) pname version src;
 
       vendorHash = "sha256-GQaIfUtM3iDQ9jmrSMqYvcPysigdu7w10xGDIYv4OY8=";
 
-      nativeBuildInputs = [
-        installShellFiles
+      ldflags = [
+        "-s"
+        "-w"
+        "-X github.com/blacktop/lporg/constant.Version=${version}"
       ];
 
+      # disable check phase
       checkPhase = '''';
-
-      postInstall = '''';
 
       meta = with lib; {
         description = "Organize Your macOS Launchpad Apps";
@@ -36,21 +38,23 @@
           in sync across devices.
         '';
         homepage = "https://github.com/blacktop/lporg";
-        changelog = "https://github.com/blacktop/lporg/releases/tag/v${version}";
+        changelog = "https://github.com/blacktop/lporg/releases/tag/${version}";
         license = with licenses; [mit];
         maintainers = with maintainers; [yousiki];
+        mainProgram = "lporg";
+        inherit platforms;
       };
     };
 
   sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
 
-  package = pkgs.callPackage recipe {inherit sources;};
-
-  systems =
+  platforms =
     builtins.filter
-    (system: pkgs.lib.hasSuffix "-darwin" system)
+    (pkgs.lib.hasSuffix "-darwin")
     (import globals.inputs.default-systems);
+
+  package = pkgs.callPackage recipe {inherit sources platforms;};
 in
-  if builtins.elem system systems
+  if builtins.elem system platforms
   then package
   else null

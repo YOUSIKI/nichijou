@@ -2,6 +2,10 @@
 src.github = "blacktop/lporg"
 fetch.github = "blacktop/lporg"
 
+[clash-meta]
+src.github = "MetaCubeX/mihomo"
+fetch.github = "MetaCubeX/mihomo"
+
 [rime-ice]
 src.git = "https://github.com/iDvel/rime-ice"
 fetch.github = "iDvel/rime-ice"
