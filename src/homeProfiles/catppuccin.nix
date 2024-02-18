@@ -1,4 +1,4 @@
-# Shell configurations via Home-manager.
+# Catppuccin themes via Home-manager.
 {globals, ...}: {
   config,
   lib,
