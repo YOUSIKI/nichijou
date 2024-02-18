@@ -68,11 +68,11 @@ in {
     # btop
     (mkIf config.programs.btop.enable {
       programs.btop.settings.color_scheme = "catppuccin-${cfg.flavor}";
-      xdg.configFile =
+      home.file =
         mapAttrs'
         (n: v:
           nameValuePair
-          "btop/themes/catppuccin-${n}.theme"
+          ".config/btop/themes/catppuccin-${n}.theme"
           {source = sources.catppuccin-btop.src + "/themes/catppuccin_${n}.theme";})
         flavorAttrs;
     })
