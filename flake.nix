@@ -19,13 +19,14 @@
     };
   in
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = import (inputs.systems);
+
+      # flake-parts modules.
       imports = with inputs; [
         flake-parts.flakeModules.easyOverlay
         flake-root.flakeModule
         treefmt-nix.flakeModule
       ];
-
-      systems = import (inputs.systems);
 
       perSystem = {
         config,
@@ -35,7 +36,8 @@
         system,
         ...
       }: let
-        sources = pkgs.callPackage _sources/generated.nix {};
+        # Nix sources expr from nvfetcher.
+        sources = pkgs.callPackage ./nvfetcher/generated.nix {};
       in rec {
         # Overwrite nixpkgs configurations.
         _module.args.pkgs = import inputs.nixpkgs {
@@ -55,20 +57,21 @@
 
         # Packages.
         packages = inputs.haumea.lib.load {
-          src = globals.root + /src/packages;
-          inputs = {inherit globals config self' inputs' pkgs system sources;};
+          src = ./src/packages;
+          inputs = {inherit config self' inputs' pkgs system sources;};
           transformer = _: mod:
             if builtins.isAttrs mod
             then pkgs.lib.filterAttrs (n: v: v != null) mod
             else mod;
         };
 
+        # Overlay attributes (flake-parts easy overlay).
         overlayAttrs = packages;
       };
 
       flake = let
         src = inputs.haumea.lib.load {
-          src = globals.root + /src;
+          src = ./src;
           inputs = {inherit globals;};
           loader = inputs.haumea.lib.loaders.scoped;
           transformer = [inputs.haumea.lib.transformers.liftDefault];
