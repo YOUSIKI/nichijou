@@ -27,7 +27,7 @@ in {
       # The garbage collector will keep the outputs of non-garbage derivations.
       keep-outputs = true;
       # Builds will be performed in a sandboxed environment.
-      sandbox = false;
+      sandbox = true;
       # These users will have additional rights when connecting to the Nix daemon.
       trusted-users = ["root" "@wheel" "@admin"];
       # Never warn about dirty Git/Mercurial trees.
@@ -43,7 +43,7 @@ in {
     # Garbage collector
     gc.automatic = true;
 
-    # List of directories to be searched for <...> file references.W
+    # List of directories to be searched for <...> file references.
     nixPath = [
       "nixpkgs=flake:nixpkgs"
       "darwin=/etc/nix/inputs/darwin"

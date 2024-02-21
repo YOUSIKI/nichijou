@@ -70,22 +70,23 @@
       };
 
       flake = let
-        src = inputs.haumea.lib.load {
-          src = ./src;
-          inputs = {inherit globals;};
-          loader = inputs.haumea.lib.loaders.scoped;
-          transformer = [inputs.haumea.lib.transformers.liftDefault];
-        };
+        load = src:
+          inputs.haumea.lib.load {
+            inherit src;
+            inputs = {inherit globals;};
+            loader = inputs.haumea.lib.loaders.scoped;
+            transformer = [inputs.haumea.lib.transformers.liftDefault];
+          };
       in {
-        inherit
-          (src)
-          commonProfiles
-          darwinConfigurations
-          darwinProfiles
-          homeProfiles
-          nixosConfigurations
-          nixosProfiles
-          ;
+        # Profiles.
+        commonProfiles = load ./src/profiles/common;
+        darwinProfiles = load ./src/profiles/darwin;
+        homeProfiles = load ./src/profiles/home;
+        nixosProfiles = load ./src/profiles/nixos;
+
+        # Configurations.
+        darwinConfigurations = load ./src/configurations/darwin;
+        nixosConfigurations = load ./src/configurations/nixos;
       };
     };
 
