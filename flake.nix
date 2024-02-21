@@ -136,17 +136,7 @@
       "https://nixpkgs-wayland.cachix.org?priority=40"
       "https://numtide.cachix.org?priority=40"
     ];
-    trusted-substituters = [
-      "https://cache.garnix.io?priority=50"
-      "https://cache.nixos.org?priority=45"
-      "https://hyprland.cachix.org?priority=40"
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=30"
-      "https://mirrors.ustc.edu.cn/nix-channels/store?priority=35"
-      "https://nichijou.cachix.org?priority=40"
-      "https://nix-community.cachix.org?priority=40"
-      "https://nixpkgs-wayland.cachix.org?priority=40"
-      "https://numtide.cachix.org?priority=40"
-    ];
+    trusted-substituters = substituters;
     trusted-public-keys = [
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="

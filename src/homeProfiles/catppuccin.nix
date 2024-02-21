@@ -6,7 +6,7 @@
   ...
 }:
 with builtins // lib; let
-  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
+  sources = pkgs.callPackage (globals.root + /nvfetcher/generated.nix) {};
 
   cfg = config.catppuccin;
 
