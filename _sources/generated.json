@@ -59,26 +59,6 @@
     },
     "version": "c6469190f2ecf25f017d6120bf4e050e6b1d17af"
   },
-  "catppuccin-fcitx5": {
-    "cargoLocks": null,
-    "date": "2022-10-05",
-    "extract": null,
-    "name": "catppuccin-fcitx5",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "catppuccin",
-      "repo": "fcitx5",
-      "rev": "ce244cfdf43a648d984719fdfd1d60aab09f5c97",
-      "sha256": "sha256-uFaCbyrEjv4oiKUzLVFzw+UY54/h7wh2cntqeyYwGps=",
-      "type": "github"
-    },
-    "version": "ce244cfdf43a648d984719fdfd1d60aab09f5c97"
-  },
   "catppuccin-gitui": {
     "cargoLocks": null,
     "date": "2023-11-13",
@@ -161,7 +141,7 @@
   },
   "rime-ice": {
     "cargoLocks": null,
-    "date": "2024-02-18",
+    "date": "2024-02-21",
     "extract": null,
     "name": "rime-ice",
     "passthru": null,
@@ -173,10 +153,10 @@
       "name": null,
       "owner": "iDvel",
       "repo": "rime-ice",
-      "rev": "6d438fb8f4de5e54e0fb2e1daf0635d729277493",
-      "sha256": "sha256-bKwzulM6Xl3+Xr0Nk9jNKXKfbDJyPr8u90jHceCVwo8=",
+      "rev": "362288fed5814b3fe10fe9819672767c38d836c9",
+      "sha256": "sha256-8ZC9qt2xbV9/J6te/ngxJayvcLTDMT44/QsgmYHEc0U=",
       "type": "github"
     },
-    "version": "6d438fb8f4de5e54e0fb2e1daf0635d729277493"
+    "version": "362288fed5814b3fe10fe9819672767c38d836c9"
   }
 }

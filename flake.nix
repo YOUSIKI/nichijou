@@ -25,7 +25,7 @@
         treefmt-nix.flakeModule
       ];
 
-      systems = import (inputs.default-systems);
+      systems = import (inputs.systems);
 
       perSystem = {
         config,
@@ -34,7 +34,9 @@
         pkgs,
         system,
         ...
-      }: rec {
+      }: let
+        sources = pkgs.callPackage _sources/generated.nix {};
+      in rec {
         # Overwrite nixpkgs configurations.
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
@@ -54,7 +56,7 @@
         # Packages.
         packages = inputs.haumea.lib.load {
           src = globals.root + /src/packages;
-          inputs = {inherit globals config self' inputs' pkgs system;};
+          inputs = {inherit globals config self' inputs' pkgs system sources;};
           transformer = _: mod:
             if builtins.isAttrs mod
             then pkgs.lib.filterAttrs (n: v: v != null) mod
@@ -98,7 +100,9 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
-    default-systems.url = "github:nix-systems/default";
+    systems.url = "github:nix-systems/default";
+    linux-systems.url = "github:nix-systems/default-linux";
+    darwin-systems.url = "github:nix-systems/default-darwin";
 
     flake-root.url = "github:srid/flake-root";
 

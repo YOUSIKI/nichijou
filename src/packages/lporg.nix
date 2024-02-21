@@ -1,60 +1,40 @@
+# Organize Your macOS Launchpad Apps.
+# https://github.com/blacktop/lporg
 {
-  globals,
-  config,
-  self',
-  inputs',
   pkgs,
-  system,
+  sources,
   ...
-}: let
-  recipe = {
-    lib,
-    stdenv,
-    buildGoModule,
-    fetchFromGitHub,
-    installShellFiles,
-    sources,
-    platforms,
-  }:
-    buildGoModule rec {
-      inherit (sources.lporg) pname version src;
+}:
+if pkgs.stdenv.isDarwin
+then
+  pkgs.buildGoModule rec {
+    inherit (sources.lporg) pname src;
 
-      vendorHash = "sha256-GQaIfUtM3iDQ9jmrSMqYvcPysigdu7w10xGDIYv4OY8=";
+    version = pkgs.lib.removePrefix "v" sources.lporg.version;
 
-      ldflags = [
-        "-s"
-        "-w"
-        "-X github.com/blacktop/lporg/constant.Version=${version}"
-      ];
+    vendorHash = "sha256-GQaIfUtM3iDQ9jmrSMqYvcPysigdu7w10xGDIYv4OY8=";
 
-      # disable check phase
-      checkPhase = '''';
+    ldflags = [
+      "-s"
+      "-w"
+      "-X github.com/blacktop/lporg/constant.Version=${version}"
+    ];
 
-      meta = with lib; {
-        description = "Organize Your macOS Launchpad Apps";
-        longDescription = ''
-          lporg is meant to help people setting up a brand
-          new Mac or to keep all of their Launchpad Folders
-          in sync across devices.
-        '';
-        homepage = "https://github.com/blacktop/lporg";
-        changelog = "https://github.com/blacktop/lporg/releases/tag/${version}";
-        license = with licenses; [mit];
-        maintainers = with maintainers; [yousiki];
-        mainProgram = "lporg";
-        inherit platforms;
-      };
+    # skip check phase
+    checkPhase = '''';
+
+    meta = with pkgs.lib; {
+      description = "Organize Your macOS Launchpad Apps";
+      longDescription = ''
+        lporg is meant to help people setting up a brand
+        new Mac or to keep all of their Launchpad Folders
+        in sync across devices.
+      '';
+      homepage = "https://github.com/blacktop/lporg";
+      changelog = "https://github.com/blacktop/lporg/releases/tag/${version}";
+      mainProgram = "lporg";
+      license = with licenses; [mit];
+      maintainers = with maintainers; [yousiki];
     };
-
-  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
-
-  platforms =
-    builtins.filter
-    (pkgs.lib.hasSuffix "-darwin")
-    (import globals.inputs.default-systems);
-
-  package = pkgs.callPackage recipe {inherit sources platforms;};
-in
-  if builtins.elem system platforms
-  then package
-  else null
+  }
+else null

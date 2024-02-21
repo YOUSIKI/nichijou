@@ -41,18 +41,6 @@
     };
     date = "2023-10-07";
   };
-  catppuccin-fcitx5 = {
-    pname = "catppuccin-fcitx5";
-    version = "ce244cfdf43a648d984719fdfd1d60aab09f5c97";
-    src = fetchFromGitHub {
-      owner = "catppuccin";
-      repo = "fcitx5";
-      rev = "ce244cfdf43a648d984719fdfd1d60aab09f5c97";
-      fetchSubmodules = false;
-      sha256 = "sha256-uFaCbyrEjv4oiKUzLVFzw+UY54/h7wh2cntqeyYwGps=";
-    };
-    date = "2022-10-05";
-  };
   catppuccin-gitui = {
     pname = "catppuccin-gitui";
     version = "39978362b2c88b636cacd55b65d2f05c45a47eb9";
@@ -101,14 +89,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "6d438fb8f4de5e54e0fb2e1daf0635d729277493";
+    version = "362288fed5814b3fe10fe9819672767c38d836c9";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "6d438fb8f4de5e54e0fb2e1daf0635d729277493";
+      rev = "362288fed5814b3fe10fe9819672767c38d836c9";
       fetchSubmodules = false;
-      sha256 = "sha256-bKwzulM6Xl3+Xr0Nk9jNKXKfbDJyPr8u90jHceCVwo8=";
+      sha256 = "sha256-8ZC9qt2xbV9/J6te/ngxJayvcLTDMT44/QsgmYHEc0U=";
     };
-    date = "2024-02-18";
+    date = "2024-02-21";
   };
 }

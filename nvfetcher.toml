@@ -22,10 +22,6 @@ fetch.github = "catppuccin/bottom"
 src.git = "https://github.com/catppuccin/btop"
 fetch.github = "catppuccin/btop"
 
-[catppuccin-fcitx5]
-src.git = "https://github.com/catppuccin/fcitx5"
-fetch.github = "catppuccin/fcitx5"
-
 [catppuccin-gitui]
 src.git = "https://github.com/catppuccin/gitui"
 fetch.github = "catppuccin/gitui"

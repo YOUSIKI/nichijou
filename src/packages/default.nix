@@ -1,18 +1,15 @@
+# Default package which joins all packages in the flake.
+# `nix build --print-out-paths | cachix push nichijou` will cache all packages.
 {
-  globals,
-  config,
   self',
-  inputs',
   pkgs,
-  system,
   ...
 }:
-with builtins // pkgs.lib;
-  pkgs.symlinkJoin {
-    name = "nichijou-packages";
-    paths =
-      attrValues
-      (filterAttrs
-        (n: v: n != "default")
-        globals.outputs.packages.${pkgs.system});
-  }
+pkgs.symlinkJoin {
+  name = "nichijou-packages";
+  paths =
+    pkgs.lib.attrValues
+    (pkgs.lib.filterAttrs
+      (n: v: n != "default" && pkgs.lib.isDerivation v)
+      self'.packages);
+}

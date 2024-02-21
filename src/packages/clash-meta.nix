@@ -1,61 +1,47 @@
+# Another Clash Kernel.
+# Note that pkgs.*.overrideAttrs doesn't support buildGoModule
+# https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/networking/clash-meta/default.nix
 {
-  globals,
-  config,
-  self',
-  inputs',
   pkgs,
-  system,
+  sources,
   ...
-}: let
-  recipe = {
-    lib,
-    fetchFromGitHub,
-    buildGoModule,
-    sources,
-    platforms,
-  }:
-    buildGoModule rec {
-      inherit (sources.clash-meta) pname version src;
+}:
+if pkgs ? clash-meta
+then
+  pkgs.buildGoModule rec {
+    inherit (sources.clash-meta) pname src;
 
-      vendorHash = "sha256-tvPR5kAta4MlMTwjfxwVOacRr2nVpfalbN08mfxml64=";
+    version = pkgs.lib.removePrefix "v" sources.clash-meta.version;
 
-      # Do not build testing suit
-      excludedPackages = ["./test"];
+    vendorHash = "sha256-tvPR5kAta4MlMTwjfxwVOacRr2nVpfalbN08mfxml64=";
 
-      ldflags = [
-        "-s"
-        "-w"
-        "-X github.com/MetaCubeX/mihomo/constant.Version=${version}"
-      ];
+    # Do not build testing suit
+    excludedPackages = ["./test"];
 
-      tags = [
-        "with_gvisor"
-      ];
+    ldflags = [
+      "-s"
+      "-w"
+      "-X github.com/MetaCubeX/mihomo/constant.Version=${version}"
+    ];
 
-      # network required
-      doCheck = false;
+    tags = [
+      "with_gvisor"
+    ];
 
-      postInstall = ''
-        mv $out/bin/mihomo $out/bin/clash-meta
-      '';
+    # network required
+    doCheck = false;
 
-      meta = with lib; {
-        description = "Another Clash Kernel";
-        homepage = "https://github.com/MetaCubeX/mihomo";
-        changelog = "https://github.com/MetaCubeX/mihomo/releases/tag/${version}";
-        license = licenses.gpl3Only;
-        maintainers = with maintainers; [yousiki];
-        mainProgram = "clash-meta";
-        inherit platforms;
-      };
+    postInstall = ''
+      mv $out/bin/mihomo $out/bin/clash-meta
+    '';
+
+    meta = with pkgs.lib; {
+      description = "Another Clash Kernel";
+      homepage = "https://github.com/MetaCubeX/mihomo";
+      changelog = "https://github.com/MetaCubeX/mihomo/releases/tag/${version}";
+      mainProgram = "clash-meta";
+      license = licenses.gpl3Only;
+      maintainers = with maintainers; [yousiki];
     };
-
-  sources = pkgs.callPackage (globals.root + /_sources/generated.nix) {};
-
-  platforms = import globals.inputs.default-systems;
-
-  package = pkgs.callPackage recipe {inherit sources platforms;};
-in
-  if builtins.elem system platforms
-  then package
-  else null
+  }
+else null
