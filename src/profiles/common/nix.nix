@@ -27,7 +27,7 @@ in {
       # The garbage collector will keep the outputs of non-garbage derivations.
       keep-outputs = true;
       # Builds will be performed in a sandboxed environment.
-      sandbox = true;
+      sandbox = pkgs.stdenv.isLinux;
       # These users will have additional rights when connecting to the Nix daemon.
       trusted-users = ["root" "@wheel" "@admin"];
       # Never warn about dirty Git/Mercurial trees.

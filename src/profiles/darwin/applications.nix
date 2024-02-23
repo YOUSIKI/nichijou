@@ -116,7 +116,7 @@ with builtins // lib; {
     "xpra"
     "xquartz"
     "zed"
-    "zotero"
+    "zotero-beta"
   ];
 
   environment.systemPath =
