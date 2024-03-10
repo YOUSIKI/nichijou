@@ -19,6 +19,7 @@
     qq
     spotify
     steam
+    vlc
     vscode
     wezterm
     zotero
