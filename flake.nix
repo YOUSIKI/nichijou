@@ -13,6 +13,9 @@
         allowUnfree = true;
         allowBroken = false;
         allowUnsupported = false;
+        # permittedInsecurePackages = [
+        #   "nix-2.15.3"
+        # ];
       };
       inherit self inputs;
       inherit (self) outputs;
@@ -130,6 +133,8 @@
       "https://cache.garnix.io?priority=50"
       "https://cache.nixos.org?priority=45"
       "https://hyprland.cachix.org?priority=40"
+      "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
+      "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=30"
       "https://mirrors.ustc.edu.cn/nix-channels/store?priority=35"
       "https://nichijou.cachix.org?priority=40"

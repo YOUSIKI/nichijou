@@ -7,15 +7,15 @@
 }: {
   catppuccin-bat = {
     pname = "catppuccin-bat";
-    version = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
+    version = "a875b71dc5514b2eae9174b0591ef421887aa99f";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "bat";
-      rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
+      rev = "a875b71dc5514b2eae9174b0591ef421887aa99f";
       fetchSubmodules = false;
-      sha256 = "sha256-6WVKQErGdaqb++oaXnY3i6/GuH2FhTgK0v4TN4Y0Wbw=";
+      sha256 = "sha256-PWX8LR3xTgNBUpk+xBIGpEBQCNJHre8cRX4OTSWkZvs=";
     };
-    date = "2022-11-10";
+    date = "2024-03-08";
   };
   catppuccin-bottom = {
     pname = "catppuccin-bottom";
@@ -89,14 +89,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "362288fed5814b3fe10fe9819672767c38d836c9";
+    version = "a03b57b17a123498af87959806457f146662da7e";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "362288fed5814b3fe10fe9819672767c38d836c9";
+      rev = "a03b57b17a123498af87959806457f146662da7e";
       fetchSubmodules = false;
-      sha256 = "sha256-8ZC9qt2xbV9/J6te/ngxJayvcLTDMT44/QsgmYHEc0U=";
+      sha256 = "sha256-fvyIKDwQKR4pDi3WRfRjyK3IsfmFHHKqtUeyB/KJo2o=";
     };
-    date = "2024-02-21";
+    date = "2024-03-07";
   };
 }
