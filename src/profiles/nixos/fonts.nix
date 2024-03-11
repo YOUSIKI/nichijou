@@ -19,15 +19,7 @@ with lib; let
     wqy_microhei
     wqy_zenhei
   ];
-in
-  mkMerge [
-    {
-      fonts.fontDir.enable = true;
-    }
-    (mkIf pkgs.stdenv.isLinux {
-      fonts.packages = fontPackages;
-    })
-    (mkIf pkgs.stdenv.isDarwin {
-      fonts.fonts = fontPackages;
-    })
-  ]
+in {
+  fonts.fontDir.enable = true;
+  fonts.packages = fontPackages;
+}

@@ -7,9 +7,9 @@
     ./_hardware-configuration.nix
 
     # Host-specific profiles
-    commonProfiles.fonts
     commonProfiles.nix
     commonProfiles.packages
+    nixosProfiles.fonts
 
     # Home-manager module
     globals.inputs.home-manager.nixosModules.home-manager
