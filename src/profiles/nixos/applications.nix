@@ -11,6 +11,7 @@
     clapper
     cloudflare-warp
     discord
+    dolphin
     dragon
     firefox
     google-chrome
