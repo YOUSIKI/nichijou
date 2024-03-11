@@ -8,13 +8,17 @@
   home.packages = with pkgs; [
     _1password-gui
     brave
+    clapper
     cloudflare-warp
     discord
+    dragon
     firefox
     google-chrome
     handbrake
+    haruna
     kitty
     motrix
+    mpv
     qbittorrent
     qq
     spotify
