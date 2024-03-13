@@ -6,8 +6,8 @@
   ...
 }:
 with builtins // lib; {
-  environment.systemPackages =
-    (with pkgs; [
+  environment.systemPackages = with pkgs // globals.outputs.packages.${pkgs.system};
+    [
       alejandra
       curl
       duf
@@ -30,10 +30,8 @@ with builtins // lib; {
       vim
       wget
       zellij
-    ])
-    ++ (optionals pkgs.stdenv.isDarwin (with globals.outputs.packages.${pkgs.system}; [
-      lporg
-    ]));
+    ]
+    ++ (optionals pkgs.stdenv.isDarwin [lporg]);
 
   programs.fish.enable = true;
   programs.tmux.enable = true;
