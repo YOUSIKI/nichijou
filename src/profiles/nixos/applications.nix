@@ -5,16 +5,21 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     _1password-gui
     brave
+    clapper
     cloudflare-warp
     discord
+    dolphin
+    dragon
     firefox
     google-chrome
     handbrake
+    haruna
     kitty
     motrix
+    mpv
     qbittorrent
     qq
     spotify

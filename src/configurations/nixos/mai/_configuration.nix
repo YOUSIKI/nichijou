@@ -37,12 +37,6 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma6.enable = true;
 
-  services.xserver.videoDrivers = [
-    "intel"
-    "modesetting"
-    "fbdev"
-  ];
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -69,6 +63,7 @@
   users.users.yousiki = {
     isNormalUser = true;
     extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
   };
 
   # List packages installed in system profile. To search, run:

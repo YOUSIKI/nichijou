@@ -7,9 +7,10 @@
     ./_hardware-configuration.nix
 
     # Host-specific profiles
-    commonProfiles.fonts
     commonProfiles.nix
     commonProfiles.packages
+    nixosProfiles.fonts
+    nixosProfiles.applications
 
     # Home-manager module
     globals.inputs.home-manager.nixosModules.home-manager
@@ -20,7 +21,6 @@
         extraSpecialArgs = {inherit globals;};
         users.yousiki = {
           imports = with homeProfiles; [
-            applications
             base
             lang.complete
             shell
