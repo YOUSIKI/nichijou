@@ -1,3 +1,3 @@
-# homeConfigurations.yousiki
+# darwinConfigurations.sakamoto
 
-`yousiki` is my username.
+`sakamoto` is my MacbookPro.
