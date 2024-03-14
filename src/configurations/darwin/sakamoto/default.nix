@@ -21,6 +21,7 @@
             base
             lang.complete
             shell
+            ssh
           ];
         };
       };

@@ -1,11 +1,10 @@
-# Basic packages for NixOS and Nix-darwin.
+# Fonts for NixOS.
 {globals, ...}: {
   config,
   lib,
   pkgs,
   ...
-}:
-with lib; let
+}: let
   fontPackages = with pkgs; [
     lxgw-neoxihei
     lxgw-wenkai

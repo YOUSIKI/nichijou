@@ -4,8 +4,7 @@
   lib,
   pkgs,
   ...
-}:
-with builtins // lib; {
+}: {
   nixpkgs.config.cudaSupport = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.nvidiaSettings = true;

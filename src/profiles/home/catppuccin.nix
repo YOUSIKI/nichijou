@@ -42,7 +42,7 @@ in {
 
   config = mkIf cfg.enable (mkMerge [
     # bat
-    (mkIf config.programs.bat.enable {
+    (mkIf (false && config.programs.bat.enable) {
       programs.bat = {
         config.theme = "catppuccin-${cfg.flavor}";
         themes =
