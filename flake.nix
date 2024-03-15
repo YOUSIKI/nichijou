@@ -130,7 +130,7 @@
 
   nixConfig = rec {
     substituters = [
-      "https://cache.garnix.io?priority=50"
+      # "https://cache.garnix.io?priority=50"
       "https://cache.nixos.org?priority=45"
       "https://hyprland.cachix.org?priority=40"
       "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"

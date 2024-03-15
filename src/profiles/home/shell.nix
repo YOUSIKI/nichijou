@@ -43,7 +43,9 @@ with builtins // lib; {
     # eza (exa)
     eza = {
       enable = true;
-      enableAliases = true;
+      # enableAliases = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
       icons = true;
       git = true;
     };
