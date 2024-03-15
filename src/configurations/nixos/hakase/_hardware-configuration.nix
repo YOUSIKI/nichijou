@@ -34,6 +34,27 @@
     {device = "/dev/disk/by-uuid/9dc3e2ac-b63d-4dda-8b4c-7be566aa349a";}
   ];
 
+  # Mount multiple-device bcachefs.
+  systemd.services.mount-data-volume = {
+    description = "mount data volume";
+    bindsTo = ["dev-nvme0n1p3.device" "dev-sda1.device" "dev-sdb1.device"];
+    after = ["dev-nvme0n1p3.device" "dev-sda1.device" "dev-sdb1.device" "local-fs-pre.target"];
+    before = ["umount.target" "local-fs.target"];
+    conflicts = ["umount.target"];
+    wantedBy = ["local-fs.target"];
+    unitConfig = {
+      RequiresMountsFor = "/data";
+      DefaultDependencies = false;
+    };
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.util-linux}/bin/mount -t bcachefs -o noatime /dev/nvme0n1p3:/dev/sda1:/dev/sdb1 /data";
+      ExecStop = "${pkgs.util-linux}/umount /data";
+    };
+  };
+
+  # NVIDIA GPU support.
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.nvidiaSettings = true;
   hardware.nvidia.modesetting.enable = true;
