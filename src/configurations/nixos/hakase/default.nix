@@ -8,8 +8,9 @@
     # Host-specific profiles
     commonProfiles.nix
     commonProfiles.packages
-    nixosProfiles.fonts
     nixosProfiles.applications
+    nixosProfiles.fonts
+    nixosProfiles.nvidia-gpu
     nixosProfiles.vscode-server
 
     # Home-manager module
@@ -24,6 +25,7 @@
             base
             lang.complete
             shell
+            ssh
           ];
         };
       };

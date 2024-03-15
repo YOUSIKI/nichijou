@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: {
-  programs.ssh.extraConfig = ''
+  home.file.".ssh/config".text = ''
     Include ~/.orbstack/ssh/config
 
     Host satoshi
