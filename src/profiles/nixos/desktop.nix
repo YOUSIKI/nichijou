@@ -1,4 +1,4 @@
-# Install packages for NixOS.
+# Configure desktop environment for NixOS.
 {globals, ...}: {
   config,
   lib,
@@ -28,5 +28,20 @@
     vscode
     wezterm
     zotero
+  ];
+
+  fonts.fontDir.enable = true;
+  fonts.packages = with pkgs; [
+    lxgw-neoxihei
+    lxgw-wenkai
+    nerdfonts
+    noto-fonts-cjk
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    source-han-mono
+    source-han-sans
+    source-han-serif
+    wqy_microhei
+    wqy_zenhei
   ];
 }

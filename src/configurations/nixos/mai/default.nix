@@ -9,8 +9,7 @@
     # Host-specific profiles
     commonProfiles.nix
     commonProfiles.packages
-    nixosProfiles.fonts
-    nixosProfiles.applications
+    nixosProfiles.desktop
 
     # Home-manager module
     globals.inputs.home-manager.nixosModules.home-manager

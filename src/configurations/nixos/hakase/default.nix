@@ -8,8 +8,7 @@
     # Host-specific profiles
     commonProfiles.nix
     commonProfiles.packages
-    nixosProfiles.applications
-    nixosProfiles.fonts
+    nixosProfiles.desktop
     nixosProfiles.nvidia-gpu
     nixosProfiles.vscode-server
 
