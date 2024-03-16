@@ -34,9 +34,9 @@
   # };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -69,32 +69,6 @@
 
   programs.zsh.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    alejandra
-    curl
-    duf
-    eza
-    fd
-    fzf
-    gdu
-    gh
-    git
-    helix
-    home-manager
-    htop
-    jq
-    man
-    neofetch
-    nodejs
-    nvfetcher
-    ripgrep
-    rsync
-    vim
-    wget
-    zellij
-  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -137,56 +111,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
-
-  nix = {
-    settings = rec {
-      # Nix automatically detects files in the store that have identical contents, and replaces them with hard links to a single copy.
-      auto-optimise-store = true;
-      # Nix will instruct remote build machines to use their own binary substitutes if available.
-      builders-use-substitutes = true;
-      # Experimental nix features.
-      experimental-features = ["flakes" "nix-command"];
-      # Nix will fall back to building from source if a binary substitute fails.
-      fallback = true;
-      # The garbage collector will keep the derivations from which non-garbage store paths were built.
-      keep-derivations = true;
-      # The garbage collector will keep the outputs of non-garbage derivations.
-      keep-outputs = true;
-      # Builds will be performed in a sandboxed environment.
-      sandbox = pkgs.stdenv.isLinux;
-      # These users will have additional rights when connecting to the Nix daemon.
-      trusted-users = ["root" "@wheel" "@admin"];
-      # Never warn about dirty Git/Mercurial trees.
-      warn-dirty = false;
-      # Substituters.
-      substituters = [
-        "https://cache.garnix.io?priority=50"
-        "https://cache.nixos.org?priority=45"
-        "https://hyprland.cachix.org?priority=40"
-        "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
-        "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
-        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=30"
-        "https://mirrors.ustc.edu.cn/nix-channels/store?priority=35"
-        "https://nichijou.cachix.org?priority=40"
-        "https://nix-community.cachix.org?priority=40"
-        "https://nixpkgs-wayland.cachix.org?priority=40"
-        "https://numtide.cachix.org?priority=40"
-      ];
-      # Trusted substituters
-      trusted-substituters = substituters;
-      # Trusted public keys
-      trusted-public-keys = [
-        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "nichijou.cachix.org-1:rbaTU9nLgVW9BK/HSV41vsag6A7/A/caBpcX+cR/6Ps="
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
-        "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
-      ];
-    };
-
-    # Garbage collector
-    gc.automatic = true;
-  };
 }

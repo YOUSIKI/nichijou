@@ -21,8 +21,8 @@
   # time.timeZone = "Europe/Amsterdam";
 
   # Configure network proxy if necessary
-  networking.proxy.default = "http://yousiki:yangsiqi@192.168.31.34:7890";
-  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain,edu.cn";
+  networking.proxy.default = "http://yousiki:yangsiqi@satoshi.mck.cn.yousiki.top:7890";
+  networking.proxy.noProxy = "127.0.0.1,localhost,cn.yousiki.top,edu.cn";
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -33,9 +33,9 @@
   # };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -47,14 +47,14 @@
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
+  # security.rtkit.enable = true;
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   jack.enable = true;
+  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

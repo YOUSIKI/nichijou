@@ -13,9 +13,6 @@
         allowUnfree = true;
         allowBroken = false;
         allowUnsupported = false;
-        # permittedInsecurePackages = [
-        #   "nix-2.15.3"
-        # ];
       };
       inherit self inputs;
       inherit (self) outputs;
