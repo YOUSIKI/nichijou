@@ -80,8 +80,4 @@
     "zed"
     "zotero-beta"
   ];
-
-  environment.systemPackages = with globals.outputs.packages.${pkgs.system}; [
-    lporg # LaunchPad orgnaizer
-  ];
 }
