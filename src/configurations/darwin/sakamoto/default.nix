@@ -2,12 +2,13 @@
 {globals, ...}: let
   darwinModules = with globals.outputs; [
     # Host-specific modules
+    ./_applications.nix
     ./_configuration.nix
 
     # Host specific profiles
     commonProfiles.nix
     commonProfiles.packages
-    darwinProfiles.applications
+    darwinProfiles.homebrew
 
     # Home-manager module
     globals.inputs.home-manager.darwinModules.home-manager

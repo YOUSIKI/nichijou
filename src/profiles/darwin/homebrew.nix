@@ -1,11 +1,11 @@
-# Install macOS applications with homebrew.
+# Configure homebrew for macOS.
+# Note that TUNA mirror is enabled for better experience in China.
 {globals, ...}: {
   config,
   lib,
   pkgs,
   ...
-}:
-with builtins // lib; {
+}: {
   homebrew.enable = true;
 
   # Upgrade and uninstall homebrew casks automatically.
@@ -41,82 +41,6 @@ with builtins // lib; {
       name = "homebrew/services";
       clone_target = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-services.git";
     }
-  ];
-
-  # Add casks.
-  homebrew.casks = [
-    "1password"
-    "adobe-creative-cloud"
-    "adrive"
-    "alt-tab"
-    "altserver"
-    "arc"
-    "baidunetdisk"
-    "balenaetcher"
-    "bilibili"
-    "brave-browser"
-    "cloudflare-warp"
-    "cyberduck"
-    "discord"
-    "element"
-    "feishu"
-    "firefox"
-    "font-caskaydia-cove-nerd-font"
-    "font-fira-code-nerd-font"
-    "font-jetbrains-mono-nerd-font"
-    "font-lxgw-bright"
-    "font-lxgw-wenkai"
-    "font-monaspace"
-    "github"
-    "google-chrome"
-    "google-drive"
-    "handbrake"
-    "hiddenbar"
-    "iina"
-    "itsycal"
-    "jetbrains-toolbox"
-    "keepingyouawake"
-    "keka"
-    "kitty"
-    "logitech-options"
-    "maccy"
-    "microsoft-auto-update"
-    "microsoft-office"
-    "microsoft-remote-desktop"
-    "miniconda"
-    "monitorcontrol"
-    "mos"
-    "motrix"
-    "mounty"
-    "neteasemusic"
-    "obs"
-    "obsidian"
-    "onyx"
-    "orbstack"
-    "plex"
-    "poe"
-    "qfinder-pro"
-    "qq"
-    "qsync-client"
-    "qudedup-extract-tool"
-    "raycast"
-    "rectangle"
-    "sioyek"
-    "spotify"
-    "squirrel"
-    "stats"
-    "steam"
-    "tailscale"
-    "tencent-meeting"
-    "transmission"
-    "visual-studio-code"
-    "warp"
-    "wechat"
-    "wezterm"
-    "xpra"
-    "xquartz"
-    "zed"
-    "zotero-beta"
   ];
 
   environment.systemPath =
