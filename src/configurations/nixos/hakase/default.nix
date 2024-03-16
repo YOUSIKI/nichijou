@@ -12,6 +12,7 @@
     nixosProfiles.nvidia-gpu
     nixosProfiles.sops
     nixosProfiles.vscode-server
+    nixosProfiles.nas
 
     # Home-manager module
     globals.inputs.home-manager.nixosModules.home-manager

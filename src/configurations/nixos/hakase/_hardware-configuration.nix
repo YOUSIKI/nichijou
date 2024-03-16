@@ -56,43 +56,6 @@
     };
   };
 
-  # Mount NAS satoshi.
-  fileSystems."/mnt/nas-mck-home" = {
-    device = "//nas-changping.ybh1998.space/home";
-    fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
-  };
-
-  fileSystems."/mnt/nas-mck-share" = {
-    device = "//nas-changping.ybh1998.space/share";
-    fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
-  };
-
-  fileSystems."/mnt/nas-yyp-home" = {
-    device = "//nas.ybh1998.space/home";
-    fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
-  };
-
-  fileSystems."/mnt/nas-yyp-share" = {
-    device = "//nas.ybh1998.space/share";
-    fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
-  };
-
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
