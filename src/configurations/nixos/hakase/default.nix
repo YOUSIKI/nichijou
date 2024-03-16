@@ -10,6 +10,7 @@
     commonProfiles.packages
     nixosProfiles.desktop
     nixosProfiles.nvidia-gpu
+    nixosProfiles.sops
     nixosProfiles.vscode-server
 
     # Home-manager module

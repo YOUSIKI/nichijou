@@ -35,7 +35,9 @@
   ];
 
   # Mount multiple-device bcachefs.
-  systemd.services.mount-data-volume = {
+  systemd.services.mount-data-volume = let
+    target = "/mnt/data";
+  in {
     description = "mount data volume";
     bindsTo = ["dev-nvme0n1p3.device" "dev-sda1.device" "dev-sdb1.device"];
     after = ["dev-nvme0n1p3.device" "dev-sda1.device" "dev-sdb1.device" "local-fs-pre.target"];
@@ -43,15 +45,52 @@
     conflicts = ["umount.target"];
     wantedBy = ["local-fs.target"];
     unitConfig = {
-      RequiresMountsFor = "/data";
+      RequiresMountsFor = target;
       DefaultDependencies = false;
     };
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "${pkgs.util-linux}/bin/mount -t bcachefs -o noatime /dev/nvme0n1p3:/dev/sda1:/dev/sdb1 /data";
-      ExecStop = "${pkgs.util-linux}/umount /data";
+      ExecStart = "${pkgs.util-linux}/bin/mount -t bcachefs -o noatime /dev/nvme0n1p3:/dev/sda1:/dev/sdb1 ${target}";
+      ExecStop = "${pkgs.util-linux}/umount ${target}";
     };
+  };
+
+  # Mount NAS satoshi.
+  fileSystems."/mnt/nas-mck-home" = {
+    device = "//nas-changping.ybh1998.space/home";
+    fsType = "cifs";
+    options = let
+      # this line prevents hanging on network split
+      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
+  };
+
+  fileSystems."/mnt/nas-mck-share" = {
+    device = "//nas-changping.ybh1998.space/share";
+    fsType = "cifs";
+    options = let
+      # this line prevents hanging on network split
+      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
+  };
+
+  fileSystems."/mnt/nas-yyp-home" = {
+    device = "//nas.ybh1998.space/home";
+    fsType = "cifs";
+    options = let
+      # this line prevents hanging on network split
+      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
+  };
+
+  fileSystems."/mnt/nas-yyp-share" = {
+    device = "//nas.ybh1998.space/share";
+    fsType = "cifs";
+    options = let
+      # this line prevents hanging on network split
+      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    in ["${automount_opts},noperm,credentials=${config.sops.secrets.nas-credentials.path}"];
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

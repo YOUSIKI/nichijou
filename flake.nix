@@ -8,6 +8,7 @@
       nixpkgs.overlays = with inputs; [
         fenix.overlays.default
         nvfetcher.overlays.default
+        sops-nix.overlays.default
       ];
       nixpkgs.config = {
         allowUnfree = true;
@@ -105,8 +106,6 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     systems.url = "github:nix-systems/default";
-    linux-systems.url = "github:nix-systems/default-linux";
-    darwin-systems.url = "github:nix-systems/default-darwin";
 
     flake-root.url = "github:srid/flake-root";
 
@@ -123,6 +122,9 @@
 
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = rec {
