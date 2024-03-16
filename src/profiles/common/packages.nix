@@ -30,9 +30,9 @@
       wget
       zellij
     ]
-    ++ lib.optional pkgs.stdenv.isDarwin [
+    ++ (lib.optionals pkgs.stdenv.isDarwin [
       globals.outputs.packages.${pkgs.system}.lporg
-    ];
+    ]);
 
   programs.fish.enable = true;
   programs.tmux.enable = true;
