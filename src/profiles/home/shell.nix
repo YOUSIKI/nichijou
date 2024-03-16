@@ -161,7 +161,7 @@ with builtins // lib; {
       enable = true;
       enableCompletion = true;
       autocd = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       historySubstringSearch.enable = true;
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
