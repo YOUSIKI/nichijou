@@ -184,6 +184,22 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1710622004,
+        "narHash": "sha256-6zR642tXcZzzk3C8BHxlCrR0yh8z8zMXLiuXpWDIpX0=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "968952f950a59dee9ed1e8799dda38c6dfa1bad3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixos-vscode-server": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -286,6 +302,7 @@
         "flake-utils": "flake-utils",
         "haumea": "haumea",
         "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
         "nixos-vscode-server": "nixos-vscode-server",
         "nixpkgs": "nixpkgs",
         "nvfetcher": "nvfetcher",
