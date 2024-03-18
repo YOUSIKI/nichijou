@@ -40,6 +40,7 @@ globals.inputs.nixpkgs.lib.nixosSystem {
       nas
       nvidia-gpu
       sops
+      virtualisation
       vscode-server
     ]);
 }

@@ -20,8 +20,6 @@
     allowUnfree = true;
     cudaSupport = true;
   };
-  virtualisation.docker = {
-    enableNvidia = true;
-    daemon.settings.default-runtime = "nvidia";
-  };
+  virtualisation.containers.cdi.dynamic.nvidia.enable = true;
+  virtualisation.docker.enableNvidia = true;
 }

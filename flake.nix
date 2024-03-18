@@ -9,6 +9,9 @@
         fenix.overlays.default
         nvfetcher.overlays.default
         sops-nix.overlays.default
+        (final: prev: {
+          inherit (self.outputs.packages.${prev.system}) clash-meta cloudflare-warp lporg;
+        })
       ];
       nixpkgs.config = {
         allowUnfree = true;
@@ -127,6 +130,9 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    arion.url = "github:hercules-ci/arion";
+    arion.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = rec {
