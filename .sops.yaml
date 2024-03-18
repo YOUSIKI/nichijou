@@ -1,9 +1,0 @@
-keys:
-  - &yousiki_hakase_age age1v2f38zx3fyn789lemwf8jm2wcx2d7krjc82z74t2qwcrk6hsjsqs8xsjhh
-  - &server_hakase_age age13m8rakh7w2zkawjuqgd29sp7wtceqt4mkw38mcg9fsrurs5x2urq9dgqg0
-creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
-    key_groups:
-    - age:
-      - *yousiki_hakase_age
-      - *server_hakase_age
