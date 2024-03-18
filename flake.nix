@@ -5,14 +5,23 @@
     self,
     flake-parts,
     haumea,
+    nixpkgs,
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import (inputs.default-systems);
 
-      imports = [
-        ./parts/formatter.nix
-      ];
+      # Import files starting with "flakeModule" from the src directory.
+      imports = with nixpkgs.lib // builtins; (
+        collect
+        (p: (isPath p) && (hasPrefix "flakeModule" (baseNameOf p)))
+        (
+          haumea.lib.load {
+            src = ./src;
+            loader = haumea.lib.loaders.path;
+          }
+        )
+      );
     };
 
   inputs = {
@@ -33,6 +42,17 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+
+    fenix.url = "github:nix-community/fenix";
+    fenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = rec {
