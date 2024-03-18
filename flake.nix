@@ -1,22 +1,18 @@
 {
   description = "nix configurations for daily life";
 
-  outputs = {self, ...} @ inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs = {
+    self,
+    flake-parts,
+    haumea,
+    ...
+  } @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import (inputs.default-systems);
 
-      imports = with inputs; [
-        treefmt-nix.flakeModule
+      imports = [
+        ./parts/formatter.nix
       ];
-
-      perSystem = {
-        config,
-        self',
-        inputs',
-        pkgs,
-        system,
-        ...
-      }: {};
     };
 
   inputs = {
@@ -31,8 +27,6 @@
     haumea.url = "github:nix-community/haumea";
     haumea.inputs.nixpkgs.follows = "nixpkgs";
 
-    flake-utils.url = "github:numtide/flake-utils";
-
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     default-systems.url = "github:nix-systems/default";
@@ -43,7 +37,7 @@
 
   nixConfig = rec {
     substituters = [
-      # "https://cache.garnix.io?priority=50"
+      # "https://cache.garnix.io?priority=50" # Disable in China
       "https://cache.nixos.org?priority=45"
       "https://hyprland.cachix.org?priority=40"
       "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
