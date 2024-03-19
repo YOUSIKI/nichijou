@@ -13,30 +13,6 @@
 in {
   config = {
     flake = {
-      # Linux home-manager module
-      nixosModules.home-manager = {
-        imports = [
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-          }
-        ];
-      };
-
-      # macOS home-manager module
-      darwinModules.home-manager = {
-        imports = [
-          inputs.home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-          }
-        ];
-      };
-
       lib = rec {
         inherit specialArgs;
 
@@ -58,6 +34,28 @@ in {
             extraSpecialArgs = specialArgs;
             modules = [mod];
           };
+
+        mkLinuxHomeModule = {
+          imports = [
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = specialArgs;
+            }
+          ];
+        };
+
+        mkDarwinHomeModule = {
+          imports = [
+            inputs.home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = specialArgs;
+            }
+          ];
+        };
       };
     };
   };
