@@ -29,6 +29,7 @@
           inputs.cells.home.homeProfiles.core
           inputs.cells.home.homeProfiles.languages
           inputs.cells.home.homeProfiles.shell
+          inputs.cells.home.homeProfiles.ssh
         ];
 
         bee.home-languages = [
