@@ -15,9 +15,10 @@
     inputs.nixos-hardware.nixosModules.common-pc-hdd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
-    inputs.cells.common.commonProfiles.core
-
     inputs.cells.nixos.nixosProfiles.core
+    inputs.cells.nixos.nixosProfiles.desktop
+    inputs.cells.nixos.nixosProfiles.nvidia
+    inputs.cells.nixos.nixosProfiles.server
   ];
 
   bee = rec {

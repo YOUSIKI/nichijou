@@ -50,4 +50,34 @@ in {
       (n: v: {flake = v;})
       (l.removeAttrs inputs ["nixpkgs" "cells" "self"]);
   };
+
+  # Basic packages for both NixOS and Darwin.
+  environment.systemPackages = with pkgs; [
+    alejandra
+    curl
+    duf
+    eza
+    fd
+    fzf
+    gdu
+    gh
+    git
+    helix
+    home-manager
+    htop
+    jq
+    man
+    neofetch
+    nodejs
+    nvfetcher
+    ripgrep
+    rsync
+    tmux
+    vim
+    wget
+    zellij
+  ];
+
+  programs.fish.enable = true;
+  programs.zsh.enable = true;
 }
