@@ -24,6 +24,10 @@
       cellBlocks = [
         (std.blockTypes.functions "lib")
 
+        (std.blockTypes.nixago "configs")
+
+        (std.blockTypes.devshells "devshells")
+
         (std.blockTypes.functions "commonModules")
         (std.blockTypes.functions "commonProfiles")
         (std.blockTypes.functions "homeModules")
@@ -35,9 +39,10 @@
       ];
     }
     {
-      nixosModules = hive.pick self [
-        ["nixos" "nixosModules"]
-      ];
+      devShells = hive.harvest self [["common" "devshells"]];
+    }
+    {
+      nixosModules = hive.pick self [["nixos" "nixosModules"]];
     }
     {
       nixosConfigurations = collect self "nixosConfigurations";
@@ -93,6 +98,11 @@
 
     fenix = {
       url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvfetcher = {
+      url = "github:berberman/nvfetcher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

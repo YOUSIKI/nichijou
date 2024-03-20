@@ -58,6 +58,7 @@
       };
       overlays = [
         inputs.fenix.overlays.default
+        inputs.nvfetcher.overlays.default
       ];
     };
   };

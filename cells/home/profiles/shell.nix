@@ -23,6 +23,13 @@
 
   programs.btop.enable = true;
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.eza = {
     enable = true;
     enableBashIntegration = true;

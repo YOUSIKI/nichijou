@@ -56,6 +56,7 @@ in {
     alejandra
     cachix
     curl
+    direnv
     du-dust
     duf
     eza
