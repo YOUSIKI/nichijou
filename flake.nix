@@ -26,6 +26,8 @@
 
         (std.blockTypes.functions "commonModules")
         (std.blockTypes.functions "commonProfiles")
+        (std.blockTypes.functions "homeModules")
+        (std.blockTypes.functions "homeProfiles")
         (std.blockTypes.functions "nixosModules")
         (std.blockTypes.functions "nixosProfiles")
 
@@ -78,6 +80,16 @@
     default-systems.url = "github:nix-systems/default";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nixos-vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = rec {

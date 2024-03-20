@@ -19,6 +19,29 @@
     inputs.cells.nixos.nixosProfiles.desktop
     inputs.cells.nixos.nixosProfiles.nvidia
     inputs.cells.nixos.nixosProfiles.server
+
+    inputs.cells.home.homeProfiles.base
+
+    {
+      home-manager.users.yousiki = {
+        imports = [
+          inputs.cells.home.homeProfiles.catppuccin
+          inputs.cells.home.homeProfiles.core
+          inputs.cells.home.homeProfiles.languages
+          inputs.cells.home.homeProfiles.shell
+        ];
+
+        bee.home-languages = [
+          "c"
+          "latex"
+          "nix"
+          "python"
+          "rust"
+        ];
+
+        bee.home-catppuccin.flavor = "mocha";
+      };
+    }
   ];
 
   bee = rec {
@@ -30,7 +53,9 @@
         allowUnfree = true;
         cudaSupport = true;
       };
-      overlays = [];
+      overlays = [
+        inputs.fenix.overlays.default
+      ];
     };
   };
 }

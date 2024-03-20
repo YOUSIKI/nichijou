@@ -54,7 +54,9 @@ in {
   # Basic packages for both NixOS and Darwin.
   environment.systemPackages = with pkgs; [
     alejandra
+    cachix
     curl
+    du-dust
     duf
     eza
     fd
@@ -67,15 +69,20 @@ in {
     htop
     jq
     man
+    mc
     neofetch
     nodejs
     nvfetcher
+    rclone
     ripgrep
     rsync
+    statix
+    thefuck
     tmux
     vim
     wget
     zellij
+    zoxide
   ];
 
   programs.fish.enable = true;
