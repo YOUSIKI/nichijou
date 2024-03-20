@@ -34,6 +34,11 @@
     {device = "/dev/disk/by-uuid/9dc3e2ac-b63d-4dda-8b4c-7be566aa349a";}
   ];
 
+  bcachefs.fileSystems."/mnt/data" = {
+    devices = ["/dev/nvme0n1p3" "/dev/sda1" "/dev/sdb1"];
+    options = ["noatime"];
+  };
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

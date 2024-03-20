@@ -16,6 +16,16 @@ in {
       transformer = defaultAsRoot;
     };
 
+  importModules = {
+    src,
+    args ? {},
+  }:
+    haumea.lib.load {
+      inherit src;
+      inputs = args;
+      transformer = haumea.lib.transformers.liftDefault;
+    };
+
   importProfiles = {
     src,
     args ? {},

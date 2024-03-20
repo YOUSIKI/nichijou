@@ -35,6 +35,11 @@
       ];
     }
     {
+      nixosModules = hive.pick self [
+        ["nixos" "nixosModules"]
+      ];
+    }
+    {
       nixosConfigurations = collect self "nixosConfigurations";
     };
 

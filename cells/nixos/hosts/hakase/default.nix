@@ -15,6 +15,8 @@
     inputs.nixos-hardware.nixosModules.common-pc-hdd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
+    inputs.cells.nixos.nixosModules.bcachefs
+
     inputs.cells.nixos.nixosProfiles.core
     inputs.cells.nixos.nixosProfiles.desktop
     inputs.cells.nixos.nixosProfiles.nvidia
