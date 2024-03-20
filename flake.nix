@@ -1,58 +1,83 @@
 {
-  description = "nix configurations for daily life";
+  description = "Personal nix configurations";
 
   outputs = {
     self,
-    flake-parts,
-    haumea,
+    hive,
+    std,
     nixpkgs,
     ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = import (inputs.default-systems);
+  } @ inputs: let
+    collect = hive.collect // {renamer = _: target: target;};
+  in
+    hive.growOn {
+      inherit inputs;
 
-      # Import files starting with "flakeModule" from the src directory.
-      imports = with nixpkgs.lib // builtins; (
-        collect
-        (p: (isPath p) && (hasPrefix "flakeModule" (baseNameOf p)))
-        (
-          haumea.lib.load {
-            src = ./src;
-            loader = haumea.lib.loaders.path;
-          }
-        )
-      );
+      systems = import inputs.default-systems;
+
+      nixpkgsConfig = {
+        allowUnfree = true;
+      };
+
+      cellsFrom = ./cells;
+
+      cellBlocks = [
+        (std.blockTypes.functions "lib")
+
+        (std.blockTypes.functions "commonModules")
+        (std.blockTypes.functions "commonProfiles")
+        (std.blockTypes.functions "nixosModules")
+        (std.blockTypes.functions "nixosProfiles")
+
+        hive.blockTypes.nixosConfigurations
+      ];
+    }
+    {
+      nixosConfigurations = collect self "nixosConfigurations";
     };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    haumea.url = "github:nix-community/haumea";
-    haumea.inputs.nixpkgs.follows = "nixpkgs";
+    hive = {
+      url = "github:divnix/hive";
+      inputs = {
+        colmena.follows = "colmena";
+        nixago.follows = "nixago";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    std.follows = "hive/std";
+
+    nixago = {
+      url = "github:nix-community/nixago";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    colmena = {
+      url = "github:zhaofengli/colmena";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    haumea = {
+      url = "github:nix-community/haumea";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     default-systems.url = "github:nix-systems/default";
 
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
-    nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
-
-    fenix.url = "github:nix-community/fenix";
-    fenix.inputs.nixpkgs.follows = "nixpkgs";
-
-    nvfetcher.url = "github:berberman/nvfetcher";
-    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = rec {
