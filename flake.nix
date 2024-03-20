@@ -28,7 +28,6 @@
 
         (std.blockTypes.devshells "devshells")
 
-        (std.blockTypes.functions "commonModules")
         (std.blockTypes.functions "commonProfiles")
         (std.blockTypes.functions "homeModules")
         (std.blockTypes.functions "homeProfiles")
