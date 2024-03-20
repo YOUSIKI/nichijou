@@ -37,6 +37,75 @@ Add nichijou to your `flake.nix`:
 }
 ```
 
+## 💾 Modules
+
+### Multi-device bcachefs module
+
+```nix
+imports = [
+  nichijou.nixosModules.bcachefs
+];
+
+bcachefs.fileSystems."/data" = {
+  devices = ["/dev/sda1" "/dev/sdb1" "/dev/sdc1"];
+  options = ["noatime"];
+};
+```
+
+## 🧱 Structure
+
+<details>
+
+<summary>Snapshot 20240321</summary>
+
+```text
+ nichijou
+├──  cells
+│  ├──  common
+│  │  ├──  commonProfiles.nix
+│  │  ├──  configs.nix
+│  │  ├──  devshells.nix
+│  │  ├──  lib.nix
+│  │  └──  profiles
+│  │     └──  core.nix
+│  ├── 󱂵 home
+│  │  ├──  homeProfiles.nix
+│  │  └──  profiles
+│  │     ├──  base.nix
+│  │     ├──  catppuccin.nix
+│  │     ├──  core.nix
+│  │     ├──  languages.nix
+│  │     ├──  shell.nix
+│  │     └──  ssh.nix
+│  └──  nixos
+│     ├──  hosts
+│     │  └──  hakase
+│     │     ├──  configuration.nix
+│     │     ├──  default.nix
+│     │     └──  hardware-configuration.nix
+│     ├──  modules
+│     │  └──  bcachefs.nix
+│     ├──  nixosConfigurations.nix
+│     ├──  nixosModules.nix
+│     ├──  nixosProfiles.nix
+│     └──  profiles
+│        ├──  core.nix
+│        ├──  desktop.nix
+│        ├──  nvidia.nix
+│        └──  server.nix
+├──  flake.lock
+├──  flake.nix
+├──  garnix.yaml
+├──  LICENSE
+├──  nvfetcher
+│  ├──  generated.json
+│  └──  generated.nix
+├──  nvfetcher.toml
+└──  README.md
+```
+
+</details>
+
 ## ⛰️ Giants
 
 This repository stands on the shoulders of giants:
@@ -49,7 +118,7 @@ This repository stands on the shoulders of giants:
   - [Misterio77/nix-config](https://github.com/Misterio77/nix-config)
   - [linuxmobile/hyprland-dots](https://github.com/linuxmobile/hyprland-dots)
   - and more ...
-- Awesome flake tools
+- Awesome tools
   - [divnix/hive](https://github.com/divnix/hive)
   - [divnix/std](https://github.com/divnix/std)
   - [nix-community/haumea](https://github.com/nix-community/haumea)
