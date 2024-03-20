@@ -24,6 +24,7 @@ in {
         };
       };
     };
+
     packages = [
       inputs.nixpkgs.alejandra
       inputs.nixpkgs.nodePackages.prettier
