@@ -7,7 +7,21 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}: let
+  mkCifs = device: {
+    device = device;
+    fsType = "cifs";
+    options = [
+      "noauto"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=60"
+      "x-systemd.device-timeout=5s"
+      "x-systemd.mount-timeout=5s"
+      "noperm"
+      "credentials=/etc/credentials"
+    ];
+  };
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -38,6 +52,11 @@
     devices = ["/dev/nvme0n1p3" "/dev/sda1" "/dev/sdb1"];
     options = ["noatime"];
   };
+
+  fileSystems."/mnt/nas-yyp-home" = mkCifs "//nas.ybh1998.space/home";
+  fileSystems."/mnt/nas-yyp-share" = mkCifs "//nas.ybh1998.space/share";
+  fileSystems."/mnt/nas-mck-home" = mkCifs "//nas-changping.ybh1998.space/home";
+  fileSystems."/mnt/nas-mck-share" = mkCifs "//nas-changping.ybh1998.space/share";
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
