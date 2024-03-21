@@ -110,6 +110,7 @@
     substituters = [
       # "https://cache.garnix.io?priority=50" # Disable in China
       "https://cache.nixos.org?priority=45"
+      "https://cuda-maintainers.cachix.org?priority=40"
       "https://hyprland.cachix.org?priority=40"
       "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
       "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
@@ -124,6 +125,7 @@
     trusted-public-keys = [
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nichijou.cachix.org-1:rbaTU9nLgVW9BK/HSV41vsag6A7/A/caBpcX+cR/6Ps="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
