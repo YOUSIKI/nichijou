@@ -29,11 +29,14 @@
         (std.blockTypes.devshells "devshells")
 
         (std.blockTypes.functions "commonProfiles")
+        (std.blockTypes.functions "darwinModules")
+        (std.blockTypes.functions "darwinProfiles")
         (std.blockTypes.functions "homeModules")
         (std.blockTypes.functions "homeProfiles")
         (std.blockTypes.functions "nixosModules")
         (std.blockTypes.functions "nixosProfiles")
 
+        hive.blockTypes.darwinConfigurations
         hive.blockTypes.nixosConfigurations
       ];
     }
@@ -44,6 +47,7 @@
       nixosModules = hive.pick self [["nixos" "nixosModules"]];
     }
     {
+      darwinConfigurations = collect self "darwinConfigurations";
       nixosConfigurations = collect self "nixosConfigurations";
     };
 
