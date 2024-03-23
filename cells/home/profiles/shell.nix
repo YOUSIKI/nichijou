@@ -168,4 +168,8 @@
       SHELLPROXY_NO_PROXY = "localhost,127.0.0.1,edu.cn,yousiki.top";
     };
   };
+
+  home.packages = with pkgs; [
+    lunarvim
+  ];
 }
