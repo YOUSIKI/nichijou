@@ -108,6 +108,11 @@
       url = "github:berberman/nvfetcher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = rec {
@@ -117,8 +122,8 @@
       "https://cuda-maintainers.cachix.org?priority=40"
       "https://hyprland.cachix.org?priority=40"
       "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
-      "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=30"
+      # "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=25"
       "https://mirrors.ustc.edu.cn/nix-channels/store?priority=35"
       "https://nichijou.cachix.org?priority=40"
       "https://nix-community.cachix.org?priority=40"

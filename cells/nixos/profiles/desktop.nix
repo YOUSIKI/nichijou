@@ -25,7 +25,7 @@
     dragon
     firefox
     google-chrome
-    handbrake
+    # handbrake
     haruna
     kitty
     motrix

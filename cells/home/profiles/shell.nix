@@ -2,6 +2,10 @@
   inputs,
   cell,
 }: {pkgs, ...}: {
+  imports = [
+    inputs.nix-index-database.hmModules.nix-index
+  ];
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -98,6 +102,8 @@
     enableFishIntegration = true;
     fuzzySearchFactor = 3;
   };
+
+  programs.nix-index.enable = true;
 
   programs.starship = {
     enable = true;
