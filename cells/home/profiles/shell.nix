@@ -56,6 +56,7 @@
     extensions = with pkgs; [
       gh-actions-cache
       gh-cal
+      gh-copilot
       gh-dash
       gh-eco
       gh-markdown-preview
