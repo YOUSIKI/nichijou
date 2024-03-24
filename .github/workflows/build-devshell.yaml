@@ -1,4 +1,4 @@
-name: Build devshell
+name: devshell
 
 on:
   push:

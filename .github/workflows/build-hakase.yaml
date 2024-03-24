@@ -1,4 +1,4 @@
-name: Build hakase configuration
+name: hakase
 
 on:
   push:
