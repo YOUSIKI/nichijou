@@ -20,6 +20,7 @@
     inputs.cells.nixos.nixosProfiles.core
     inputs.cells.nixos.nixosProfiles.desktop
     inputs.cells.nixos.nixosProfiles.nvidia
+    inputs.cells.nixos.nixosProfiles.secrets
     inputs.cells.nixos.nixosProfiles.server
 
     inputs.cells.home.homeProfiles.base
@@ -57,6 +58,7 @@
         cudaSupport = true;
       };
       overlays = [
+        inputs.agenix.overlays.default
         inputs.fenix.overlays.default
         inputs.nvfetcher.overlays.default
       ];

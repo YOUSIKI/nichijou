@@ -53,6 +53,7 @@ in {
 
   # Basic packages for both NixOS and Darwin.
   environment.systemPackages = with pkgs; [
+    agenix
     alejandra
     cachix
     curl

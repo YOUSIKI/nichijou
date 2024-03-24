@@ -8,6 +8,8 @@
   modulesPath,
   ...
 }: let
+  credentials = config.age.secrets.nas-credentials.path;
+
   mkCifs = device: {
     device = device;
     fsType = "cifs";
@@ -18,7 +20,7 @@
       "x-systemd.device-timeout=5s"
       "x-systemd.mount-timeout=5s"
       "noperm"
-      "credentials=/etc/credentials"
+      "credentials=${credentials}"
     ];
   };
 in {
