@@ -24,4 +24,4 @@ jobs:
           extraPullNames: colmena,cuda-maintainers,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build devshell
-        run: nix develop --command "echo 'Hello, world!'"
+        run: nix develop --command menu"
