@@ -1,4 +1,4 @@
-name: Build NixOS configuration
+name: Build devshell
 
 on:
   push:
