@@ -46,9 +46,10 @@
       inherit system;
       config = {
         allowUnfree = true;
-        cudaSupport = true;
       };
       overlays = [
+        inputs.agenix.overlays.default
+        inputs.colmena.overlays.default
         inputs.fenix.overlays.default
         inputs.nvfetcher.overlays.default
       ];
