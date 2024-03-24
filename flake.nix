@@ -122,23 +122,25 @@
 
   nixConfig = rec {
     substituters = [
-      # "https://cache.garnix.io?priority=50" # Disable in China
       "https://cache.nixos.org?priority=45"
+      "https://colmena.cachix.org?priority=40"
       "https://cuda-maintainers.cachix.org?priority=40"
       "https://hyprland.cachix.org?priority=40"
       "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
-      # "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=25"
       "https://mirrors.ustc.edu.cn/nix-channels/store?priority=35"
       "https://nichijou.cachix.org?priority=40"
       "https://nix-community.cachix.org?priority=40"
       "https://nixpkgs-wayland.cachix.org?priority=40"
       "https://numtide.cachix.org?priority=40"
+      # "https://cache.garnix.io?priority=50"
+      # "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
     ];
     trusted-substituters = substituters;
     trusted-public-keys = [
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "colmena.cachix.org-1:7BzpDnjjH8ki2CT3f6GdOk7QAzPOl+1t3LvTLXqYcSg="
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nichijou.cachix.org-1:rbaTU9nLgVW9BK/HSV41vsag6A7/A/caBpcX+cR/6Ps="

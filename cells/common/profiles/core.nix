@@ -56,6 +56,7 @@ in {
     agenix
     alejandra
     cachix
+    colmena
     curl
     direnv
     du-dust

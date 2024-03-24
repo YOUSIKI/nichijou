@@ -59,6 +59,7 @@
       };
       overlays = [
         inputs.agenix.overlays.default
+        inputs.colmena.overlays.default
         inputs.fenix.overlays.default
         inputs.nvfetcher.overlays.default
       ];
