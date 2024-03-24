@@ -36,6 +36,7 @@
         (std.blockTypes.functions "nixosModules")
         (std.blockTypes.functions "nixosProfiles")
 
+        hive.blockTypes.colmenaConfigurations
         hive.blockTypes.darwinConfigurations
         hive.blockTypes.nixosConfigurations
       ];
@@ -47,6 +48,10 @@
       nixosModules = hive.pick self [["nixos" "nixosModules"]];
     }
     {
+      colmenaHive =
+        nixpkgs.lib.recursiveUpdate
+        (collect self "colmenaConfigurations")
+        {metaConfig.allowApplyAll = true;};
       darwinConfigurations = collect self "darwinConfigurations";
       nixosConfigurations = collect self "nixosConfigurations";
     };
