@@ -1,0 +1,12 @@
+name: sakamoto
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/build-darwin.yaml
+    with:
+      configuration: sakamoto
+    secrets: inherit
