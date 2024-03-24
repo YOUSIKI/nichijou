@@ -29,6 +29,11 @@
         help = "Format code with treefmt";
         command = "treefmt";
       }
+      {
+        name = "cachix-hakase";
+        help = "Push hakase configuration to cachix";
+        command = "nix build --print-out-paths .#nixosConfigurations.hakase.config.system.build.toplevel | cachix push nichijou";
+      }
     ];
   };
 }
