@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: cachix
     steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
       - name: Checkout repository
         uses: actions/checkout@main
       - name: Check flake.lock file
