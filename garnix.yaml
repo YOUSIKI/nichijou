@@ -5,3 +5,4 @@ builds:
     - "*.aarch64-linux.*"
     - "*.x86_64-darwin.*"
     - "*.x86_64-linux.*"
+    - "nixosConfigurations.*.config.system.build.toplevel"
