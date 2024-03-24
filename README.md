@@ -13,6 +13,7 @@
 <!-- build -->
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build-devshell.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build-devshell.yaml/badge.svg"></a>
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build-hakase.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build-hakase.yaml/badge.svg"></a>
+<a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build-sakamoto.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build-sakamoto.yaml/badge.svg"></a>
 <!-- flakehub -->
 <a href="https://flakehub.com/flake/YOUSIKI/nichijou"><img src="https://img.shields.io/endpoint?url=https://flakehub.com/f/YOUSIKI/nichijou/badge"></a>
 </p>
