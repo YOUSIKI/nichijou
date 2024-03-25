@@ -52,10 +52,13 @@ in {
       l.mkIf (l.elem "python" config.bee.home-languages) {
         home.packages = with pkgs; [
           black
+          conda
           isort
+          micromamba
           poetry
           python3
           ruff
+          uv
           yapf
         ];
 
