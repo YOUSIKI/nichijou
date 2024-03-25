@@ -23,9 +23,15 @@
 
   virtualisation.podman = {
     enable = true;
+    dockerCompat = true;
     autoPrune.enable = true;
     dockerSocket.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    docker-compose
+    podman-compose
+  ];
 
   system.stateVersion = "24.05";
 }
