@@ -63,13 +63,13 @@
   };
   clash-meta = {
     pname = "clash-meta";
-    version = "v1.18.1";
+    version = "v1.18.2";
     src = fetchFromGitHub {
       owner = "MetaCubeX";
       repo = "mihomo";
-      rev = "v1.18.1";
+      rev = "v1.18.2";
       fetchSubmodules = false;
-      sha256 = "sha256-ezOkDrpytZQdc+Txe4eUyuWY6oipn9jIrmu7aO8lNlQ=";
+      sha256 = "sha256-/4Tlv6LLT1+CHdjJ1ZlYaZj44TX5y6FEHdKk+OA1vBU=";
     };
   };
   lporg = {
