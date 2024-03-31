@@ -47,7 +47,9 @@
       devShells = hive.harvest self [["common" "devshells"]];
 
       packages = hive.harvest self [
+        ["common" "packages"]
         ["darwin" "packages"]
+        ["nixos" "packages"]
       ];
     }
     {
