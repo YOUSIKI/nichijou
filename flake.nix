@@ -28,6 +28,8 @@
 
         (std.blockTypes.devshells "devshells")
 
+        (std.blockTypes.installables "packages")
+
         (std.blockTypes.functions "commonProfiles")
         (std.blockTypes.functions "darwinModules")
         (std.blockTypes.functions "darwinProfiles")
@@ -43,6 +45,10 @@
     }
     {
       devShells = hive.harvest self [["common" "devshells"]];
+
+      packages = hive.harvest self [
+        ["darwin" "packages"]
+      ];
     }
     {
       nixosModules = hive.pick self [["nixos" "nixosModules"]];
