@@ -1,0 +1,94 @@
+name: Build packages
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  x86_64-linux-clash-meta:
+    runs-on: ubuntu-latest
+    environment: cachix
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Check flake.lock file
+        uses: DeterminateSystems/flake-checker-action@main
+      - name: Install nix and flakes
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Use magic nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Use cachix nix cache
+        uses: cachix/cachix-action@master
+        with:
+          name: nichijou
+          extraPullNames: colmena,cuda-maintainers,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build packages
+        run: |
+          nix build --print-out-paths .#packages.x86_64-linux.clash-meta | cachix push nichijou
+  
+  x86_64-linux-cloudflare-warp:
+    runs-on: ubuntu-latest
+    environment: cachix
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Check flake.lock file
+        uses: DeterminateSystems/flake-checker-action@main
+      - name: Install nix and flakes
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Use magic nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Use cachix nix cache
+        uses: cachix/cachix-action@master
+        with:
+          name: nichijou
+          extraPullNames: colmena,cuda-maintainers,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build packages
+        run: |
+          nix build --print-out-paths .#packages.x86_64-linux.cloudflare-warp | cachix push nichijou
+  
+  x86_64-darwin-clash-meta:
+    runs-on: macos-latest
+    environment: cachix
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Check flake.lock file
+        uses: DeterminateSystems/flake-checker-action@main
+      - name: Install nix and flakes
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Use magic nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Use cachix nix cache
+        uses: cachix/cachix-action@master
+        with:
+          name: nichijou
+          extraPullNames: colmena,cuda-maintainers,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build packages
+        run: |
+          nix build --print-out-paths .#packages.x86_64-darwin.clash-meta | cachix push nichijou
+  
+  x86_64-darwin-lporg:
+    runs-on: macos-latest
+    environment: cachix
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Check flake.lock file
+        uses: DeterminateSystems/flake-checker-action@main
+      - name: Install nix and flakes
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Use magic nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Use cachix nix cache
+        uses: cachix/cachix-action@master
+        with:
+          name: nichijou
+          extraPullNames: colmena,cuda-maintainers,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build packages
+        run: |
+          nix build --print-out-paths .#packages.x86_64-darwin.lporg | cachix push nichijou
