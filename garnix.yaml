@@ -1,9 +1,8 @@
 builds:
   exclude: []
   include:
-    - "devShell.*.default"
-    - "darwinConfigurations.*.config.system.build.toplevel"
-    - "nixosConfigurations.*.config.system.build.toplevel"
+    - "devShell.x86_64-darwin.default"
+    - "devShell.x86_64-linux.default"
     - "packages.x86_64-darwin.clash-meta"
     - "packages.x86_64-darwin.lporg"
     - "packages.x86_64-linux.clash-meta"
