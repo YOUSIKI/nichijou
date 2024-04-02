@@ -1,7 +1,10 @@
 builds:
   exclude: []
   include:
-    - "*.aarch64-darwin.*"
-    - "*.aarch64-linux.*"
-    - "*.x86_64-darwin.*"
-    - "*.x86_64-linux.*"
+    - "devShell.*.default"
+    - "darwinConfigurations.*.config.system.build.toplevel"
+    - "nixosConfigurations.*.config.system.build.toplevel"
+    - "packages.x86_64-darwin.clash-meta"
+    - "packages.x86_64-darwin.lporg"
+    - "packages.x86_64-linux.clash-meta"
+    - "packages.x86_64-linux.cloudflare-warp"
