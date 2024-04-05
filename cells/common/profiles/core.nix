@@ -56,6 +56,7 @@ in {
     agenix
     alejandra
     cachix
+    cloudflared
     colmena
     curl
     direnv

@@ -21,5 +21,17 @@ in {
       HostName hakase.mck.cn.yousiki.top
       User yousiki
       Port 22
+
+    Host satoshi-cf
+      HostName satoshi.yousiki.top
+      User yousiki
+      Port 22
+      ProxyCommand cloudflared access ssh --hostname %h
+
+    Host hakase-cf
+      HostName hakase.yousiki.top
+      User yousiki
+      Port 22
+      ProxyCommand cloudflared access ssh --hostname %h
   '';
 }
