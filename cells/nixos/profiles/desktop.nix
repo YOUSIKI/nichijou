@@ -19,13 +19,11 @@
     _1password-gui
     brave
     clapper
-    cloudflare-warp
     discord
     dolphin
     dragon
     firefox
     google-chrome
-    # handbrake
     haruna
     kitty
     motrix
