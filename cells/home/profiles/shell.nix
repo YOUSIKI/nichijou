@@ -179,4 +179,9 @@
   home.packages = with pkgs; [
     lunarvim
   ];
+
+  home.sessionVariables = {
+    EDITOR = "lvim";
+    VISUAL = "lvim";
+  };
 }
