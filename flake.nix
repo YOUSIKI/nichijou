@@ -108,7 +108,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nixos-vscode-server = {
-      url = "github:nix-community/nixos-vscode-server";
+      # url = "github:nix-community/nixos-vscode-server";
+      url = "github:ten0/nixos-vscode-server/support_new_vscode_versions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

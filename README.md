@@ -54,6 +54,21 @@ bcachefs.fileSystems."/data" = {
 };
 ```
 
+### Clash-meta module
+
+```nix
+imports = [
+  nichijou.nixosModules.clash-meta
+];
+
+services.clash-meta = {
+  enable = true;
+  configPath = "/path/to/clash/config.yaml";
+  port = 7890;  # The `mixed-port` in config.
+  openFirewall = true;
+};
+```
+
 ## 🧱 Structure
 
 <details>
