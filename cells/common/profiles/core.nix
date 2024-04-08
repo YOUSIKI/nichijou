@@ -58,6 +58,7 @@ in {
     cachix
     cloudflared
     colmena
+    comma
     curl
     direnv
     du-dust
@@ -77,6 +78,7 @@ in {
     neofetch
     nodejs
     nvfetcher
+    ouch
     rclone
     ripgrep
     rsync
@@ -85,6 +87,7 @@ in {
     tmux
     vim
     wget
+    yazi
     zellij
     zoxide
   ];
