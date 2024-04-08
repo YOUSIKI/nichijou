@@ -13,14 +13,4 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "hakase";
-
-  networking.proxy.default = "http://yousiki:yangsiqi@satoshi.mck.cn.yousiki.top:7890";
-  networking.proxy.noProxy = "127.0.0.1,localhost,cn.yousiki.top,edu.cn";
-
-  services.cloudflare-warp.enable = true;
-  services.cloudflare-warp.openFirewall = true;
-
-  services.clash-meta.enable = true;
-  services.clash-meta.configPath = config.age.secrets.clash-config.path;
-  services.clash-meta.openFirewall = true;
 }
