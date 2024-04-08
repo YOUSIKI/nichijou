@@ -6,4 +6,5 @@ let
   users = [yousiki_hakase];
 in {
   "nas-credentials.age".publicKeys = hosts ++ users;
+  "clash-config.age".publicKeys = hosts ++ users;
 }

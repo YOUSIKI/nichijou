@@ -16,6 +16,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     inputs.cells.nixos.nixosModules.bcachefs
+    inputs.cells.nixos.nixosModules.clash-meta
     inputs.cells.nixos.nixosModules.cloudflare-warp
 
     inputs.cells.nixos.nixosProfiles.core

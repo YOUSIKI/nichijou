@@ -19,4 +19,8 @@
 
   services.cloudflare-warp.enable = true;
   services.cloudflare-warp.openFirewall = true;
+
+  services.clash-meta.enable = true;
+  services.clash-meta.configPath = config.age.secrets.clash-config.path;
+  services.clash-meta.openFirewall = true;
 }
