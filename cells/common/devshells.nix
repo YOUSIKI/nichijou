@@ -20,34 +20,19 @@
 
     commands = [
       {
-        name = "fetch";
+        name = "fet";
         help = "Fetch latest sources with nvfetcher";
         command = "nvfetcher -o nvfetcher";
+      }
+      {
+        name = "upd";
+        help = "Update flake inputs.";
+        command = "nix flake update";
       }
       {
         name = "fmt";
         help = "Format code with treefmt";
         command = "treefmt";
-      }
-      {
-        name = "cache-x86_64-linux";
-        help = "Build and push to cachix (x86_64-linux)";
-        command = ''
-          nix build --print-out-paths .#devShells.x86_64-linux.default | cachix push nichijou && \
-          nix build --print-out-paths .#packages.x86_64-linux.clash-meta | cachix push nichijou && \
-          nix build --print-out-paths .#packages.x86_64-linux.cloudflare-warp | cachix push nichijou && \
-          nix build --print-out-paths .#nixosConfigurations.hakase.config.system.build.toplevel | cachix push nichijou
-        '';
-      }
-      {
-        name = "cache-x86_64-darwin";
-        help = "Build and push to cachix (x86_64-darwin)";
-        command = ''
-          nix build --print-out-paths .#devShells.x86_64-darwin.default | cachix push nichijou && \
-          nix build --print-out-paths .#packages.x86_64-linux.clash-meta | cachix push nichijou && \
-          nix build --print-out-paths .#packages.x86_64-linux.lporg | cachix push nichijou && \
-          nix build --print-out-paths .#darwinConfigurations.sakamoto.config.system.build.toplevel | cachix push nichijou
-        '';
       }
     ];
   };
