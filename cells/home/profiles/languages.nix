@@ -50,17 +50,21 @@ in {
     )
     (
       l.mkIf (l.elem "python" config.bee.home-languages) {
-        home.packages = with pkgs; [
-          black
-          isort
-          micromamba
-          poetry
-          python3
-          ruff
-          uv
-          yapf
-          inputs.cells.common.packages.micromamba-env
-        ];
+        home.packages =
+          (with pkgs; [
+            black
+            isort
+            micromamba
+            poetry
+            python3
+            ruff
+            uv
+            yapf
+          ])
+          ++ (
+            l.optional pkgs.stdenv.isLinux
+            inputs.cells.nixos.packages.micromamba-env
+          );
 
         home.file.".condarc".text = ''
           channels:
