@@ -53,6 +53,21 @@
         "type": "github"
       }
     },
+    "catppuccin": {
+      "locked": {
+        "lastModified": 1713323853,
+        "narHash": "sha256-EfUm65RRsoch0tpfHZtEyqo+iWIYhuSX39U/fi0/4WU=",
+        "owner": "catppuccin",
+        "repo": "nix",
+        "rev": "372decb578f3187d7aad837885ed98e73e8abd60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "colmena": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -799,6 +814,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "catppuccin": "catppuccin",
         "colmena": "colmena",
         "darwin": "darwin_2",
         "default-systems": "default-systems",

@@ -18,7 +18,8 @@
     {
       home-manager.users.yousiki = {
         imports = [
-          inputs.cells.home.homeProfiles.catppuccin
+          inputs.catppuccin.homeManagerModules.catppuccin
+
           inputs.cells.home.homeProfiles.core
           inputs.cells.home.homeProfiles.languages
           inputs.cells.home.homeProfiles.shell
@@ -32,8 +33,6 @@
           "python"
           "rust"
         ];
-
-        bee.home-catppuccin.flavor = "mocha";
       };
     }
   ];

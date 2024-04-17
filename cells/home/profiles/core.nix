@@ -16,4 +16,8 @@ in {
   );
 
   home.stateVersion = "23.05";
+
+  xdg.enable = true;
+
+  catppuccin.flavour = "mocha";
 }
