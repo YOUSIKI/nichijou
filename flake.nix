@@ -67,6 +67,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
     nixpkgs-nixos.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     darwin = {
       url = "github:LnL7/nix-darwin";

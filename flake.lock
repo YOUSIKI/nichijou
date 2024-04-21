@@ -728,6 +728,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-darwin": {
+      "locked": {
+        "lastModified": 1713349283,
+        "narHash": "sha256-2bjFu3+1zPWZPPGqF+7rumTvEwmdBHBhjPva/AMSruQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2e359fb3162c85095409071d131e08252d91a14f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-nixos": {
       "locked": {
         "lastModified": 1713297878,
@@ -843,6 +859,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-vscode-server": "nixos-vscode-server",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-nixos": "nixpkgs-nixos",
         "nvfetcher": "nvfetcher",
         "std": [
