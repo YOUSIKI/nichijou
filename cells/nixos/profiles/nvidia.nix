@@ -14,6 +14,10 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      libGL
+    ];
+    setLdLibraryPath = true;
   };
 
   virtualisation.containers.cdi.dynamic.nvidia.enable = true;
