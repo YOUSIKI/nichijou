@@ -12,6 +12,8 @@ in {
   home.file.".ssh/config".text = ''
     Include ~/.orbstack/ssh/config
 
+    Include ~/.openbayes/ssh/config
+
     Host satoshi
       HostName satoshi.mck.cn.yousiki.top
       User yousiki
