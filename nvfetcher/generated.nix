@@ -3,13 +3,13 @@
 {
   clash-meta = {
     pname = "clash-meta";
-    version = "v1.18.3";
+    version = "v1.18.4";
     src = fetchFromGitHub {
       owner = "MetaCubeX";
       repo = "mihomo";
-      rev = "v1.18.3";
+      rev = "v1.18.4";
       fetchSubmodules = false;
-      sha256 = "sha256-/fFVUI++OhOer5DrvcXO+R+4whtb5+3Qg3e4+ikJr1Y=";
+      sha256 = "sha256-mqNcMB2nb8+e9XEGKqwaBE/nC4+jRaEFxE17e0JTo8Y=";
     };
   };
   lporg = {
@@ -25,14 +25,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "b0c91af4c37f252e8a77264d0a365642e9c8ec71";
+    version = "c29d07abe402ea3d79d3357dc458bdb78084f9b5";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "b0c91af4c37f252e8a77264d0a365642e9c8ec71";
+      rev = "c29d07abe402ea3d79d3357dc458bdb78084f9b5";
       fetchSubmodules = false;
-      sha256 = "sha256-hK8+H9oQH8hvYWBLDLoPUkw8yEiEPFLPKFe06CSSU9w=";
+      sha256 = "sha256-JbDETlkNAq9SqJ2FHO7RT0AylLUiNhktpvZVXzVQ/gw=";
     };
-    date = "2024-04-26";
+    date = "2024-05-16";
   };
 }
