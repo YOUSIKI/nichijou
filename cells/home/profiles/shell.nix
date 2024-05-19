@@ -211,4 +211,9 @@
     EDITOR = "lvim";
     VISUAL = "lvim";
   };
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.openbayes/bin"
+  ];
 }
