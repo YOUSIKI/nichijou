@@ -51,7 +51,7 @@ in {
     (
       l.mkIf (l.elem "node" config.bee.home-languages) {
         home.packages = with pkgs; [
-          nodejs
+          nodejs_22
           yarn-berry
         ];
       }
