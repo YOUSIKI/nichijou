@@ -13,11 +13,4 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "hakase";
-
-  networking.firewall.allowedTCPPortRanges = [
-    {
-      from = 6006;
-      to = 6010;
-    }
-  ];
 }

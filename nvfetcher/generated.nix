@@ -3,13 +3,13 @@
 {
   clash-meta = {
     pname = "clash-meta";
-    version = "v1.18.4";
+    version = "v1.18.5";
     src = fetchFromGitHub {
       owner = "MetaCubeX";
       repo = "mihomo";
-      rev = "v1.18.4";
+      rev = "v1.18.5";
       fetchSubmodules = false;
-      sha256 = "sha256-mqNcMB2nb8+e9XEGKqwaBE/nC4+jRaEFxE17e0JTo8Y=";
+      sha256 = "sha256-YNnZ/wlOzmTAD76py4CRlClPi2S1b4PaanCfT/Q426A=";
     };
   };
   lporg = {
@@ -23,16 +23,27 @@
       sha256 = "sha256-A/OE67qAn9RHSCveiRwG5lPYNTMdrbUWVfQOP3XjkdU=";
     };
   };
+  ollama = {
+    pname = "ollama";
+    version = "v0.1.38";
+    src = fetchFromGitHub {
+      owner = "ollama";
+      repo = "ollama";
+      rev = "v0.1.38";
+      fetchSubmodules = false;
+      sha256 = "sha256-7oCrUwu52VFKg94qhWNgVzQZ6MWBEMWSQSQeGzZ/4Ok=";
+    };
+  };
   rime-ice = {
     pname = "rime-ice";
-    version = "c29d07abe402ea3d79d3357dc458bdb78084f9b5";
+    version = "ea7770e408ffebada5da5079f4af0275837a3591";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "c29d07abe402ea3d79d3357dc458bdb78084f9b5";
+      rev = "ea7770e408ffebada5da5079f4af0275837a3591";
       fetchSubmodules = false;
-      sha256 = "sha256-JbDETlkNAq9SqJ2FHO7RT0AylLUiNhktpvZVXzVQ/gw=";
+      sha256 = "sha256-lpPwGzuAAAzJBgcVW0o5z4lzAzKUOuo7Ae6ySltzhVE=";
     };
-    date = "2024-05-16";
+    date = "2024-05-21";
   };
 }

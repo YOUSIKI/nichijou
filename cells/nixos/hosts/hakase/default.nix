@@ -20,6 +20,7 @@
     inputs.cells.nixos.nixosProfiles.core
     inputs.cells.nixos.nixosProfiles.desktop
     inputs.cells.nixos.nixosProfiles.nvidia
+    inputs.cells.nixos.nixosProfiles.ollama
     inputs.cells.nixos.nixosProfiles.proxy
     inputs.cells.nixos.nixosProfiles.secrets
     inputs.cells.nixos.nixosProfiles.server

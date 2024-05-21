@@ -7,4 +7,5 @@ let
 in {
   "nas-credentials.age".publicKeys = hosts ++ users;
   "clash-config.age".publicKeys = hosts ++ users;
+  "cloudflare-tunnel-cert.age".publicKeys = hosts ++ users;
 }
