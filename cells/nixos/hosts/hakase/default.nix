@@ -41,6 +41,7 @@
           "c"
           "latex"
           "nix"
+          "node"
           "python"
           "rust"
         ];

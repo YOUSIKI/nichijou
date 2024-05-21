@@ -49,6 +49,14 @@ in {
       }
     )
     (
+      l.mkIf (l.elem "node" config.bee.home-languages) {
+        home.packages = with pkgs; [
+          nodejs
+          yarn-berry
+        ];
+      }
+    )
+    (
       l.mkIf (l.elem "python" config.bee.home-languages) {
         home.packages =
           (with pkgs; [
