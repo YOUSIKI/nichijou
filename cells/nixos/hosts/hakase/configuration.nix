@@ -13,4 +13,23 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "hakase";
+
+  services.cloudflared = {
+    enable = true;
+    tunnels = {
+      "hakase-tunnel" = {
+        credentialsFile = "${config.age.secrets.hakase-tunnel-cert.path}";
+        ingress = {
+          "nas.siki.moe" = "http://satoshi.siki.moe:5000";
+          "qb.siki.moe" = "http://localhost:8080";
+        };
+        default = "http_status:404";
+      };
+    };
+  };
+
+  services.qbittorrent = {
+    enable = true;
+    webui.port = 8080;
+  };
 }
