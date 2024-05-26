@@ -15,9 +15,10 @@ in {
     else "/home/${config.home.username}"
   );
 
-  home.stateVersion = "23.05";
-
   xdg.enable = true;
 
-  catppuccin.flavour = "mocha";
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
+
+  home.stateVersion = "23.05";
 }

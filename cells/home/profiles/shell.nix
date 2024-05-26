@@ -21,17 +21,14 @@
       batwatch
       prettybat
     ];
-    catppuccin.enable = true;
   };
 
   programs.bottom = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.btop = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.direnv = {
@@ -55,7 +52,6 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
     tmux.enableShellIntegration = true;
-    catppuccin.enable = true;
   };
 
   programs.gh = {
@@ -75,7 +71,6 @@
     enable = true;
     lfs.enable = true;
     delta.enable = true;
-    delta.catppuccin.enable = true;
     userName = "yousiki";
     userEmail = "you.siki@outlook.com";
     extraConfig = {
@@ -86,7 +81,6 @@
 
   programs.gitui = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.helix = {
@@ -106,12 +100,10 @@
         lsp.display-messages = true;
       };
     };
-    catppuccin.enable = true;
   };
 
   programs.lazygit = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.mcfly = {
@@ -133,17 +125,14 @@
     enableNushellIntegration = true;
     enableTransience = true;
     settings.format = "$all";
-    catppuccin.enable = true;
   };
 
   programs.tmux = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.yazi = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.zellij = {
