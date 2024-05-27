@@ -8,6 +8,6 @@
       if pkgs.config.cudaSupport
       then "cuda"
       else null;
-    listenAddress = "127.0.0.1:11434";
+    listenAddress = "0.0.0.0:11434";
   };
 }
