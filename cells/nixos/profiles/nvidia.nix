@@ -20,6 +20,7 @@
     setLdLibraryPath = true;
   };
 
-  virtualisation.containers.cdi.dynamic.nvidia.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
+
   virtualisation.docker.enableNvidia = true;
 }
