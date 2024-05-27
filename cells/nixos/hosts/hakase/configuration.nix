@@ -21,7 +21,9 @@
         credentialsFile = "${config.age.secrets.hakase-tunnel-cert.path}";
         ingress = {
           "nas.siki.moe" = "http://satoshi.siki.moe:5000";
+          "plex.siki.moe" = "https://localhost:32400";
           "qb.siki.moe" = "http://localhost:8080";
+          "tautulli.siki.moe" = "http://localhost:32401";
         };
         default = "http_status:404";
       };
@@ -31,5 +33,16 @@
   services.qbittorrent = {
     enable = true;
     webui.port = 8080;
+  };
+
+  services.plex = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  services.tautulli = {
+    enable = true;
+    openFirewall = true;
+    port = 32401;
   };
 }
