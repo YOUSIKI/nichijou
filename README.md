@@ -69,7 +69,124 @@ services.clash-meta = {
 };
 ```
 
+### Cloudflare WARP module
+
+```nix
+imports = [
+  nichijou.nixosModules.cloudflare-warp
+];
+
+services.cloudflare-warp = {
+  enable = true;
+  openFirewall = true;
+};
+```
+
+This will start the warp-svc daemon and you may configure Cloudflare WARP via `warp-cli`.
+
+### qBittorrent module
+
+```nix
+imports = [
+  nichijou.nixosModules.qbittorrent
+];
+
+services.qbittorrent = {
+  enable = true;
+  webui.port = 8080;
+  openFirewall = true;
+};
+```
+
 ## 🧱 Structure
+
+<details>
+
+<summary>Snapshot 20240528</summary>
+
+```text
+ .
+├──  cells
+│  ├──  common
+│  │  ├──  commonProfiles.nix
+│  │  ├──  configs.nix
+│  │  ├──  devshells.nix
+│  │  ├──  lib.nix
+│  │  ├──  packages
+│  │  │  └──  clash-meta.nix
+│  │  ├──  packages.nix
+│  │  └──  profiles
+│  │     └──  core.nix
+│  ├──  darwin
+│  │  ├──  darwinConfigurations.nix
+│  │  ├──  darwinProfiles.nix
+│  │  ├──  hosts
+│  │  │  └──  sakamoto
+│  │  │     ├──  applications.nix
+│  │  │     ├──  configuration.nix
+│  │  │     └──  default.nix
+│  │  ├──  packages
+│  │  │  └──  lporg.nix
+│  │  ├──  packages.nix
+│  │  └──  profiles
+│  │     ├──  core.nix
+│  │     └──  homebrew.nix
+│  ├── 󱂵 home
+│  │  ├──  homeProfiles.nix
+│  │  └──  profiles
+│  │     ├──  base.nix
+│  │     ├──  core.nix
+│  │     ├──  languages.nix
+│  │     ├──  shell.nix
+│  │     └──  ssh.nix
+│  └──  nixos
+│     ├──  colmenaConfigurations.nix
+│     ├──  hosts
+│     │  └──  hakase
+│     │     ├──  configuration.nix
+│     │     ├──  default.nix
+│     │     ├──  hardware-configuration.nix
+│     │     └──  homelab.nix
+│     ├──  modules
+│     │  ├──  bcachefs.nix
+│     │  ├──  clash-meta.nix
+│     │  ├──  cloudflare-warp.nix
+│     │  └──  qbittorrent.nix
+│     ├──  nixosConfigurations.nix
+│     ├──  nixosModules.nix
+│     ├──  nixosProfiles.nix
+│     ├──  packages
+│     │  ├──  cloudflare-warp.nix
+│     │  └──  micromamba-env.nix
+│     ├──  packages.nix
+│     └──  profiles
+│        ├──  core.nix
+│        ├──  desktop.nix
+│        ├──  nvidia.nix
+│        ├──  proxy.nix
+│        ├──  secrets.nix
+│        └──  server.nix
+├──  flake.lock
+├──  flake.nix
+├──  garnix.yaml
+├──  LICENSE
+├──  nvfetcher
+│  ├──  generated.json
+│  └──  generated.nix
+├──  nvfetcher.toml
+├──  README.md
+├──  secrets
+│  ├── 󰦝 clash-config.age
+│  ├── 󰦝 hakase-tunnel-cert.age
+│  ├── 󰦝 nas-credentials.age
+│  └──  secrets.nix
+├──  static
+│  └──  images
+│     └──  sakamoto.gif
+└──  treefmt.toml
+```
+
+</details>
 
 <details>
 
