@@ -143,7 +143,6 @@
       "https://colmena.cachix.org?priority=40"
       "https://cuda-maintainers.cachix.org?priority=40"
       "https://hyprland.cachix.org?priority=40"
-      "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=25"
       "https://mirrors.ustc.edu.cn/nix-channels/store?priority=35"
       "https://nichijou.cachix.org?priority=40"
@@ -151,6 +150,7 @@
       "https://nixpkgs-wayland.cachix.org?priority=40"
       "https://numtide.cachix.org?priority=40"
       # "https://cache.garnix.io?priority=50"
+      # "https://mirror.sjtu.edu.cn/nix-channels/store?priority=25"
       # "https://mirrors.cqupt.edu.cn/nix-channels/store?priority=35"
     ];
     trusted-substituters = substituters;
