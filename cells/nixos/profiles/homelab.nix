@@ -1,9 +1,18 @@
 {
+  inputs,
+  cell,
+}: {
   config,
   lib,
   pkgs,
   ...
 }: {
+  age.secrets.hakase-tunnel-cert = {
+    file = "${inputs.self}/secrets/hakase-tunnel-cert.age";
+    owner = "cloudflared";
+    group = "cloudflared";
+  };
+
   services.cloudflared = {
     enable = true;
     tunnels = {

@@ -4,6 +4,7 @@
 }: {pkgs, ...}: {
   imports = [
     inputs.cells.common.commonProfiles.core
+    inputs.agenix.nixosModules.default
   ];
 
   time.timeZone = "Asia/Shanghai";

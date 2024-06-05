@@ -9,7 +9,6 @@
   imports = [
     ./configuration.nix
     ./hardware-configuration.nix
-    ./homelab.nix
 
     inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
@@ -21,9 +20,10 @@
 
     inputs.cells.nixos.nixosProfiles.core
     inputs.cells.nixos.nixosProfiles.desktop
+    inputs.cells.nixos.nixosProfiles.homelab
+    inputs.cells.nixos.nixosProfiles.nas
     inputs.cells.nixos.nixosProfiles.nvidia
     inputs.cells.nixos.nixosProfiles.proxy
-    inputs.cells.nixos.nixosProfiles.secrets
     inputs.cells.nixos.nixosProfiles.server
 
     inputs.cells.home.homeProfiles.base

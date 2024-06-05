@@ -18,9 +18,9 @@
 
     inputs.cells.nixos.nixosProfiles.core
     inputs.cells.nixos.nixosProfiles.desktop
+    inputs.cells.nixos.nixosProfiles.nas
     inputs.cells.nixos.nixosProfiles.proxy
     inputs.cells.nixos.nixosProfiles.rime
-    inputs.cells.nixos.nixosProfiles.secrets
     inputs.cells.nixos.nixosProfiles.server
 
     inputs.cells.home.homeProfiles.base

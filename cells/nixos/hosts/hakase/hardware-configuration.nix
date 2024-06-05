@@ -66,16 +66,6 @@ in {
     options = ["noatime"];
   };
 
-  fileSystems."/mnt/nas-yyp-home" = mkCifs "//nas.ybh1998.space/home";
-  fileSystems."/mnt/nas-yyp-share" = mkCifs "//nas.ybh1998.space/share";
-  fileSystems."/mnt/nas-mck-home" = mkCifs "//nas-changping.ybh1998.space/home";
-  fileSystems."/mnt/nas-mck-share" = mkCifs "//nas-changping.ybh1998.space/share";
-
-  fileSystems."/mnt/nas-satoshi-bangumi" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Bangumi";
-  fileSystems."/mnt/nas-satoshi-downloads" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Downloads";
-  fileSystems."/mnt/nas-satoshi-movie" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Movie";
-  fileSystems."/mnt/nas-satoshi-research" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Research";
-
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
