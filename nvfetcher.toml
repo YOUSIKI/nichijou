@@ -13,3 +13,7 @@ fetch.github = "ollama/ollama"
 [rime-ice]
 src.git = "https://github.com/iDvel/rime-ice"
 fetch.github = "iDvel/rime-ice"
+
+[oh-my-rime]
+src.git = "https://github.com/Mintimate/oh-my-rime"
+fetch.github = "Mintimate/oh-my-rime"
