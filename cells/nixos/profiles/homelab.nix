@@ -41,7 +41,9 @@
       if pkgs.config.cudaSupport
       then "cuda"
       else null;
-    listenAddress = "0.0.0.0:11434";
+    # listenAddress = "0.0.0.0:11434";
+    host = "0.0.0.0";
+    port = 11434;
     environmentVariables = {
       OLLAMA_ORIGINS = "*";
     };
