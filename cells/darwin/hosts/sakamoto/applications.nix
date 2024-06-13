@@ -69,6 +69,7 @@
     "visual-studio-code"
     "warp"
     "wechat"
+    "wetype"
     "wezterm"
     "xpra"
     "xquartz"
