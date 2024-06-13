@@ -15,23 +15,23 @@ in {
     Include ~/.openbayes/ssh/config
 
     Host satoshi
-      HostName satoshi.mck.cn.yousiki.top
+      HostName satoshi.siki.moe
       User yousiki
       Port 22
 
     Host hakase
-      HostName hakase.mck.cn.yousiki.top
+      HostName hakase.siki.moe
       User yousiki
       Port 22
 
     Host satoshi-cf
-      HostName satoshi.yousiki.top
+      HostName satoshi-ssh.siki.moe
       User yousiki
       Port 22
       ProxyCommand cloudflared access ssh --hostname %h
 
     Host hakase-cf
-      HostName hakase.yousiki.top
+      HostName hakase-ssh.siki.moe
       User yousiki
       Port 22
       ProxyCommand cloudflared access ssh --hostname %h
