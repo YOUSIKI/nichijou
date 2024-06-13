@@ -33,15 +33,15 @@
             "name": null,
             "owner": "blacktop",
             "repo": "lporg",
-            "rev": "v20.4.31",
-            "sha256": "sha256-A/OE67qAn9RHSCveiRwG5lPYNTMdrbUWVfQOP3XjkdU=",
+            "rev": "v20.4.32",
+            "sha256": "sha256-g8zZZ/uQeoJQIzpQY3oMUuWMu4/8OnaOLeLvaii+Tmk=",
             "type": "github"
         },
-        "version": "v20.4.31"
+        "version": "v20.4.32"
     },
     "oh-my-rime": {
         "cargoLocks": null,
-        "date": "2024-05-30",
+        "date": "2024-06-12",
         "extract": null,
         "name": "oh-my-rime",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "Mintimate",
             "repo": "oh-my-rime",
-            "rev": "31895cec7f8b145468b8482cc090640adc3c5517",
-            "sha256": "sha256-rNaYL7JunhwvDCo7lIw2aWq9SBdfgpswC3gj9/sH5Pc=",
+            "rev": "a745d57846af608921bb2806a16bbe0981ac6322",
+            "sha256": "sha256-JMLCOtHhN8/IkFXrGFKG3VHfTlBkHJT3TXNVj+/YJsI=",
             "type": "github"
         },
-        "version": "31895cec7f8b145468b8482cc090640adc3c5517"
+        "version": "a745d57846af608921bb2806a16bbe0981ac6322"
     },
     "ollama": {
         "cargoLocks": null,
@@ -73,15 +73,15 @@
             "name": null,
             "owner": "ollama",
             "repo": "ollama",
-            "rev": "v0.1.41",
-            "sha256": "sha256-EaZjCH/JhYrHYwHRLzOI8OM3OW5YR6i2r8Ce3ewptrw=",
+            "rev": "v0.1.43",
+            "sha256": "sha256-cIPFKaOzqnJUCj6Sx5OZCyQGp+tRir+QH5Ho5hHQnSc=",
             "type": "github"
         },
-        "version": "v0.1.41"
+        "version": "v0.1.43"
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-06-04",
+        "date": "2024-06-10",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -93,10 +93,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "af2480ba1b147a6a54c0c21e2997ef451c34e036",
-            "sha256": "sha256-3KfuCHGFFcEzgprvJzJiyot8HqYWHvDhIu4Qo6Tu6Ys=",
+            "rev": "0b59306d619a29cd345e3277aa5cd0b0d5653eda",
+            "sha256": "sha256-dElBA0baKaMN04sSXvMgfey+I60Zq4b+i+KoYzpxZMQ=",
             "type": "github"
         },
-        "version": "af2480ba1b147a6a54c0c21e2997ef451c34e036"
+        "version": "0b59306d619a29cd345e3277aa5cd0b0d5653eda"
     }
 }
