@@ -8,7 +8,7 @@ pkgs.buildGoModule rec {
 
   version = lib.removePrefix "v" sources.lporg.version;
 
-  vendorHash = "sha256-GQaIfUtM3iDQ9jmrSMqYvcPysigdu7w10xGDIYv4OY8=";
+  vendorHash = "sha256-a3bmTZKMcPvDEDp1RZ9iGEfPuJNXJN0s6NLVVDCPrFo=";
 
   ldflags = [
     "-s"
