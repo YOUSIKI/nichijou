@@ -111,6 +111,10 @@ in {
       l.mkIf (l.elem "rust" config.bee.home-languages) {
         home.packages = with pkgs; [
           fenix.stable.toolchain
+          libiconv
+        ];
+        home.sessionPath = [
+          "$HOME/.cargo/bin"
         ];
       }
     )
