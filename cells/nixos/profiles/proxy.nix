@@ -12,10 +12,10 @@
   ];
 
   networking.proxy.default = "http://127.0.0.1:7890";
-  networking.proxy.noProxy = "127.0.0.1,localhost,yousiki.top,edu.cn";
+  networking.proxy.noProxy = "127.0.0.1,localhost,yousiki.top,siki.moe,edu.cn";
 
   services.cloudflare-warp.enable = true;
-  services.cloudflare-warp.openFirewall = true;
+  services.cloudflare-warp.openFirewall = false;
 
   services.clash-meta.enable = true;
   services.clash-meta.configPath = config.age.secrets.clash-config.path;
