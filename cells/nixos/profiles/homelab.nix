@@ -20,7 +20,6 @@
         credentialsFile = "${config.age.secrets.hakase-tunnel-cert.path}";
         ingress = {
           "lobe.siki.moe" = "http://localhost:3210";
-          "nas.siki.moe" = "http://satoshi.siki.moe:5000";
           "ollama.siki.moe" = "http://localhost:11434";
           "qb.siki.moe" = "http://localhost:8080";
         };
