@@ -25,25 +25,25 @@
   };
   oh-my-rime = {
     pname = "oh-my-rime";
-    version = "a745d57846af608921bb2806a16bbe0981ac6322";
+    version = "930b768f77f313309c38da37576c956e6f06abbe";
     src = fetchFromGitHub {
       owner = "Mintimate";
       repo = "oh-my-rime";
-      rev = "a745d57846af608921bb2806a16bbe0981ac6322";
+      rev = "930b768f77f313309c38da37576c956e6f06abbe";
       fetchSubmodules = false;
-      sha256 = "sha256-JMLCOtHhN8/IkFXrGFKG3VHfTlBkHJT3TXNVj+/YJsI=";
+      sha256 = "sha256-NE0LOTdC2kZTGHi4nFqCUg02BcYGbdOESR3UBHNk+ZY=";
     };
-    date = "2024-06-12";
+    date = "2024-06-15";
   };
   ollama = {
     pname = "ollama";
-    version = "v0.1.43";
+    version = "v0.1.44";
     src = fetchFromGitHub {
       owner = "ollama";
       repo = "ollama";
-      rev = "v0.1.43";
+      rev = "v0.1.44";
       fetchSubmodules = false;
-      sha256 = "sha256-cIPFKaOzqnJUCj6Sx5OZCyQGp+tRir+QH5Ho5hHQnSc=";
+      sha256 = "sha256-dnNuJ1a0C2jNEKBbm47QUGbbQwa2vpy1EYYgm9ZS2C4=";
     };
   };
   rime-ice = {

@@ -20,19 +20,14 @@
 
     commands = [
       {
-        name = "fet";
+        name = "fetch";
         help = "Fetch latest sources with nvfetcher";
         command = "nvfetcher -o nvfetcher";
       }
       {
-        name = "upd";
+        name = "update";
         help = "Update flake inputs.";
         command = "nix flake update";
-      }
-      {
-        name = "fmt";
-        help = "Format code with treefmt";
-        command = "treefmt";
       }
     ];
   };
