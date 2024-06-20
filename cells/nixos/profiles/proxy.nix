@@ -21,5 +21,5 @@
   services.clash-meta.configPath = config.age.secrets.clash-config.path;
   services.clash-meta.openFirewall = true;
 
-  age.secrets.clash-config.file = "${inputs.self}/secrets/clash-config.age";
+  age.secrets.clash-config.file = "${inputs.self}/secrets/clash-config.yaml.age";
 }
