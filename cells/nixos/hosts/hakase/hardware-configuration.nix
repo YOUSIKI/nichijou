@@ -6,35 +6,7 @@
   lib,
   modulesPath,
   ...
-}: let
-  credentials = config.age.secrets.nas-credentials.path;
-
-  mkCifs = device: {
-    device = device;
-    fsType = "cifs";
-    options = [
-      "noauto"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=60"
-      "x-systemd.device-timeout=5s"
-      "x-systemd.mount-timeout=5s"
-      "noperm"
-      "credentials=${credentials}"
-    ];
-  };
-
-  mkNfs = device: {
-    device = device;
-    fsType = "nfs";
-    options = [
-      "noauto"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=600"
-      "x-systemd.device-timeout=5s"
-      "x-systemd.mount-timeout=5s"
-    ];
-  };
-in {
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
