@@ -46,18 +46,4 @@
       OLLAMA_ORIGINS = "*";
     };
   };
-
-  age.secrets.lobechat-envs = {
-    file = "${inputs.self}/secrets/lobechat.envs.age";
-  };
-
-  virtualisation.oci-containers.containers.lobe-chat = {
-    image = "docker.siki.moe/lobehub/lobe-chat";
-    labels = {
-      "io.containers.autoupdate" = "registry";
-    };
-    environmentFiles = ["${config.age.secrets.lobechat-envs.path}"];
-    extraOptions = ["--network=host"];
-    autoStart = true;
-  };
 }

@@ -11,6 +11,5 @@ let
 in {
   "clash-config.yaml.age".publicKeys = all;
   "hakase-tunnel-cert.age".publicKeys = all;
-  "lobechat.envs.age".publicKeys = all;
   "nas-credentials.age".publicKeys = all;
 }
