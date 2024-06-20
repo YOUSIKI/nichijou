@@ -24,6 +24,7 @@
           inputs.cells.home.homeProfiles.languages
           inputs.cells.home.homeProfiles.shell
           inputs.cells.home.homeProfiles.ssh
+          inputs.cells.home.homeProfiles.wezterm
         ];
 
         bee.home-languages = [
