@@ -37,25 +37,25 @@
   };
   ollama = {
     pname = "ollama";
-    version = "v0.1.44";
+    version = "v0.1.45";
     src = fetchFromGitHub {
       owner = "ollama";
       repo = "ollama";
-      rev = "v0.1.44";
+      rev = "v0.1.45";
       fetchSubmodules = false;
-      sha256 = "sha256-dnNuJ1a0C2jNEKBbm47QUGbbQwa2vpy1EYYgm9ZS2C4=";
+      sha256 = "sha256-SafX9GX4xcNhfoS8UQyJ15LjKMD9ZdReQY3oBWUaWBg=";
     };
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "0b59306d619a29cd345e3277aa5cd0b0d5653eda";
+    version = "fdb6141a18ed6479fd82616c8a82befea2ae30df";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "0b59306d619a29cd345e3277aa5cd0b0d5653eda";
+      rev = "fdb6141a18ed6479fd82616c8a82befea2ae30df";
       fetchSubmodules = false;
-      sha256 = "sha256-dElBA0baKaMN04sSXvMgfey+I60Zq4b+i+KoYzpxZMQ=";
+      sha256 = "sha256-O1oR85+0qo3GFluV6Z5rYuycUCErhZHOc1rrdD2Yh5k=";
     };
-    date = "2024-06-10";
+    date = "2024-06-23";
   };
 }

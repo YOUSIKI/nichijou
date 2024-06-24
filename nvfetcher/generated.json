@@ -76,16 +76,16 @@
             "name": null,
             "owner": "ollama",
             "repo": "ollama",
-            "rev": "v0.1.44",
-            "sha256": "sha256-dnNuJ1a0C2jNEKBbm47QUGbbQwa2vpy1EYYgm9ZS2C4=",
+            "rev": "v0.1.45",
+            "sha256": "sha256-SafX9GX4xcNhfoS8UQyJ15LjKMD9ZdReQY3oBWUaWBg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.1.44"
+        "version": "v0.1.45"
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-06-10",
+        "date": "2024-06-23",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -97,11 +97,11 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "0b59306d619a29cd345e3277aa5cd0b0d5653eda",
-            "sha256": "sha256-dElBA0baKaMN04sSXvMgfey+I60Zq4b+i+KoYzpxZMQ=",
+            "rev": "fdb6141a18ed6479fd82616c8a82befea2ae30df",
+            "sha256": "sha256-O1oR85+0qo3GFluV6Z5rYuycUCErhZHOc1rrdD2Yh5k=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0b59306d619a29cd345e3277aa5cd0b0d5653eda"
+        "version": "fdb6141a18ed6479fd82616c8a82befea2ae30df"
     }
 }
