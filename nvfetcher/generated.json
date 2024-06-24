@@ -15,6 +15,7 @@
             "repo": "mihomo",
             "rev": "v1.18.5",
             "sha256": "sha256-YNnZ/wlOzmTAD76py4CRlClPi2S1b4PaanCfT/Q426A=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v1.18.5"
@@ -35,6 +36,7 @@
             "repo": "lporg",
             "rev": "v20.4.32",
             "sha256": "sha256-g8zZZ/uQeoJQIzpQY3oMUuWMu4/8OnaOLeLvaii+Tmk=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v20.4.32"
@@ -55,6 +57,7 @@
             "repo": "oh-my-rime",
             "rev": "930b768f77f313309c38da37576c956e6f06abbe",
             "sha256": "sha256-NE0LOTdC2kZTGHi4nFqCUg02BcYGbdOESR3UBHNk+ZY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "930b768f77f313309c38da37576c956e6f06abbe"
@@ -75,6 +78,7 @@
             "repo": "ollama",
             "rev": "v0.1.44",
             "sha256": "sha256-dnNuJ1a0C2jNEKBbm47QUGbbQwa2vpy1EYYgm9ZS2C4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v0.1.44"
@@ -95,6 +99,7 @@
             "repo": "rime-ice",
             "rev": "0b59306d619a29cd345e3277aa5cd0b0d5653eda",
             "sha256": "sha256-dElBA0baKaMN04sSXvMgfey+I60Zq4b+i+KoYzpxZMQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "0b59306d619a29cd345e3277aa5cd0b0d5653eda"
