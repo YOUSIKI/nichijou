@@ -19,7 +19,6 @@
       "hakase-tunnel" = {
         credentialsFile = "${config.age.secrets.hakase-tunnel-cert.path}";
         ingress = {
-          "lobe.siki.moe" = "http://localhost:3210";
           "ollama.siki.moe" = "http://localhost:11434";
           "qb.siki.moe" = "http://localhost:8080";
         };
@@ -31,7 +30,6 @@
   services.qbittorrent = {
     enable = true;
     webui.port = 8080;
-    openFirewall = true;
   };
 
   services.ollama = {
