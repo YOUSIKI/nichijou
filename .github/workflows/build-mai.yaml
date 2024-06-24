@@ -1,0 +1,12 @@
+name: mai
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/build-nixos.yaml
+    with:
+      configuration: mai
+    secrets: inherit
