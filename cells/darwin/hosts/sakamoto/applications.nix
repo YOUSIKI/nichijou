@@ -75,6 +75,6 @@
     "xquartz"
     "zed"
     "zed@preview"
-    "zotero-beta"
+    "zotero@beta"
   ];
 }
