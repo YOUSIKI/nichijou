@@ -6,35 +6,7 @@
   lib,
   modulesPath,
   ...
-}: let
-  credentials = config.age.secrets.nas-credentials.path;
-
-  mkCifs = device: {
-    device = device;
-    fsType = "cifs";
-    options = [
-      "noauto"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=60"
-      "x-systemd.device-timeout=5s"
-      "x-systemd.mount-timeout=5s"
-      "noperm"
-      "credentials=${credentials}"
-    ];
-  };
-
-  mkNfs = device: {
-    device = device;
-    fsType = "nfs";
-    options = [
-      "noauto"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=600"
-      "x-systemd.device-timeout=5s"
-      "x-systemd.mount-timeout=5s"
-    ];
-  };
-in {
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -72,16 +44,6 @@ in {
     {device = "/dev/disk/by-uuid/aa708a45-8575-4503-a234-f18888887989";}
     {device = "/dev/disk/by-uuid/30968767-7ddc-42ac-ae92-436db93a0631";}
   ];
-
-  fileSystems."/mnt/nas-yyp-home" = mkCifs "//nas.ybh1998.space/home";
-  fileSystems."/mnt/nas-yyp-share" = mkCifs "//nas.ybh1998.space/share";
-  fileSystems."/mnt/nas-mck-home" = mkCifs "//nas-changping.ybh1998.space/home";
-  fileSystems."/mnt/nas-mck-share" = mkCifs "//nas-changping.ybh1998.space/share";
-
-  fileSystems."/mnt/nas-satoshi-bangumi" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Bangumi";
-  fileSystems."/mnt/nas-satoshi-downloads" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Downloads";
-  fileSystems."/mnt/nas-satoshi-movie" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Movie";
-  fileSystems."/mnt/nas-satoshi-research" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Research";
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

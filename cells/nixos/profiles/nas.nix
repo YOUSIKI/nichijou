@@ -41,7 +41,8 @@ in {
   fileSystems."/mnt/nas-mck-home" = mkCifs "//nas-changping.ybh1998.space/home";
   fileSystems."/mnt/nas-mck-share" = mkCifs "//nas-changping.ybh1998.space/share";
 
-  fileSystems."/mnt/nas-satoshi-bangumi" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Bangumi";
-  fileSystems."/mnt/nas-satoshi-downloads" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Downloads";
-  fileSystems."/mnt/nas-satoshi-movie" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Movie";
+  fileSystems."/mnt/nas-satoshi-bangumi" = mkCifs "//satoshi.siki.moe/Bangumi";
+  fileSystems."/mnt/nas-satoshi-downloads" = mkCifs "//satoshi.siki.moe/Downloads";
+  fileSystems."/mnt/nas-satoshi-movie" = mkCifs "//satoshi.siki.moe/Movie";
+  fileSystems."/mnt/nas-satoshi-research" = mkCifs "//satoshi.siki.moe/Research";
 }
