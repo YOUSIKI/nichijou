@@ -34,6 +34,7 @@
     steam
     vlc
     vscode
+    warp-terminal
     wezterm
     zotero
   ];
