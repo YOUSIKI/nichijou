@@ -85,6 +85,7 @@ in {
     statix
     thefuck
     tmux
+    unzip
     vim
     wget
     yazi
