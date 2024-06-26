@@ -17,7 +17,12 @@ in {
     Host satoshi
       HostName satoshi.siki.moe
       User yousiki
-      Port 22
+      Port 23
+
+    Host mai
+      HostName mai.siki.moe
+      User yousiki
+      Port 24
 
     Host hakase
       HostName hakase.siki.moe

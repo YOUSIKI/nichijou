@@ -44,5 +44,4 @@ in {
   fileSystems."/mnt/nas-satoshi-bangumi" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Bangumi";
   fileSystems."/mnt/nas-satoshi-downloads" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Downloads";
   fileSystems."/mnt/nas-satoshi-movie" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Movie";
-  fileSystems."/mnt/nas-satoshi-research" = mkNfs "satoshi.mck.cn.yousiki.top:/share/Research";
 }
