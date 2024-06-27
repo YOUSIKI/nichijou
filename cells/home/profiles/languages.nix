@@ -8,6 +8,26 @@
   ...
 }: let
   l = builtins // lib;
+
+  condarc = ''
+    channels:
+      - defaults
+    changeps1: false
+    show_channel_urls: true
+    auto_activate_base: false
+    default_channels:
+      - https://mirrors.pku.edu.cn/anaconda/pkgs/main
+      - https://mirrors.pku.edu.cn/anaconda/pkgs/r
+    custom_channels:
+      Paddle: https://mirrors.pku.edu.cn/anaconda/cloud
+      bioconda: https://mirrors.pku.edu.cn/anaconda/cloud
+      conda-forge: https://mirrors.pku.edu.cn/anaconda/cloud
+      intel: https://mirrors.pku.edu.cn/anaconda/cloud
+      numba: https://mirrors.pku.edu.cn/anaconda/cloud
+      pytorch3d: https://mirrors.pku.edu.cn/anaconda/cloud
+      pytorch: https://mirrors.pku.edu.cn/anaconda/cloud
+      rapidsai: https://mirrors.pku.edu.cn/anaconda/cloud
+  '';
 in {
   options = {
     bee.home-languages = l.mkOption {
@@ -75,25 +95,9 @@ in {
             inputs.cells.nixos.packages.micromamba-env
           );
 
-        home.file.".condarc".text = ''
-          channels:
-            - defaults
-          changeps1: false
-          show_channel_urls: true
-          auto_activate_base: false
-          default_channels:
-            - https://mirrors.pku.edu.cn/anaconda/pkgs/main
-            - https://mirrors.pku.edu.cn/anaconda/pkgs/r
-          custom_channels:
-            Paddle: https://mirrors.pku.edu.cn/anaconda/cloud
-            bioconda: https://mirrors.pku.edu.cn/anaconda/cloud
-            conda-forge: https://mirrors.pku.edu.cn/anaconda/cloud
-            intel: https://mirrors.pku.edu.cn/anaconda/cloud
-            numba: https://mirrors.pku.edu.cn/anaconda/cloud
-            pytorch3d: https://mirrors.pku.edu.cn/anaconda/cloud
-            pytorch: https://mirrors.pku.edu.cn/anaconda/cloud
-            rapidsai: https://mirrors.pku.edu.cn/anaconda/cloud
-        '';
+        home.file.".condarc".text = condarc;
+
+        home.file.".mambarc".text = condarc;
 
         home.file.".config/pip/pip.conf".text = ''
           [global]
@@ -110,6 +114,7 @@ in {
     (
       l.mkIf (l.elem "rust" config.bee.home-languages) {
         home.packages = with pkgs; [
+          cargo-generate
           fenix.stable.toolchain
           libiconv
         ];
