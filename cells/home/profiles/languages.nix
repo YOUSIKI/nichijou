@@ -105,8 +105,8 @@ in {
         '';
 
         programs.zsh.initExtra = ''
-          if [[ -x "$(command -v conda)" ]]; then
-            eval "$(conda "shell.$(basename "$SHELL")" hook)"
+          if [[ -x "$(command -v micromamba)" ]]; then
+            eval "$(micromamba shell hook --shell zsh)"
           fi
         '';
       }
