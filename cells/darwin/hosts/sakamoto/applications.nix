@@ -39,8 +39,6 @@
     "microsoft-auto-update"
     "microsoft-office"
     "microsoft-remote-desktop"
-    "miniconda"
-    "miniconda"
     "monitorcontrol"
     "mos"
     "motrix"
