@@ -170,7 +170,6 @@
         "python"
         "rust"
         "shell-proxy"
-        "thefuck"
         "zoxide"
         "zsh-interactive-cd"
       ];

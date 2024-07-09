@@ -75,7 +75,6 @@ in {
     jq
     man
     mc
-    neofetch
     nodejs
     nvfetcher
     ouch
@@ -83,7 +82,6 @@ in {
     ripgrep
     rsync
     statix
-    thefuck
     tmux
     unzip
     vim

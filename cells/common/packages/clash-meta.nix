@@ -8,7 +8,7 @@ pkgs.buildGoModule rec {
 
   version = lib.removePrefix "v" sources.clash-meta.version;
 
-  vendorHash = "sha256-yBQ4Nt03VS2em6vkzMa1WH9jHc6pwdlW0tt9cth55oQ=";
+  vendorHash = "sha256-lBHL4vD+0JDOlc6SWFsj0cerE/ypImoh8UFbL736SmA=";
 
   # Do not build testing suit
   excludedPackages = ["./test"];

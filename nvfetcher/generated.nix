@@ -3,13 +3,13 @@
 {
   clash-meta = {
     pname = "clash-meta";
-    version = "v1.18.5";
+    version = "v1.18.6";
     src = fetchFromGitHub {
       owner = "MetaCubeX";
       repo = "mihomo";
-      rev = "v1.18.5";
+      rev = "v1.18.6";
       fetchSubmodules = false;
-      sha256 = "sha256-YNnZ/wlOzmTAD76py4CRlClPi2S1b4PaanCfT/Q426A=";
+      sha256 = "sha256-h/H5T9UBCp/gXM+c5muRs8luz3LoHofBGwP3jofQ9Qg=";
     };
   };
   lporg = {
@@ -25,37 +25,37 @@
   };
   oh-my-rime = {
     pname = "oh-my-rime";
-    version = "930b768f77f313309c38da37576c956e6f06abbe";
+    version = "8c51bd827630d3e1c9a12d596b481e699392b385";
     src = fetchFromGitHub {
       owner = "Mintimate";
       repo = "oh-my-rime";
-      rev = "930b768f77f313309c38da37576c956e6f06abbe";
+      rev = "8c51bd827630d3e1c9a12d596b481e699392b385";
       fetchSubmodules = false;
-      sha256 = "sha256-NE0LOTdC2kZTGHi4nFqCUg02BcYGbdOESR3UBHNk+ZY=";
+      sha256 = "sha256-ePB1aISloWpzTWIycov6o5x+P9pWvbCflJctZP4Rbg8=";
     };
-    date = "2024-06-15";
+    date = "2024-07-08";
   };
   ollama = {
     pname = "ollama";
-    version = "v0.1.45";
+    version = "v0.2.1";
     src = fetchFromGitHub {
       owner = "ollama";
       repo = "ollama";
-      rev = "v0.1.45";
+      rev = "v0.2.1";
       fetchSubmodules = false;
-      sha256 = "sha256-SafX9GX4xcNhfoS8UQyJ15LjKMD9ZdReQY3oBWUaWBg=";
+      sha256 = "sha256-+SfW8ar4tzW7tUZw5Th0QHsKgy2PrE8m4PWYGkAuyQg=";
     };
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "fdb6141a18ed6479fd82616c8a82befea2ae30df";
+    version = "37ca416a9c755716d049c549b131276ddc440688";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "fdb6141a18ed6479fd82616c8a82befea2ae30df";
+      rev = "37ca416a9c755716d049c549b131276ddc440688";
       fetchSubmodules = false;
-      sha256 = "sha256-O1oR85+0qo3GFluV6Z5rYuycUCErhZHOc1rrdD2Yh5k=";
+      sha256 = "sha256-uEE+KWkIjCvB/cuLNm94lFm7HLb9cCgFE7t6NCTVEoo=";
     };
-    date = "2024-06-23";
+    date = "2024-07-03";
   };
 }
