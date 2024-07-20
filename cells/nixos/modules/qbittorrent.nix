@@ -151,6 +151,7 @@ in {
       description = "qBittorrent Daemon";
       documentation = ["man:qbittorrent-nox(1)"];
       after = ["network-online.target" "nss-lookup.target"];
+      requires = ["network-online.target"];
       wantedBy = ["multi-user.target"];
       wants = ["multi-user.target"];
       path = [pkgs.qbittorrent];

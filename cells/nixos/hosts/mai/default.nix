@@ -11,7 +11,6 @@
     ./hardware-configuration.nix
 
     inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
-    inputs.nixos-hardware.nixosModules.common-pc-hdd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     inputs.cells.nixos.nixosModules.bcachefs
