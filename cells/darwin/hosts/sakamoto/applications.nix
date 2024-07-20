@@ -71,7 +71,6 @@
     "wezterm"
     "xpra"
     "xquartz"
-    "zed"
     "zed@preview"
     "zotero@beta"
   ];
