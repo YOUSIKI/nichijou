@@ -62,6 +62,7 @@
     "stats"
     "steam"
     "tailscale"
+    "tencent-lemon"
     "tencent-meeting"
     "transmission"
     "visual-studio-code"
