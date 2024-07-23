@@ -19,7 +19,6 @@
 
     inputs.cells.nixos.nixosProfiles.core
     inputs.cells.nixos.nixosProfiles.desktop
-    inputs.cells.nixos.nixosProfiles.homelab
     inputs.cells.nixos.nixosProfiles.nas
     inputs.cells.nixos.nixosProfiles.nvidia
     inputs.cells.nixos.nixosProfiles.proxy

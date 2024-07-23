@@ -182,13 +182,6 @@
         source ~/.orbstack/shell/init.zsh 2>/dev/null || :
       fi
     '';
-    sessionVariables = {
-      SHELLPROXY_URL =
-        if pkgs.stdenv.isDarwin
-        then "http://127.0.0.1:6152"
-        else "http://127.0.0.1:7890";
-      SHELLPROXY_NO_PROXY = "localhost,127.0.0.1,edu.cn,yousiki.top";
-    };
   };
 
   home.packages = with pkgs; [

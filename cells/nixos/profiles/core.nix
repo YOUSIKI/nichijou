@@ -34,8 +34,6 @@
   environment.systemPackages = with pkgs; [
     docker-compose
     podman-compose
-    inputs.cells.common.packages.clash-meta
-    inputs.cells.nixos.packages.cloudflare-warp
   ];
 
   system.stateVersion = "24.05";

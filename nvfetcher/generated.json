@@ -1,25 +1,4 @@
 {
-    "clash-meta": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "clash-meta",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "MetaCubeX",
-            "repo": "mihomo",
-            "rev": "v1.18.6",
-            "sha256": "sha256-h/H5T9UBCp/gXM+c5muRs8luz3LoHofBGwP3jofQ9Qg=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v1.18.6"
-    },
     "lporg": {
         "cargoLocks": null,
         "date": null,
@@ -40,68 +19,5 @@
             "type": "github"
         },
         "version": "v20.4.32"
-    },
-    "oh-my-rime": {
-        "cargoLocks": null,
-        "date": "2024-07-16",
-        "extract": null,
-        "name": "oh-my-rime",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Mintimate",
-            "repo": "oh-my-rime",
-            "rev": "e4df90919b43a51000a85a4f2ce17c6452accfe2",
-            "sha256": "sha256-7qQd9odk2ckGR6+k+XM/ePW5rAS9r7bxrJ3LDynaS9E=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "e4df90919b43a51000a85a4f2ce17c6452accfe2"
-    },
-    "ollama": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "ollama",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ollama",
-            "repo": "ollama",
-            "rev": "v0.2.7",
-            "sha256": "sha256-E0TVslQIxB+DKC6H18cHHeEbUviH+JOoGG0xAPVFkc4=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v0.2.7"
-    },
-    "rime-ice": {
-        "cargoLocks": null,
-        "date": "2024-07-19",
-        "extract": null,
-        "name": "rime-ice",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "iDvel",
-            "repo": "rime-ice",
-            "rev": "60a2d21d925e8259319d570779412c83e30318c0",
-            "sha256": "sha256-gAXs/fhNKoe43pYA0mDpbKrjx1FOwozEJuRJtIOGTf8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "60a2d21d925e8259319d570779412c83e30318c0"
     }
 }

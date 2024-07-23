@@ -57,5 +57,7 @@ in {
       (n: v: nixpkgs.callPackage v (args // {inherit sources;}))
       paths;
   in
-    pkgs;
+    if l.pathExists src
+    then pkgs
+    else {};
 }
