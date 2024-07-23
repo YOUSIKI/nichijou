@@ -43,6 +43,7 @@ in {
 
   fileSystems."/mnt/nas-satoshi-bangumi" = mkCifs "//satoshi.siki.moe/Bangumi";
   fileSystems."/mnt/nas-satoshi-downloads" = mkCifs "//satoshi.siki.moe/Downloads";
+  fileSystems."/mnt/nas-satoshi-game" = mkCifs "//satoshi.siki.moe/Game";
   fileSystems."/mnt/nas-satoshi-movie" = mkCifs "//satoshi.siki.moe/Movie";
   fileSystems."/mnt/nas-satoshi-research" = mkCifs "//satoshi.siki.moe/Research";
 }
