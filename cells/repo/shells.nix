@@ -16,11 +16,19 @@ in
       # Tool Homepage: https://nix-community.github.io/nixago/
       # This is Standard's devshell integration.
       # It runs the startup hook when entering the shell.
-      nixago = [
-        cell.configs.treefmt
+      nixago = with cell.configs; [
+        nvfetcher
+        treefmt
       ];
 
       commands = [
+        {
+          name = "fetch";
+          help = "Fetch latest sources with nvfetcher";
+          command = ''
+            nvfetcher -c nvfetcher.toml -o packages/nvfetcher
+          '';
+        }
       ];
     };
   }

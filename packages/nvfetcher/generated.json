@@ -1,0 +1,22 @@
+{
+  "lporg": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "lporg",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "blacktop",
+      "repo": "lporg",
+      "rev": "v20.4.32",
+      "sha256": "sha256-g8zZZ/uQeoJQIzpQY3oMUuWMu4/8OnaOLeLvaii+Tmk=",
+      "type": "github"
+    },
+    "version": "v20.4.32"
+  }
+}
