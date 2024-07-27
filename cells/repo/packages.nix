@@ -4,23 +4,27 @@
 }: let
   inherit (inputs) nixpkgs haumea;
 
-  importPackages = {
-    src,
-    args ? {},
-  }: let
-    paths = haumea.lib.load {
-      inherit src;
-      loader = haumea.lib.loaders.path;
-    };
-    pkgs =
-      nixpkgs.lib.mapAttrs
-      (n: v: nixpkgs.callPackage v args)
-      paths;
-  in
-    if nixpkgs.lib.pathExists src
-    then pkgs
+  packagesPath = "${inputs.self}/packages";
+  nvfetcherPath = "${packagesPath}/nvfetcher/generated.nix";
+  recipesPath = "${packagesPath}/recipes";
+
+  sources =
+    if nixpkgs.lib.pathExists nvfetcherPath
+    then nixpkgs.callPackage nvfetcherPath {}
     else {};
+
+  recipePaths =
+    if nixpkgs.lib.pathExists recipesPath
+    then
+      haumea.lib.load {
+        src = recipesPath;
+        loader = haumea.lib.loaders.path;
+      }
+    else {};
+
+  packages =
+    nixpkgs.lib.mapAttrs
+    (n: v: nixpkgs.callPackage v {inherit sources;})
+    recipePaths;
 in
-  importPackages {
-    src = "${inputs.self}/packages";
-  }
+  packages

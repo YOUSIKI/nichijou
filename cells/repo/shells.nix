@@ -27,6 +27,8 @@ in
           help = "Fetch latest sources with nvfetcher";
           command = ''
             nvfetcher -c nvfetcher.toml -o packages/nvfetcher
+            treefmt packages/nvfetcher/*.nix
+            treefmt packages/nvfetcher/*.json
           '';
         }
       ];

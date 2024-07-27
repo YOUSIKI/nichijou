@@ -18,7 +18,6 @@ in {
       };
     in {
       lporg = mkGithubRelease "blacktop/lporg";
-      # mihomo = mkGithubRelease "mihomo/mihomo";
     };
     packages = with inputs.nixpkgs; [nvfetcher];
   };

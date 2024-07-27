@@ -14,6 +14,7 @@
 .run
 
 ### nixago: ignore-linked-files ###
+/packages/nvfetcher.toml
 /nvfetcher.toml
 /treefmt.toml
 lefthook.yml

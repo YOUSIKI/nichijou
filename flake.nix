@@ -18,6 +18,7 @@
       ];
     } {
       devShells = std.harvest self [["repo" "shells"]];
+      packages = std.harvest self [["repo" "packages"]];
     };
 
   inputs = {
