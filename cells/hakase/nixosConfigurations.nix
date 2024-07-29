@@ -3,7 +3,7 @@
   cell,
 }: let
 in {
-  mai = {
+  hakase = {
     bee = rec {
       system = "x86_64-linux";
       home = inputs.home-manager;
@@ -17,5 +17,11 @@ in {
         ];
       };
     };
+
+    imports = [
+      inputs.cells.common.profiles.common-nix
+      inputs.cells.common.profiles.common-packages
+      inputs.cells.bcachefs.modules.bcachefs
+    ];
   };
 }

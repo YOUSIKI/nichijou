@@ -3,7 +3,7 @@
   cell,
 }: let
 in {
-  hakase = {
+  mai = {
     bee = rec {
       system = "x86_64-linux";
       home = inputs.home-manager;

@@ -25,6 +25,9 @@
         (nvfetcher "nvfetcher")
         # Packages
         (installables "packages")
+        # Profiles & Modules
+        (functions "profiles")
+        (functions "modules")
         # Configurations
         nixosConfigurations
         darwinConfigurations
@@ -34,6 +37,7 @@
       lib = std.pick self [["repo" "lib"]];
       devShells = std.harvest self [["repo" "devshells"]];
       packages = lib.filterPackagesByPlatform (std.harvest self [["lporg" "packages"]]);
+      nixosModules = std.pick self [["bcachefs" "modules"]];
       nixosConfigurations = lib.collectWithoutRename self "nixosConfigurations";
       darwinConfigurations = lib.collectWithoutRename self "darwinConfigurations";
     };
