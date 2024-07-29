@@ -2,8 +2,13 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells.repo.lib) callPackageWithSources;
   inherit (inputs) nixpkgs;
+
+  sourcesPath = "${inputs.self}/lporg/nvfetcher/generated.nix";
+  sources = nixpkgs.callPackage sourcesPath {};
+  recipePath = "${inputs.self}/lporg/lporg.nix";
 in {
-  lporg = callPackageWithSources nixpkgs ./recipe.nix;
+  lporg = nixpkgs.callPackage recipePath {
+    inherit (sources.lporg) pname version src;
+  };
 }

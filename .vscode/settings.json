@@ -1,3 +1,10 @@
 {
-    "explorer.excludeGitIgnore": true
+  "files.exclude": {
+    ".bin": true,
+    ".cache": true,
+    ".config": true,
+    ".data": true,
+    ".run": true,
+    "result": true
+  }
 }

@@ -6,22 +6,6 @@
   inherit (inputs.std.lib) cfg;
   inherit (inputs) nixpkgs;
 in {
-  # Tool Homepage: https://github.com/berberman/nvfetcher
-  nvfetcher = mkNixago {
-    output = "nvfetcher.toml";
-    format = "toml";
-    data = let
-      # Fetch from github latest release
-      mkGithubRelease = repo: {
-        src.github = repo;
-        fetch.github = repo;
-      };
-    in {
-      lporg = mkGithubRelease "blacktop/lporg";
-    };
-    packages = with inputs.nixpkgs; [nvfetcher];
-  };
-
   # Tool Homepage: https://numtide.github.io/treefmt/
   treefmt = mkNixago cfg.treefmt {
     data = {
@@ -56,6 +40,11 @@ in {
           includes = ["*.sh"];
         };
       };
+      global.excludes = [
+        "**/nvfetcher/generated.json"
+        "**/nvfetcher/generated.nix"
+        "**/nvfetcher/*.md"
+      ];
     };
     packages = with nixpkgs; [
       alejandra

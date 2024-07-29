@@ -1,12 +1,14 @@
 {
   pkgs,
   lib,
-  sources,
+  pname,
+  version,
+  src,
 }:
-pkgs.buildGoModule rec {
-  inherit (sources.lporg) pname src;
+pkgs.buildGoModule {
+  inherit pname src;
 
-  version = lib.removePrefix "v" sources.lporg.version;
+  version = lib.removePrefix "v" version;
 
   vendorHash = "sha256-a3bmTZKMcPvDEDp1RZ9iGEfPuJNXJN0s6NLVVDCPrFo=";
 

@@ -16,9 +16,9 @@ in
       # Tool Homepage: https://nix-community.github.io/nixago/
       # This is Standard's devshell integration.
       # It runs the startup hook when entering the shell.
-      nixago = with cell.configs; [
-        nvfetcher
-        treefmt
+      nixago = [
+        cell.configs.treefmt
+        inputs.cells.lporg.configs.nvfetcher
       ];
 
       commands = [

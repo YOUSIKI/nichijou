@@ -21,6 +21,8 @@
         (devshells "devshells")
         # Helper Functions
         (functions "lib")
+        # Nvfetcher
+        (nvfetcher "nvfetcher")
         # Packages
         (installables "packages")
         # Configurations
