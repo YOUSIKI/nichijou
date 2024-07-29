@@ -3,33 +3,58 @@
 
   outputs = {
     self,
+    hive,
     std,
+    nixpkgs,
     ...
-  } @ inputs:
-    std.growOn {
+  } @ inputs: let
+    blockTypes = std.blockTypes // hive.blockTypes;
+
+    collect = hive.collect // {renamer = _: target: target;};
+  in
+    hive.growOn {
       inherit inputs;
+      nixpkgsConfig = {
+        allowUnfree = true;
+      };
       cellsFrom = ./cells;
-      cellBlocks = with std.blockTypes; [
+      cellBlocks = with blockTypes; [
         # Development Environments
         (nixago "configs")
         (devshells "shells")
         # Packages
         (installables "packages")
+        # Configurations
+        nixosConfigurations
+        darwinConfigurations
+        colmenaConfigurations
       ];
     } {
       devShells = std.harvest self [["repo" "shells"]];
-      packages = std.harvest self [["repo" "packages"]];
+      packages = std.harvest self [["darwin" "packages"]];
+      nixosConfigurations = collect self "nixosConfigurations";
+      darwinConfigurations = collect self "darwinConfigurations";
+      colmenaHive = collect self "colmenaConfigurations";
     };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
-
     std = {
       url = "github:divnix/std";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        devshell.url = "github:numtide/devshell";
-        nixago.url = "github:nix-community/nixago";
+        nixago.follows = "nixago";
+        devshell.follows = "devshell";
+      };
+    };
+
+    hive = {
+      url = "github:divnix/hive";
+      inputs = {
+        std.follows = "std";
+        nixpkgs.follows = "nixpkgs";
+        nixago.follows = "nixago";
+        devshell.follows = "devshell";
+        colmena.follows = "colmena";
       };
     };
 
@@ -37,6 +62,57 @@
       url = "github:nix-community/haumea";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixago = {
+      url = "github:nix-community/nixago";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    colmena = {
+      url = "github:zhaofengli/colmena";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nixos-vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    catppuccin.url = "github:catppuccin/nix";
+
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
   nixConfig = rec {

@@ -7,7 +7,7 @@ in
   builtins.mapAttrs (_: lib.dev.mkShell) {
     # Tool Homepage: https://numtide.github.io/devshell/
     default = {
-      name = "develop";
+      name = "nichijou";
 
       imports = [
         std.devshellProfiles.default
@@ -26,9 +26,9 @@ in
           name = "fetch";
           help = "Fetch latest sources with nvfetcher";
           command = ''
-            nvfetcher -c nvfetcher.toml -o packages/nvfetcher
-            treefmt packages/nvfetcher/*.nix
-            treefmt packages/nvfetcher/*.json
+            nvfetcher -c nvfetcher.toml -o nvfetcher
+            treefmt nvfetcher/*.nix
+            treefmt nvfetcher/*.json
           '';
         }
       ];
