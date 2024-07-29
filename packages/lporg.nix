@@ -29,6 +29,7 @@ pkgs.buildGoModule rec {
     homepage = "https://github.com/blacktop/lporg";
     changelog = "https://github.com/blacktop/lporg/releases/tag/${version}";
     mainProgram = "lporg";
+    platforms = platforms.darwin;
     license = with licenses; [mit];
     maintainers = with maintainers; [yousiki];
   };

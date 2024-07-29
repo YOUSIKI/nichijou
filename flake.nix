@@ -9,8 +9,6 @@
     ...
   } @ inputs: let
     blockTypes = std.blockTypes // hive.blockTypes;
-
-    collect = hive.collect // {renamer = _: target: target;};
   in
     hive.growOn {
       inherit inputs;
@@ -22,6 +20,8 @@
         # Development Environments
         (nixago "configs")
         (devshells "shells")
+        # Helper Functions
+        (functions "functions")
         # Packages
         (installables "packages")
         # Configurations
@@ -29,12 +29,12 @@
         darwinConfigurations
         colmenaConfigurations
       ];
-    } {
+    } rec {
+      lib = std.pick self [["repo" "functions"]];
       devShells = std.harvest self [["repo" "shells"]];
-      packages = std.harvest self [["darwin" "packages"]];
-      nixosConfigurations = collect self "nixosConfigurations";
-      darwinConfigurations = collect self "darwinConfigurations";
-      colmenaHive = collect self "colmenaConfigurations";
+      packages = lib.filterPackagesByPlatform (std.harvest self [["repo" "packages"]]);
+      nixosConfigurations = lib.collectWithoutRename self "nixosConfigurations";
+      darwinConfigurations = lib.collectWithoutRename self "darwinConfigurations";
     };
 
   inputs = {
