@@ -3,9 +3,8 @@
 
   outputs = {
     self,
-    hive,
     std,
-    nixpkgs,
+    hive,
     ...
   } @ inputs: let
     blockTypes = std.blockTypes // hive.blockTypes;
@@ -21,7 +20,7 @@
         (nixago "configs")
         (devshells "shells")
         # Helper Functions
-        (functions "functions")
+        (functions "lib")
         # Packages
         (installables "packages")
         # Configurations
@@ -30,7 +29,7 @@
         colmenaConfigurations
       ];
     } rec {
-      lib = std.pick self [["repo" "functions"]];
+      lib = std.pick self [["repo" "lib"]];
       devShells = std.harvest self [["repo" "shells"]];
       packages = lib.filterPackagesByPlatform (std.harvest self [["repo" "packages"]]);
       nixosConfigurations = lib.collectWithoutRename self "nixosConfigurations";
