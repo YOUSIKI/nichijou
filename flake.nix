@@ -31,7 +31,7 @@
     } rec {
       lib = std.pick self [["repo" "lib"]];
       devShells = std.harvest self [["repo" "devshells"]];
-      packages = lib.filterPackagesByPlatform (std.harvest self [["repo" "packages"]]);
+      packages = lib.filterPackagesByPlatform (std.harvest self [["lporg" "packages"]]);
       nixosConfigurations = lib.collectWithoutRename self "nixosConfigurations";
       darwinConfigurations = lib.collectWithoutRename self "darwinConfigurations";
     };
