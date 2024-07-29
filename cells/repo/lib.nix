@@ -7,26 +7,14 @@
 in {
   collectWithoutRename = hive.collect // {renamer = _: target: target;};
 
-  collectPackages = path:
-    if lib.pathExists path
-    then let
-      sourcesPath = "${inputs.self}/nvfetcher/generated.nix";
-      sources =
-        if lib.pathExists sourcesPath
-        then nixpkgs.callPackage sourcesPath {}
-        else {};
-      packages =
-        lib.mapAttrs
-        (n: v: nixpkgs.callPackage v {inherit sources;})
-        (
-          haumea.lib.load {
-            src = path;
-            loader = haumea.lib.loaders.path;
-          }
-        );
-    in
-      packages
-    else {};
+  callPackageWithSources = pkgs: path: let
+    sourcesPath = "${inputs.self}/nvfetcher/generated.nix";
+    sources =
+      if lib.pathExists sourcesPath
+      then pkgs.callPackage sourcesPath {}
+      else {};
+  in
+    pkgs.callPackage path {inherit sources;};
 
   filterPackagesByPlatform = packages:
     lib.mapAttrs

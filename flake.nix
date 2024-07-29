@@ -18,7 +18,7 @@
       cellBlocks = with blockTypes; [
         # Development Environments
         (nixago "configs")
-        (devshells "shells")
+        (devshells "devshells")
         # Helper Functions
         (functions "lib")
         # Packages
@@ -30,7 +30,7 @@
       ];
     } rec {
       lib = std.pick self [["repo" "lib"]];
-      devShells = std.harvest self [["repo" "shells"]];
+      devShells = std.harvest self [["repo" "devshells"]];
       packages = lib.filterPackagesByPlatform (std.harvest self [["repo" "packages"]]);
       nixosConfigurations = lib.collectWithoutRename self "nixosConfigurations";
       darwinConfigurations = lib.collectWithoutRename self "darwinConfigurations";
