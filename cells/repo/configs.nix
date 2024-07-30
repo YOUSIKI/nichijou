@@ -44,6 +44,7 @@ in {
         "**/nvfetcher/generated.json"
         "**/nvfetcher/generated.nix"
         "**/nvfetcher/*.md"
+        "**/*.age"
       ];
     };
     packages = with nixpkgs; [

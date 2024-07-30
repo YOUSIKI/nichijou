@@ -28,16 +28,16 @@
       };
     };
 
-    pathToString = path: lib.replaceStrings ["/"] ["-"] (lib.toString path);
+    pathToString = path: lib.replaceStrings ["/"] ["-"] (builtins.toString path);
 
     mkUnit = mountPoint: mountOptions: let
       inherit (mountOptions) devices options;
-      deviceTargets = builtins.pipe devices [
+      deviceTargets = lib.pipe devices [
         (builtins.map pathToString)
         (builtins.map (lib.removePrefix "-"))
         (builtins.map (device: "${device}.device"))
       ];
-      concatDevices = lib.concatStringsSep ":" (builtins.map lib.toString devices);
+      concatDevices = lib.concatStringsSep ":" (builtins.map builtins.toString devices);
       concatOptions = lib.concatStringsSep "," options;
     in {
       description = "Mount bcachefs volume ${mountPoint}";

@@ -34,7 +34,7 @@
     {device = "/dev/disk/by-uuid/9dc3e2ac-b63d-4dda-8b4c-7be566aa349a";}
   ];
 
-  bcacheFileSystems."/mnt/data" = {
+  bcachefs."/mnt/data" = {
     devices = ["/dev/nvme0n1p3" "/dev/sda1" "/dev/sdb1"];
     options = ["noatime"];
   };
