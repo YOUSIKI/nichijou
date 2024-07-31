@@ -22,27 +22,35 @@ in {
       inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
       inputs.nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
       inputs.nixos-hardware.nixosModules.common-pc-ssd
-      inputs.cells.gpu.profiles.common-nvidia-gpu
-      inputs.cells.bcachefs.modules.bcachefs
+      inputs.cells.gpu.nixosProfiles.common-nvidia-gpu
+      inputs.cells.bcachefs.nixosModules.bcachefs
 
       inputs.agenix.nixosModules.default
 
-      inputs.cells.common.profiles.common-nix
-      inputs.cells.common.profiles.common-packages
-      inputs.cells.common.profiles.common-nixos
-      inputs.cells.common.profiles.common-server
+      inputs.cells.common.nixosProfiles.common-nix
+      inputs.cells.common.nixosProfiles.common-packages
+      inputs.cells.common.nixosProfiles.common-nixos
+      inputs.cells.common.nixosProfiles.common-server
+      inputs.cells.common.nixosProfiles.common-home-manager
 
-      inputs.cells.networking.profiles.proxy
+      inputs.cells.networking.nixosProfiles.proxy
 
-      inputs.cells.nas.profiles.satoshi
-      inputs.cells.nas.profiles.lab-yyp
-      inputs.cells.nas.profiles.lab-mck
+      inputs.cells.nas.nixosProfiles.satoshi
+      inputs.cells.nas.nixosProfiles.lab-yyp
+      inputs.cells.nas.nixosProfiles.lab-mck
 
-      inputs.cells.virtualisation.profiles.docker
-      inputs.cells.virtualisation.profiles.podman
+      inputs.cells.virtualisation.nixosProfiles.docker
+      inputs.cells.virtualisation.nixosProfiles.podman
 
       ./configuration.nix
       ./hardware-configuration.nix
+
+      {
+        home-manager.users.yousiki = {
+          imports = [
+          ];
+        };
+      }
     ];
   };
 }

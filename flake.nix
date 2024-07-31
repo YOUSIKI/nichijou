@@ -26,8 +26,12 @@
         # Packages
         (installables "packages")
         # Profiles & Modules
-        (functions "profiles")
-        (functions "modules")
+        (functions "nixosProfiles")
+        (functions "darwinProfiles")
+        (functions "homeProfiles")
+        (functions "nixosModules")
+        (functions "darwinModules")
+        (functions "homeModules")
         # Configurations
         nixosConfigurations
         darwinConfigurations
@@ -37,7 +41,7 @@
       lib = std.pick self [["repo" "lib"]];
       devShells = std.harvest self [["repo" "devshells"]];
       packages = lib.filterPackagesByPlatform (std.harvest self [["lporg" "packages"]]);
-      nixosModules = std.pick self [["bcachefs" "modules"]];
+      nixosModules = std.pick self [["bcachefs" "nixosModules"]];
       nixosConfigurations = lib.collectWithoutRename self "nixosConfigurations";
       darwinConfigurations = lib.collectWithoutRename self "darwinConfigurations";
     };

@@ -2,6 +2,7 @@
   inputs,
   cell,
 }: {
+  # Setup system proxy via clash
   proxy = {
     config,
     pkgs,
