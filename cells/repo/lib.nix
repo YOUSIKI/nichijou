@@ -16,4 +16,16 @@ in {
         platformPackages
     )
     packages;
+
+  importModule = path: let
+    mod = import path;
+  in
+    {
+      options,
+      config,
+      pkgs,
+      lib,
+      ...
+    } @ args:
+      mod (args // {inherit options config pkgs lib inputs;});
 }

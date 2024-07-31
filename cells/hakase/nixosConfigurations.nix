@@ -48,6 +48,21 @@ in {
       {
         home-manager.users.yousiki = {
           imports = [
+            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.cells.home.homeProfiles.common
+            inputs.cells.home.homeProfiles.catppuccin
+            inputs.cells.home.homeProfiles.languages
+            inputs.cells.home.homeProfiles.shell
+            inputs.cells.home.homeProfiles.ssh
+          ];
+
+          bee.languages = [
+            "c"
+            "latex"
+            "nix"
+            "node"
+            "python"
+            "rust"
           ];
         };
       }
