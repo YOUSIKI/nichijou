@@ -50,19 +50,14 @@ in {
           imports = [
             inputs.catppuccin.homeManagerModules.catppuccin
             inputs.cells.home.homeProfiles.common
-            inputs.cells.home.homeProfiles.catppuccin
-            inputs.cells.home.homeProfiles.languages
             inputs.cells.home.homeProfiles.shell
             inputs.cells.home.homeProfiles.ssh
-          ];
-
-          bee.languages = [
-            "c"
-            "latex"
-            "nix"
-            "node"
-            "python"
-            "rust"
+            inputs.cells.languages.homeProfiles.c
+            inputs.cells.languages.homeProfiles.javascript
+            inputs.cells.languages.homeProfiles.latex
+            inputs.cells.languages.homeProfiles.nix
+            inputs.cells.languages.homeProfiles.python
+            inputs.cells.languages.homeProfiles.rust
           ];
         };
       }

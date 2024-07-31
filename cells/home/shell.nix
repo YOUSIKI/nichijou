@@ -198,6 +198,8 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
-    "$HOME/.openbayes/bin"
   ];
+
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
 }

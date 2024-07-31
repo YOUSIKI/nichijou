@@ -7,9 +7,6 @@ in {
   # Common configuration for home-manager
   common = importModule ./common.nix;
 
-  # Setup catppuccin theme
-  catppuccin = importModule ./catppuccin.nix;
-
   # Setup programming languages
   languages = importModule ./languages.nix;
 
