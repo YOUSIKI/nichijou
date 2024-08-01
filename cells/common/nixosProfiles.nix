@@ -16,6 +16,9 @@ in {
   # Basic configuration for NixOS server.
   common-server = importModule ./common-server.nix;
 
+  # Basic configuration for NixOS desktop.
+  common-desktop = importModule ./common-desktop.nix;
+
   # Basic configuration for home-manager
   common-home-manager = importModule ./common-home-manager.nix;
 }
