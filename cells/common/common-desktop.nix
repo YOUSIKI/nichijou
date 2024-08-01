@@ -25,7 +25,7 @@
     dolphin
     dragon
     firefox
-    google-chrome
+    # google-chrome
     haruna
     kitty
     motrix
