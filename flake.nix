@@ -44,6 +44,7 @@
       nixosModules = std.pick self [["bcachefs" "nixosModules"]];
       nixosConfigurations = lib.collectWithoutRename self "nixosConfigurations";
       darwinConfigurations = lib.collectWithoutRename self "darwinConfigurations";
+      colmenaHive = lib.collectWithoutRename self "colmenaConfigurations";
     };
 
   inputs = {
@@ -121,7 +122,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-nixos.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
   };
 
   nixConfig = rec {

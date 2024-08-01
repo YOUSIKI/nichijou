@@ -28,4 +28,9 @@ in {
       ...
     } @ args:
       mod (args // {inherit options config pkgs lib inputs;});
+
+  localPkgs =
+    if nixpkgs.stdenv.isLinux
+    then inputs.nixpkgs-nixos.legacyPackages.${nixpkgs.system}
+    else inputs.nixpkgs-darwin.legacyPackages.${nixpkgs.system};
 }

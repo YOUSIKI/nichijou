@@ -4,7 +4,7 @@
 }: let
   inherit (inputs.std.lib.dev) mkNixago;
   inherit (inputs.std.lib) cfg;
-  inherit (inputs) nixpkgs;
+  inherit (inputs.cells.repo.lib) localPkgs;
 in {
   # Tool Homepage: https://github.com/berberman/nvfetcher
   nvfetcher = mkNixago {
@@ -19,6 +19,8 @@ in {
     in {
       lporg = mkGithubRelease "blacktop/lporg";
     };
-    packages = with inputs.nixpkgs; [nvfetcher];
+    packages = with localPkgs; [
+      nvfetcher
+    ];
   };
 }

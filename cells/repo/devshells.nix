@@ -3,6 +3,7 @@
   cell,
 }: let
   inherit (inputs.std) lib std;
+  inherit (inputs.cells.repo.lib) localPkgs;
 in
   builtins.mapAttrs (_: lib.dev.mkShell) {
     # Tool Homepage: https://numtide.github.io/devshell/
@@ -19,6 +20,10 @@ in
       nixago = [
         cell.configs.treefmt
         inputs.cells.lporg.configs.nvfetcher
+      ];
+
+      packages = with localPkgs; [
+        colmena
       ];
 
       commands = [

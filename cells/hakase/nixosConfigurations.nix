@@ -7,7 +7,7 @@ in {
     bee = rec {
       system = "x86_64-linux";
       home = inputs.home-manager;
-      pkgs = import inputs.nixpkgs {
+      pkgs = import inputs.nixpkgs-nixos {
         inherit system;
         config = {
           allowUnfree = true;
