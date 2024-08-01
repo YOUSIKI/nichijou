@@ -3,7 +3,6 @@
   cell,
 }: let
   inherit (inputs.std.lib.dev) mkNixago;
-  inherit (inputs.std.lib) cfg;
   inherit (inputs.cells.repo.lib) localPkgs;
 in {
   # Tool Homepage: https://github.com/berberman/nvfetcher

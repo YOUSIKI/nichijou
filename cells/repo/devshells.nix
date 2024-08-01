@@ -27,6 +27,13 @@ in
       ];
 
       commands = [
+        {
+          name = "fetch";
+          help = "fetches the latest sources of packages";
+          command = ''
+            std //lporg/nvfetcher/lporg:fetch
+          '';
+        }
       ];
     };
   }

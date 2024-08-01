@@ -15,9 +15,6 @@
 
 ### nixago: ignore-linked-files ###
 /lporg/nvfetcher.toml
-/packages/nvfetcher.toml
-/nvfetcher.toml
-/treefmt.toml
 lefthook.yml
 .editorconfig
 .conform.yaml
