@@ -33,6 +33,7 @@ in {
   home.packages = with pkgs; [
     micromamba
     python3
+    ruff
     rye
   ];
 
