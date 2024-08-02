@@ -27,7 +27,7 @@
   ryeconfig = ''
     [[sources]]
     name = "default"
-    url = "https://mirrors.pku.edu.cn/pypi/web/simple"
+    url = "https://pypi.tuna.tsinghua.edu.cn/simple"
   '';
 in {
   home.packages = with pkgs; [
@@ -41,7 +41,7 @@ in {
   home.file.".rye/config.toml".text = ryeconfig;
   home.file.".config/pip/pip.conf".text = ''
     [global]
-    index-url = https://mirrors.pku.edu.cn/pypi/web/simple
+    index-url = https://pypi.tuna.tsinghua.edu.cn/simple
   '';
   programs.zsh.initExtra = ''
     if [[ -x "$(command -v micromamba)" ]]; then
