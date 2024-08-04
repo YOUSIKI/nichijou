@@ -20,5 +20,7 @@
     ];
   };
 
-  hardware.nvidia-container-toolkit.enable = with config.virtualisation; (docker.enable || podman.enable);
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.enableNvidia = true;
+  virtualisation.podman.enableNvidia = true;
 }
