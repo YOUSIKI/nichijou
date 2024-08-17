@@ -20,7 +20,6 @@ in {
     imports = [
       inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
       inputs.nixos-hardware.nixosModules.common-pc-ssd
-      inputs.cells.gpu.nixosProfiles.common-nvidia-gpu
       inputs.cells.bcachefs.nixosModules.bcachefs
 
       inputs.agenix.nixosModules.default
@@ -49,6 +48,7 @@ in {
             inputs.catppuccin.homeManagerModules.catppuccin
             inputs.cells.home.homeProfiles.common
             inputs.cells.home.homeProfiles.shell
+            inputs.cells.home.homeProfiles.wezterm
             inputs.cells.home.homeProfiles.ssh
             inputs.cells.languages.homeProfiles.c
             inputs.cells.languages.homeProfiles.javascript
