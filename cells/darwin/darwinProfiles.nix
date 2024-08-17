@@ -1,10 +1,10 @@
-# Common profiles for NixOS.
+# Profiles for Nix-darwin.
 {
   inputs,
   cell,
 }: let
   inherit (inputs.cells.repo.lib) importModules;
 in
-  importModules ./commonProfiles {
+  importModules ./darwinProfiles {
     inherit inputs cell;
   }

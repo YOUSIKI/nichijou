@@ -1,8 +1,7 @@
 {
   inputs,
   cell,
-}: let
-in {
+}: {
   hakase = {
     bee = rec {
       system = "x86_64-linux";

@@ -1,10 +1,10 @@
-# Common profiles for NixOS.
+# Profiles for NixOS.
 {
   inputs,
   cell,
 }: let
   inherit (inputs.cells.repo.lib) importModules;
 in
-  importModules ./commonProfiles {
+  importModules ./nixosProfiles {
     inherit inputs cell;
   }

@@ -1,14 +1,14 @@
+# Nix configuration for NixOS and Nix-darwin.
 {
   inputs,
-  config,
   pkgs,
   lib,
   ...
-}: {
+}: let
+  flake = import "${inputs.self}/flake.nix";
+in {
   nix = {
-    settings = let
-      flake = import "${inputs.self}/flake.nix";
-    in {
+    settings = {
       # Nix automatically detects files in the store that have identical contents, and replaces them with hard links to a single copy.
       auto-optimise-store = true;
       # Nix will instruct remote build machines to use their own binary substitutes if available.
@@ -41,6 +41,6 @@
     registry =
       lib.mapAttrs
       (n: v: {flake = v;})
-      (lib.removeAttrs inputs ["nixpkgs" "cells" "self"]);
+      (lib.removeAttrs inputs ["nixpkgs" "nixpkgs-nixos" "nixpkgs-darwin" "cells" "self"]);
   };
 }

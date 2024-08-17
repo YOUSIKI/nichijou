@@ -1,3 +1,4 @@
+# NixOS module to mount bcachefs volumes with multiple devices
 {
   config,
   pkgs,

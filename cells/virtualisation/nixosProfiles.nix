@@ -1,10 +1,10 @@
+# NixOS profiles for virtualisation.
 {
   inputs,
   cell,
-}: {
-  # Configure docker on NixOS
-  docker = import ./docker.nix;
-
-  # Configure podman on NixOS
-  podman = import ./podman.nix;
-}
+}: let
+  inherit (inputs.cells.repo.lib) importModules;
+in
+  importModules ./nixosProfiles {
+    inherit inputs cell;
+  }

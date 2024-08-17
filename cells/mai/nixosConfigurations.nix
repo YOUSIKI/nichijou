@@ -1,8 +1,7 @@
 {
   inputs,
   cell,
-}: let
-in {
+}: {
   mai = {
     bee = rec {
       system = "x86_64-linux";
@@ -13,52 +12,52 @@ in {
           allowUnfree = true;
         };
         overlays = [
+          inputs.agenix.overlays.default
         ];
       };
     };
 
-    imports = [
-      inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
-      inputs.nixos-hardware.nixosModules.common-pc-ssd
-      inputs.cells.bcachefs.nixosModules.bcachefs
-
-      inputs.agenix.nixosModules.default
-
-      inputs.cells.common.nixosProfiles.common-nix
-      inputs.cells.common.nixosProfiles.common-packages
-      inputs.cells.common.nixosProfiles.common-nixos
-      inputs.cells.common.nixosProfiles.common-desktop
-      inputs.cells.common.nixosProfiles.common-home-manager
-
-      inputs.cells.networking.nixosProfiles.proxy
-
-      inputs.cells.nas.nixosProfiles.satoshi
-      inputs.cells.nas.nixosProfiles.lab-yyp
-      inputs.cells.nas.nixosProfiles.lab-mck
-
-      inputs.cells.virtualisation.nixosProfiles.docker
-      inputs.cells.virtualisation.nixosProfiles.podman
-
-      ./configuration.nix
-      ./hardware-configuration.nix
-
-      {
-        home-manager.users.yousiki = {
-          imports = [
-            inputs.catppuccin.homeManagerModules.catppuccin
-            inputs.cells.home.homeProfiles.common
-            inputs.cells.home.homeProfiles.shell
-            inputs.cells.home.homeProfiles.wezterm
-            inputs.cells.home.homeProfiles.ssh
-            inputs.cells.languages.homeProfiles.c
-            inputs.cells.languages.homeProfiles.javascript
-            inputs.cells.languages.homeProfiles.latex
-            inputs.cells.languages.homeProfiles.nix
-            inputs.cells.languages.homeProfiles.python
-            inputs.cells.languages.homeProfiles.rust
-          ];
-        };
-      }
-    ];
+    imports =
+      # Local modules.
+      [
+        ./nixosProfiles/configuration.nix
+        ./nixosProfiles/hardware-configuration.nix
+      ]
+      # External modules.
+      ++ (with inputs; [
+        agenix.nixosModules.default
+        nixos-hardware.nixosModules.common-cpu-intel-cpu-only
+        nixos-hardware.nixosModules.common-pc-ssd
+      ])
+      # Internal modules.
+      ++ (with inputs.cells; [
+        bcachefs.nixosModules.bcachefs
+        desktop.nixosProfiles.common
+        nas.nixosProfiles.lab-mck
+        nas.nixosProfiles.lab-yyp
+        nas.nixosProfiles.satoshi
+        networking.nixosProfiles.proxy
+        nixos.nixosProfiles.common
+        virtualisation.nixosProfiles.docker
+        virtualisation.nixosProfiles.podman
+      ])
+      # Home modules.
+      ++ [
+        {
+          home-manager.users.yousiki = {
+            imports =
+              # External home modules.
+              (with inputs; [
+                catppuccin.homeManagerModules.catppuccin
+              ])
+              ++ # Internal home modules.
+              (with inputs.cells; [
+                home.homeProfiles.common
+                home.homeProfiles.wezterm
+                languages.homeProfiles.common
+              ]);
+          };
+        }
+      ];
   };
 }

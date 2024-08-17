@@ -1,7 +1,9 @@
 {
   inputs,
   cell,
-}: {
-  # NixOS Module for bcachefs mount
-  bcachefs = import ./bcachefs.nix;
-}
+}: let
+  inherit (inputs.cells.repo.lib) importModules;
+in
+  importModules ./nixosModules {
+    inherit inputs cell;
+  }

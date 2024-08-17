@@ -1,6 +1,10 @@
+# GPU-related NixOS profiles
 {
   inputs,
   cell,
-}: {
-  common-nvidia-gpu = import ./common-nvidia-gpu.nix;
-}
+}: let
+  inherit (inputs.cells.repo.lib) importModules;
+in
+  importModules ./nixosProfiles {
+    inherit inputs cell;
+  }

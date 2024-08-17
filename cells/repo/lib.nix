@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) nixpkgs haumea hive;
   inherit (inputs.nixpkgs) lib;
-in {
+in rec {
   collectWithoutRename = hive.collect // {renamer = _: target: target;};
 
   filterPackagesByPlatform = packages:
@@ -17,17 +17,30 @@ in {
     )
     packages;
 
-  importModule = path: let
-    mod = import path;
-  in
+  importModule = path: args: (
     {
       options,
       config,
       pkgs,
       lib,
       ...
-    } @ args:
-      mod (args // {inherit options config pkgs lib inputs;});
+    } @ extras: let
+      func = import path;
+      funcArgs = {inherit options config pkgs lib;} // extras // args;
+    in
+      func funcArgs
+  );
+
+  importModules = path: args:
+    if lib.pathExists path
+    then
+      builtins.mapAttrs
+      (n: v: importModule v args)
+      (haumea.lib.load {
+        src = path;
+        loader = haumea.lib.loaders.path;
+      })
+    else {};
 
   localPkgs =
     if nixpkgs.stdenv.isLinux

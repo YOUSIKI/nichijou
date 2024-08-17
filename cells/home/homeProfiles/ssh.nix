@@ -1,11 +1,6 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{...}: {
   home.file.".ssh/config".text = ''
-    Include ~/.ssh/localconfig
+    Include ~/.ssh/local
     Include ~/.orbstack/ssh/config
 
     Host mai

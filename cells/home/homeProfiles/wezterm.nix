@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{...}: let
   weztermConfig = ''
     local wezterm = require 'wezterm'
 
