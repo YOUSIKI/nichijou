@@ -4,7 +4,7 @@
   hardware = {
     nvidia = {
       modesetting.enable = true; # Enable modesetting.
-      nvidiaSettings = true; # Enable Nvidia settings.
+      nvidiaSettings = true; # Enable nvidia settings.
       open = false; # Use proprietary driver.
     };
 
@@ -16,13 +16,10 @@
       ];
     };
 
-    # Enable Nvidia container toolkit.
+    # Enable nvidia container toolkit.
     nvidia-container-toolkit.enable = true;
   };
 
-  # Enable Nvidia GPU for virtualisation.
-  virtualisation = {
-    docker.enableNvidia = true;
-    podman.enableNvidia = true;
-  };
+  # Enable nvidia for podman.
+  virtualisation.containers.cdi.dynamic.nvidia.enable = true;
 }
