@@ -11,6 +11,7 @@
     direnv
     dust
     eza
+    fastfetch
     fd
     fzf
     git
