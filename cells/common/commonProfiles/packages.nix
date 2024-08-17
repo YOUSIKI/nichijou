@@ -18,8 +18,11 @@
     home-manager
     htop
     jq
+    macchina
     man
+    neofetch
     neovim
+    nerdfetch
     ouch
     procs
     rclone
