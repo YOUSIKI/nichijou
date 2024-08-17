@@ -3,9 +3,13 @@
   environment.systemPackages = with pkgs; [
     agenix
     bat
+    bottom
+    broot
     btop
+    colmena
     curl
     direnv
+    dust
     eza
     fd
     fzf
@@ -16,14 +20,21 @@
     jq
     man
     neovim
+    ouch
+    procs
     rclone
     ripgrep
     rsync
+    skim
+    tealdeer
     tmux
+    tokei
     unzip
     vim
     wget
     wget
+    xcp
+    zellij
     zoxide
   ];
 }

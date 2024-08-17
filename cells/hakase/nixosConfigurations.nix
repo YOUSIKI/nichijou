@@ -34,7 +34,6 @@
       # Internal modules.
       ++ (with inputs.cells; [
         bcachefs.nixosModules.bcachefs
-        desktop.nixosProfiles.common
         gpu.nixosProfiles.nvidia
         nas.nixosProfiles.lab-mck
         nas.nixosProfiles.lab-yyp
@@ -56,7 +55,6 @@
               ++ # Internal home modules.
               (with inputs.cells; [
                 home.homeProfiles.common
-                home.homeProfiles.wezterm
                 languages.homeProfiles.common
               ]);
           };
