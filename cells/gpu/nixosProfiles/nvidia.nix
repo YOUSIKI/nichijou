@@ -19,7 +19,4 @@
     # Enable nvidia container toolkit.
     nvidia-container-toolkit.enable = true;
   };
-
-  # Enable nvidia for podman.
-  virtualisation.containers.cdi.dynamic.nvidia.enable = true;
 }

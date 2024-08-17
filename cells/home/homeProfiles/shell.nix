@@ -15,7 +15,7 @@
   programs.bat = {
     enable = true;
     extraPackages = with pkgs.bat-extras; [
-      batdiff
+      # batdiff
       batgrep
       batman
       batpipe
@@ -71,7 +71,7 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    delta.enable = true;
+    delta.enable = false;
     userName = "yousiki";
     userEmail = "you.siki@outlook.com";
     extraConfig = {

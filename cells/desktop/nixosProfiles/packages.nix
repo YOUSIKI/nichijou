@@ -20,7 +20,7 @@
     vlc
     vscode
     warp-terminal
-    wezterm
+    # wezterm
     zed-editor
     zotero
   ];
