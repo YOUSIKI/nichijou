@@ -1,4 +1,4 @@
-{...}: {
+_: {
   home.file.".ssh/config".text = ''
     Include ~/.ssh/local
     Include ~/.orbstack/ssh/config

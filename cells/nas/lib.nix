@@ -3,7 +3,7 @@
   cell,
 }: {
   mkCifsWithCredentials = credentials: device: {
-    device = device;
+    inherit device;
     fsType = "cifs";
     options = [
       "noauto"

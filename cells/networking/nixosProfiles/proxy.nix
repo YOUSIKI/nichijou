@@ -4,14 +4,16 @@
   config,
   ...
 }: {
-  # Enable system proxy.
-  networking.proxy.default = "http://127.0.0.1:7890";
-  networking.proxy.noProxy = "127.0.0.1,localhost,siki.moe,yousiki.top,ybh1998.space,edu.cn";
-  # Open firewall for clash.
-  networking.firewall.allowedTCPPorts = [
-    7890
-    7891
-  ];
+  networking = {
+    # Enable system proxy.
+    proxy.default = "http://127.0.0.1:7890";
+    proxy.noProxy = "127.0.0.1,localhost,siki.moe,yousiki.top,ybh1998.space,edu.cn";
+    # Open firewall for clash.
+    firewall.allowedTCPPorts = [
+      7890
+      7891
+    ];
+  };
   # Enable clash (mihomo, a.k.a clash-meta).
   services.mihomo = {
     enable = true;

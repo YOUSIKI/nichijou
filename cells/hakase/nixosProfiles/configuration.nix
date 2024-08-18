@@ -1,11 +1,10 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+{pkgs, ...}: {
   networking.hostName = "hakase";
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 }

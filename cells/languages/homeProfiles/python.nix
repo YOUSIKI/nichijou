@@ -24,21 +24,26 @@
     name = "default"
     url = "https://pypi.tuna.tsinghua.edu.cn/simple"
   '';
-in {
-  home.packages = with pkgs; [
-    micromamba
-    python3
-    ruff
-    rye
-  ];
 
-  home.file.".condarc".text = condarc;
-  home.file.".mambarc".text = condarc;
-  home.file.".rye/config.toml".text = ryeconfig;
-  home.file.".config/pip/pip.conf".text = ''
+  pipconfig = ''
     [global]
     index-url = https://pypi.tuna.tsinghua.edu.cn/simple
   '';
+in {
+  home = {
+    packages = with pkgs; [
+      micromamba
+      python3
+      ruff
+      rye
+    ];
+    file = {
+      ".condarc".text = condarc;
+      ".mambarc".text = condarc;
+      ".rye/config.toml".text = ryeconfig;
+      ".config/pip/pip.conf".text = pipconfig;
+    };
+  };
   programs.zsh.initExtra = ''
     if [[ -x "$(command -v micromamba)" ]]; then
       eval "$(micromamba shell hook --shell zsh)"

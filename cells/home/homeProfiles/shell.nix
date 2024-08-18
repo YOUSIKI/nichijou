@@ -91,7 +91,7 @@
       language =
         map
         (name: {
-          name = name;
+          inherit name;
           auto-format = true;
         }) ["rust" "python" "nix"];
     };
@@ -185,17 +185,17 @@
     '';
   };
 
-  home.packages = with pkgs; [
-    comma
-    lunarvim
-  ];
-
-  home.sessionVariables = {
-    EDITOR = "lvim";
-    VISUAL = "lvim";
+  home = {
+    packages = with pkgs; [
+      comma
+      lunarvim
+    ];
+    sessionVariables = {
+      EDITOR = "lvim";
+      VISUAL = "lvim";
+    };
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
   };
-
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
 }

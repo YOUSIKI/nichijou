@@ -7,6 +7,7 @@
     broot
     btop
     colmena
+    comma
     curl
     direnv
     duf
