@@ -20,7 +20,7 @@
     vlc
     vscode
     warp-terminal
-    # wezterm
+    # wezterm # https://github.com/NixOS/nixpkgs/issues/332957
     zed-editor
     zotero
   ];

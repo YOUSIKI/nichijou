@@ -15,7 +15,7 @@
   programs.bat = {
     enable = true;
     extraPackages = with pkgs.bat-extras; [
-      # batdiff
+      # batdiff # https://github.com/NixOS/nixpkgs/issues/332957
       batgrep
       batman
       batpipe
@@ -71,7 +71,7 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    delta.enable = false;
+    delta.enable = false; # https://github.com/NixOS/nixpkgs/issues/332957
     userName = "yousiki";
     userEmail = "you.siki@outlook.com";
     extraConfig = {
