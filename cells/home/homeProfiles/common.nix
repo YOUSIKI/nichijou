@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    cell.homeProfiles.catppuccin
     cell.homeProfiles.shell
     cell.homeProfiles.ssh
   ];

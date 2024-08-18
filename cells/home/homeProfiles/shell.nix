@@ -198,7 +198,4 @@
   home.sessionPath = [
     "$HOME/.local/bin"
   ];
-
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
 }
