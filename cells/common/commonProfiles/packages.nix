@@ -42,5 +42,6 @@
     xcp
     zellij
     zoxide
+    zstd
   ];
 }
