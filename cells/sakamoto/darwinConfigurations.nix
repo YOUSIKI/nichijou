@@ -20,10 +20,11 @@
 
     imports = [
       # Local modules.
-      cell.darwinProfiles.casks
       cell.darwinProfiles.configuration
       # Internal modules.
       inputs.cells.darwin.darwinProfiles.common
+      inputs.cells.desktop.darwinProfiles.fonts
+      inputs.cells.desktop.darwinProfiles.packages
       # Home modules.
       {
         home-manager.users.yousiki = {
@@ -33,7 +34,7 @@
             # Internal home modules.
             inputs.cells.home.homeProfiles.common
             inputs.cells.home.homeProfiles.wezterm
-            # inputs.cells.languages.homeProfiles.common
+            inputs.cells.languages.homeProfiles.common
           ];
         };
       }
