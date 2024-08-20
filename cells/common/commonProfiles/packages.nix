@@ -44,4 +44,6 @@
     zoxide
     zstd
   ];
+
+  programs.zsh.enable = true; # Don't delete this line on nix-darwin!
 }

@@ -33,32 +33,8 @@
 
   # Add taps.
   homebrew.taps = [
-    {
-      name = "homebrew/cask-fonts";
-      clone_target = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git";
-    }
-    {
-      name = "homebrew/cask-versions";
-      clone_target = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-versions.git";
-    }
-    {
-      name = "homebrew/command-not-found";
-      clone_target = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-command-not-found.git";
-    }
-    {
-      name = "homebrew/services";
-      clone_target = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-services.git";
-    }
     "buo/cask-upgrade"
   ];
-
-  environment.systemPath =
-    if pkgs.system == "aarch64-darwin"
-    then [
-      "/opt/homebrew/bin"
-      "/opt/homebrew/sbin"
-    ]
-    else [];
 
   environment.systemPackages = [
     inputs.cells.lporg.packages.lporg
