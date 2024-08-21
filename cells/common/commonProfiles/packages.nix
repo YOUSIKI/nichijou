@@ -17,6 +17,7 @@
     fastfetch
     fd
     fzf
+    gdu
     git
     helix
     home-manager
