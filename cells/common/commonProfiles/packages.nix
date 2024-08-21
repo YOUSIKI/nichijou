@@ -2,6 +2,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     agenix
+    aria2
     bat
     bottom
     broot
