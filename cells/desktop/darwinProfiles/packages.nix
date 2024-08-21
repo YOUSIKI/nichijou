@@ -25,7 +25,6 @@ _: {
     "keka"
     "kitty"
     "logi-options-plus"
-    "logitech-options"
     "maccy"
     "meetingbar"
     "microsoft-auto-update"
