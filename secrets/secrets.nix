@@ -5,7 +5,8 @@ let
 
   yousiki_hakase = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFn+pRkC6G81PSmJOw8j8Y9i8Gt2OZiQ73ZpQV4UIZbg";
   yousiki_mai = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEbLXeZhWvhlPYddoukkFZY1EQjOWt8SEdH2oq4z3fu7";
-  users = [yousiki_hakase yousiki_mai];
+  yousiki_sakamoto = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP4es4WjPLH/SI/s5PnRNHGjE7E6f3O1nZolKT1fZ6Pb";
+  users = [yousiki_hakase yousiki_mai yousiki_sakamoto];
 
   all = hosts ++ users;
 in {
