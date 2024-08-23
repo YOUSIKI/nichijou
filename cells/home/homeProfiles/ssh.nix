@@ -3,15 +3,10 @@ _: {
     Include ~/.ssh/local
     Include ~/.orbstack/ssh/config
 
-    Host mai
-      HostName mai.siki.moe
-      User yousiki
-      Port 22
-
     Host satoshi
       HostName satoshi.siki.moe
       User yousiki
-      Port 23
+      Port 22
 
     Host hakase
       HostName hakase.siki.moe
