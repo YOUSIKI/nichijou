@@ -27,7 +27,7 @@ _: {
     "keepingyouawake"
     "keka"
     "kitty"
-    "logi-options-plus"
+    "logi-options+"
     "maccy"
     "microsoft-auto-update"
     "microsoft-office"
