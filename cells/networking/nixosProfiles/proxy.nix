@@ -14,10 +14,17 @@
       7891
     ];
   };
-  # Enable clash (mihomo, a.k.a clash-meta).
-  services.mihomo = {
-    enable = true;
-    configFile = config.age.secrets.clash-config.path;
+  services = {
+    # Enable clash (mihomo, a.k.a clash-meta).
+    mihomo = {
+      enable = true;
+      configFile = config.age.secrets.clash-config.path;
+    };
+    # Enable cloudflare-warp.
+    cloudflare-warp = {
+      enable = true;
+      openFirewall = true;
+    };
   };
   # Clash configuration from secrets.
   age.secrets.clash-config.file = "${inputs.self}/secrets/clash-config.yaml.age";
