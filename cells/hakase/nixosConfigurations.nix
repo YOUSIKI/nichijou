@@ -11,6 +11,9 @@
         config = {
           allowUnfree = true;
           cudaSupport = true;
+          permittedInsecurePackages = [
+            "nix-2.24.5"
+          ];
         };
         overlays = [
           inputs.agenix.overlays.default
