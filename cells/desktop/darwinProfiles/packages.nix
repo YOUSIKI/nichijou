@@ -10,6 +10,7 @@ _: {
     "balenaetcher"
     "bilibili"
     "brave-browser"
+    "cloudflare-warp"
     "cursor"
     "cyberduck"
     "discord"
@@ -17,7 +18,6 @@ _: {
     "feishu"
     "firefox"
     "github"
-    "google-chrome"
     "handbrake"
     "iina"
     "itsycal"
@@ -37,6 +37,7 @@ _: {
     "motrix"
     "mounty"
     "neteasemusic"
+    "notion"
     "orbstack"
     "qfinder-pro"
     "qq"
@@ -63,5 +64,6 @@ _: {
     "xquartz"
     "zed"
     "zotero"
+    # "google-chrome"
   ];
 }

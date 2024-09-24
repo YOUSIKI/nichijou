@@ -188,11 +188,10 @@
   home = {
     packages = with pkgs; [
       comma
-      lunarvim
     ];
     sessionVariables = {
-      EDITOR = "lvim";
-      VISUAL = "lvim";
+      EDITOR = "nvim";
+      VISUAL = "nvim";
     };
     sessionPath = [
       "$HOME/.local/bin"
