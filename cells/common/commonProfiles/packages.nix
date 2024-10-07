@@ -26,7 +26,6 @@
     macchina
     man
     neofetch
-    neovim
     nerdfetch
     ouch
     procs
@@ -38,7 +37,6 @@
     tmux
     tokei
     unzip
-    vim
     wget
     wget
     xcp

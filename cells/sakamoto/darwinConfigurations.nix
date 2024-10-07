@@ -32,6 +32,7 @@
             # External home modules.
             inputs.catppuccin.homeManagerModules.catppuccin
             # Internal home modules.
+            inputs.cells.editors.homeProfiles.neovim
             inputs.cells.home.homeProfiles.common
             inputs.cells.home.homeProfiles.wezterm
             inputs.cells.languages.homeProfiles.common
