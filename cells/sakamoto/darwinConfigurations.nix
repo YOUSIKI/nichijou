@@ -25,6 +25,7 @@
       inputs.cells.darwin.darwinProfiles.common
       inputs.cells.desktop.darwinProfiles.fonts
       inputs.cells.desktop.darwinProfiles.packages
+      inputs.cells.editors.darwinProfiles.neovim
       # Home modules.
       {
         home-manager.users.yousiki = {
@@ -32,7 +33,6 @@
             # External home modules.
             inputs.catppuccin.homeManagerModules.catppuccin
             # Internal home modules.
-            inputs.cells.editors.homeProfiles.neovim
             inputs.cells.home.homeProfiles.common
             inputs.cells.home.homeProfiles.wezterm
             inputs.cells.languages.homeProfiles.common

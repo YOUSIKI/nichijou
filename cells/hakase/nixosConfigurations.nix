@@ -37,6 +37,7 @@
       # Internal modules.
       ++ (with inputs.cells; [
         bcachefs.nixosModules.bcachefs
+        editors.nixosProfiles.neovim
         gpu.nixosProfiles.nvidia
         nas.nixosProfiles.lab-mck
         nas.nixosProfiles.lab-yyp

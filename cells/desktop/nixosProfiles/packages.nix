@@ -2,6 +2,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     _1password-gui
+    brave
     clapper
     discord
     dolphin
