@@ -188,6 +188,8 @@
   home = {
     packages = with pkgs; [
       comma
+      dvc
+      sapling
     ];
     sessionVariables = {
       EDITOR = "nvim";
