@@ -43,7 +43,7 @@
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    icons = true;
+    icons = "auto";
     git = true;
   };
 
@@ -186,11 +186,11 @@
   };
 
   home = {
-    packages = with pkgs; [
-      comma
-      dvc
-      sapling
-    ];
+    packages = with pkgs; ([
+        comma
+        sapling
+      ]
+      ++ lib.optional stdenv.isLinux dvc);
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
