@@ -10,8 +10,6 @@ _: {
     "balenaetcher"
     "bilibili"
     "brave-browser"
-    "cloudflare-warp"
-    "cursor"
     "cyberduck"
     "discord"
     "element"
@@ -44,7 +42,6 @@ _: {
     "qsync-client"
     "qudedup-extract-tool"
     "raycast"
-    "readdle-spark"
     "rectangle"
     "spacedrive"
     "spotify"
@@ -64,6 +61,5 @@ _: {
     "xquartz"
     "zed"
     "zotero"
-    # "google-chrome"
   ];
 }
