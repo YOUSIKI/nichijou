@@ -15,7 +15,7 @@ _: {
     "element"
     "feishu"
     "firefox"
-    "follow@nightly"
+    "follow"
     "github"
     "handbrake"
     "iina"
