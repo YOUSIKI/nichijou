@@ -3,8 +3,10 @@
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
+      cascadia-code
       lxgw-neoxihei
       lxgw-wenkai
+      monaspace
       nerdfonts
       noto-fonts-cjk
       noto-fonts-cjk-sans
