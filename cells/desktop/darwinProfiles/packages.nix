@@ -51,6 +51,7 @@ _: {
     "stats"
     "steam"
     "tailscale"
+    "telegram"
     "tencent-lemon"
     "tencent-meeting"
     "thunderbird"
