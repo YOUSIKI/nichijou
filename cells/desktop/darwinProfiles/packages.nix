@@ -42,6 +42,7 @@ _: {
     "qq"
     "qsync-client"
     "qudedup-extract-tool"
+    "rawtherapee"
     "raycast"
     "rectangle"
     "soulseek"
