@@ -4,7 +4,7 @@ on:
   - pull_request
   - workflow_dispatch
 jobs:
-  checks:
+  check:
     name: Check on ${{ matrix.arch }}
     runs-on: ${{ matrix.os }}
     strategy:
