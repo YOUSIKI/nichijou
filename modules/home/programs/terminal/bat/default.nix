@@ -1,3 +1,4 @@
+# bat
 {
   # Snowfall Lib provides a customized `lib` instance with access to your flake's library
   # as well as the libraries available from your flake's inputs.
@@ -17,34 +18,27 @@
   config,
   ...
 }: let
-  cfg = config.${namespace}.suites.common;
+  cfg = config.${namespace}.programs.terminal.bat;
 in {
-  options.${namespace}.suites.common = {
+  options.${namespace}.programs.terminal.bat = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Whether to enable common suite.";
+      description = "Whether to enable bat.";
     };
   };
 
   config = lib.mkIf cfg.enable {
-    ${namespace} = {
-      programs = {
-        terminal = {
-          bat.enable = true;
-          btop.enable = true;
-          comma.enable = true;
-          direnv.enable = true;
-          eza.enable = true;
-          fzf.enable = true;
-          git.enable = true;
-          mcfly.enable = true;
-          starship.enable = true;
-          zellij.enable = true;
-          zoxide.enable = true;
-          zsh.enable = true;
-        };
-      };
+    programs.bat = {
+      enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batgrep
+        batman
+        batpipe
+        batwatch
+        prettybat
+      ];
     };
   };
 }
