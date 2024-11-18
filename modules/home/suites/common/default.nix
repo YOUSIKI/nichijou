@@ -37,9 +37,11 @@ in {
           direnv.enable = true;
           eza.enable = true;
           fzf.enable = true;
+          gdu.enable = true;
           git.enable = true;
           mcfly.enable = true;
           starship.enable = true;
+          yazi.enable = true;
           zellij.enable = true;
           zoxide.enable = true;
           zsh.enable = true;
