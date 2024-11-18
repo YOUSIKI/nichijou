@@ -10,7 +10,7 @@ _: {
     deadnix.enable = true;
     # Enable keep-sorted for general sorting
     keep-sorted.enable = true;
-    # Enable prettier for json, yaml, toml formatting
+    # Enable prettier for formatting
     prettier.enable = true;
     # Enable stylua for lua formatting
     stylua.enable = true;
@@ -22,15 +22,12 @@ _: {
     statix.enable = true;
     # Enable typos for spell checking
     typos.enable = true;
+    # Enable yamlfmt for yaml formatting
+    yamlfmt.enable = true;
   };
 
   # Settings
   settings.formatter = {
-    prettier.includes = [
-      "*.json"
-      "*.yaml"
-      "*.toml"
-    ];
     typos.excludes = [
       "static/*"
     ];
