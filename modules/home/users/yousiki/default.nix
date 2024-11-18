@@ -31,7 +31,5 @@ in {
         message = "${namespace}.users.yousiki.email must be set";
       }
     ];
-
-    home.username = lib.mkDefault cfg.name;
   };
 }
