@@ -1,4 +1,3 @@
-# This module is enabled by all home-manager configurations.
 {
   lib,
   config,
