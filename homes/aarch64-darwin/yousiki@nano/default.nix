@@ -1,4 +1,4 @@
-{...}: {
+_: {
   nichijou = {
     suites = {
       common.enable = true;

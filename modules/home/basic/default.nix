@@ -16,7 +16,7 @@
     zsh.enable = lib.mkDefault true;
   };
 
-  # Configuare environment variables.
+  # Configure environment variables.
   home.sessionPath = [
     "${config.home.homeDirectory}/.local/bin"
   ];
