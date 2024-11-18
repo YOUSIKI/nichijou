@@ -21,4 +21,4 @@ jobs:
         with:
           name: statix
       - name: Run statix
-        uses: jocelynthode/statix-action@v1
+        uses: jocelynthode/statix-action@1.0
