@@ -1,4 +1,4 @@
-# Configure git
+# Configure used yousiki
 {
   # Snowfall Lib provides a customized `lib` instance with access to your flake's library
   # as well as the libraries available from your flake's inputs.
@@ -21,33 +21,27 @@
   cfg = config.${namespace}.users.yousiki;
 in {
   options.${namespace}.users.yousiki = {
-    enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Activate user yousiki.";
-    };
-
     name = lib.mkOption {
       type = lib.types.str;
-      default = "yousiki";
-      description = "The name of the user.";
+      default = "YouSiki";
+      description = "The name of the user yousiki.";
     };
 
     email = lib.mkOption {
       type = lib.types.str;
       default = "you.siki@outlook.com";
-      description = "The email of the user.";
+      description = "The email of the user yousiki.";
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = {
     assertions = [
       {
-        assersion = cfg.name != null;
+        assertion = cfg.name != null;
         message = "${namespace}.users.yousiki.name must be set";
       }
       {
-        assersion = cfg.email != null;
+        assertion = cfg.email != null;
         message = "${namespace}.users.yousiki.email must be set";
       }
     ];

@@ -1,4 +1,4 @@
-# This module is enabled by all home-manager configurations.
+# A modern alternative to ls: eza
 {
   # Snowfall Lib provides a customized `lib` instance with access to your flake's library
   # as well as the libraries available from your flake's inputs.
@@ -17,21 +17,40 @@
   # All other arguments come from the module system.
   config,
   ...
-}: {
-  # Whether to enable Home Manager.
-  programs.home-manager.enable = true;
-
-  # Whether to enable management of XDG base directories.
-  xdg.enable = true;
-
-  # Enable shells and let home-manager manage bashrc/zshrc.
-  programs = {
-    bash.enable = lib.mkDefault true;
-    zsh.enable = lib.mkDefault true;
+}: let
+  cfg = config.${namespace}.programs.terminal.eza;
+in {
+  options.${namespace}.programs.terminal.eza = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Whether to enable eza.";
+    };
   };
 
-  home.stateVersion = "24.11";
+  config = lib.mkIf cfg.enable {
+    programs.eza = {
+      enable = true;
+      package = pkgs.eza;
 
-  # TODO: remove after home-manager 25.05
-  home.enableNixpkgsReleaseCheck = false;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      enableFishIntegration = true;
+
+      extraOptions = [
+        "--group-directories-first"
+        "--header"
+      ];
+
+      icons = "auto";
+      git = true;
+    };
+
+    home.shellAliases = let
+      eza = lib.getExe config.programs.eza.package;
+    in {
+      tree = lib.mkForce "${eza} --tree --icons=always";
+    };
+  };
 }

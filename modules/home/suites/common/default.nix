@@ -31,8 +31,15 @@ in {
     ${namespace} = {
       programs = {
         terminal = {
+          btop.enable = true;
           comma.enable = true;
+          direnv.enable = true;
+          eza.enable = true;
+          fzf.enable = true;
           git.enable = true;
+          starship.enable = true;
+          zoxide.enable = true;
+          zsh.enable = true;
         };
       };
     };

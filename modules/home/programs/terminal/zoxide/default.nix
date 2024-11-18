@@ -1,4 +1,4 @@
-# This module is enabled by all home-manager configurations.
+# Zoxide
 {
   # Snowfall Lib provides a customized `lib` instance with access to your flake's library
   # as well as the libraries available from your flake's inputs.
@@ -17,21 +17,24 @@
   # All other arguments come from the module system.
   config,
   ...
-}: {
-  # Whether to enable Home Manager.
-  programs.home-manager.enable = true;
-
-  # Whether to enable management of XDG base directories.
-  xdg.enable = true;
-
-  # Enable shells and let home-manager manage bashrc/zshrc.
-  programs = {
-    bash.enable = lib.mkDefault true;
-    zsh.enable = lib.mkDefault true;
+}: let
+  cfg = config.${namespace}.programs.terminal.zoxide;
+in {
+  options.${namespace}.programs.terminal.zoxide = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Whether to enable zoxide.";
+    };
   };
 
-  home.stateVersion = "24.11";
-
-  # TODO: remove after home-manager 25.05
-  home.enableNixpkgsReleaseCheck = false;
+  config = lib.mkIf cfg.enable {
+    programs.zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+    };
+  };
 }

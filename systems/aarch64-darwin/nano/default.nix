@@ -22,10 +22,5 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     alejandra
-    direnv
-    git
-    neovim
   ];
-
-  # nix.package = pkgs.nix;
 }

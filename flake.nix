@@ -37,6 +37,13 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Catppuccin theme
+    catppuccin.url = "github:catppuccin/nix";
+    catppuccin-cursors = {
+      url = "github:catppuccin/cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -62,6 +69,7 @@
       overlays = [];
 
       homes.modules = with inputs; [
+        catppuccin.homeManagerModules.catppuccin
         nix-index-database.hmModules.nix-index
       ];
 

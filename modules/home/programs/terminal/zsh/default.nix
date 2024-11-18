@@ -1,6 +1,4 @@
-# Comma runs software without installing it.
-# https://github.com/nix-community/comma
-# This module also enables nix-index and nix-index-database.
+# My favorite terminal shell: zsh
 {
   # Snowfall Lib provides a customized `lib` instance with access to your flake's library
   # as well as the libraries available from your flake's inputs.
@@ -20,31 +18,53 @@
   config,
   ...
 }: let
-  cfg = config.${namespace}.programs.terminal.comma;
+  cfg = config.${namespace}.programs.terminal.zsh;
+
+  plugins =
+    [
+      "copyfile"
+      "copypath"
+      "docker"
+      "git"
+      "gitignore"
+      "history"
+      "python"
+      "rust"
+      "shell-proxy"
+      "zsh-interactive-cd"
+    ]
+    ++ (lib.optional config.programs.fzf.enable "fzf")
+    ++ (lib.optional config.programs.zoxide.enable "zoxide");
 in {
-  options.${namespace}.programs.terminal.comma = {
+  options.${namespace}.programs.terminal.zsh = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Whether to enable comma.";
+      description = "Whether to enable zsh.";
     };
   };
 
   config = lib.mkIf cfg.enable {
-    programs = {
-      nix-index-database.comma.enable = true;
-
-      nix-index = {
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      autocd = true;
+      autosuggestion.enable = true;
+      historySubstringSearch.enable = true;
+      syntaxHighlighting.enable = true;
+      oh-my-zsh = {
         enable = true;
-        package = pkgs.nix-index;
-
-        enableBashIntegration = true;
-        enableFishIntegration = true;
-        enableZshIntegration = true;
-
-        # Symlink nix-index-database to ~/.cache/nix-index
-        symlinkToCacheHome = true;
+        theme = "robbyrussell";
+        inherit plugins;
       };
+      initExtra = ''
+        bindkey "\e[1;3D" backward-word
+        bindkey "\e[1;3C" forward-word
+
+        if [[ -f ~/.orbstack/shell/init.zsh ]]; then
+          source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+        fi
+      '';
     };
   };
 }

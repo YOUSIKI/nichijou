@@ -1,4 +1,4 @@
-# Configure git
+# Configure git, gh (github cli), and gitui.
 {
   # Snowfall Lib provides a customized `lib` instance with access to your flake's library
   # as well as the libraries available from your flake's inputs.
@@ -26,7 +26,7 @@ in {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Enable git.";
+      description = "Whether to enable git.";
     };
 
     userName = lib.mkOption {
@@ -75,6 +75,10 @@ in {
         gh-markdown-preview # preview markdown files
         gh-poi # clean up local branches safely
       ];
+    };
+
+    programs.gitui = {
+      enable = true;
     };
   };
 }
