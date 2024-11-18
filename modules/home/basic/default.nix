@@ -16,13 +16,16 @@
     zsh.enable = lib.mkDefault true;
   };
 
-  # Configure environment variables.
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.local/bin"
-  ];
+  home = {
+    # Configure environment variables.
+    sessionPath = [
+      "${config.home.homeDirectory}/.local/bin"
+    ];
 
-  home.stateVersion = "24.11";
+    # Set home-manager state version.
+    stateVersion = "24.11";
 
-  # TODO: remove after home-manager 25.05
-  home.enableNixpkgsReleaseCheck = false;
+    # TODO: remove after home-manager 25.05
+    enableNixpkgsReleaseCheck = false;
+  };
 }

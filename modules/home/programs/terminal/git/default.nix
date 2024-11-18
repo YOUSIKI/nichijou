@@ -30,42 +30,44 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    programs.git = {
-      inherit (cfg) userName userEmail;
+    programs = {
+      git = {
+        inherit (cfg) userName userEmail;
 
-      enable = true;
-      package = pkgs.gitFull;
+        enable = true;
+        package = pkgs.gitFull;
 
-      lfs.enable = true;
-      delta.enable = true;
-      extraConfig = {
-        init.defaultBranch = "main";
-        pull.rebase = true;
-        push = {
-          autoSetRemote = true;
-          default = "current";
-          followTags = true;
+        lfs.enable = true;
+        delta.enable = true;
+        extraConfig = {
+          init.defaultBranch = "main";
+          pull.rebase = true;
+          push = {
+            autoSetRemote = true;
+            default = "current";
+            followTags = true;
+          };
+          rebase.autoStash = true;
         };
-        rebase.autoStash = true;
       };
-    };
 
-    programs.gh = {
-      enable = true;
-      gitCredentialHelper.enable = true;
-      extensions = with pkgs; [
-        gh-actions-cache # cache actions
-        gh-cal # contributions calender terminal viewer
-        gh-copilot # github copilot integration
-        gh-dash # dashboard with pull requests and issues
-        gh-eco # explore the ecosystem
-        gh-markdown-preview # preview markdown files
-        gh-poi # clean up local branches safely
-      ];
-    };
+      gh = {
+        enable = true;
+        gitCredentialHelper.enable = true;
+        extensions = with pkgs; [
+          gh-actions-cache # cache actions
+          gh-cal # contributions calender terminal viewer
+          gh-copilot # github copilot integration
+          gh-dash # dashboard with pull requests and issues
+          gh-eco # explore the ecosystem
+          gh-markdown-preview # preview markdown files
+          gh-poi # clean up local branches safely
+        ];
+      };
 
-    programs.gitui = {
-      enable = true;
+      gitui = {
+        enable = true;
+      };
     };
   };
 }
