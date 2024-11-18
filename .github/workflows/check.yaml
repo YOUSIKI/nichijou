@@ -5,15 +5,17 @@ on:
   - workflow_dispatch
 jobs:
   check:
-    name: Check on ${{ matrix.arch }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-        arch: [x86_64-linux, aarch64-darwin]
+    name: Check
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Check Nix flake inputs
         uses: DeterminateSystems/flake-checker-action@v9
+      - name: Install nix and flakes
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Use magic nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Run nix flake check
+        run: nix flake check --all-systems
