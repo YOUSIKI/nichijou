@@ -10,9 +10,9 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
       - name: Check Nix flake inputs
-        uses: DeterminateSystems/flake-checker-action@v9
+        uses: DeterminateSystems/flake-checker-action@main
       - name: Install nix and flakes
         uses: DeterminateSystems/nix-installer-action@main
       - name: Use magic nix cache

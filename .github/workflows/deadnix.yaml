@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
       - name: Check flake.lock file
         uses: DeterminateSystems/flake-checker-action@main
       - name: Install nix and flakes
