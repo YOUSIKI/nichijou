@@ -1,0 +1,11 @@
+name: Build nano configuration
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/build-macos.yaml
+    with:
+      hostname: nano
+    secrets: inherit

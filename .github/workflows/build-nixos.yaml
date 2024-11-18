@@ -1,0 +1,35 @@
+name: Build nixos configuration
+on:
+  workflow_call:
+    inputs:
+      hostname:
+        required: true
+        type: string
+    secrets:
+      CACHIX_AUTH_TOKEN:
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: cachix
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Check flake.lock file
+        uses: DeterminateSystems/flake-checker-action@main
+      - name: Install nix and flakes
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Use magic nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Use cachix nix cache
+        uses: cachix/cachix-action@master
+        with:
+          name: nichijou
+          extraPullNames: colmena,cuda-maintainers,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build system configuration
+        run: nix build ".#nixosConfigurations.${{ inputs.hostname }}.config.system.build.toplevel"
