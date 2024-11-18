@@ -18,21 +18,6 @@
 
 ## 🧭 Usage
 
-Add nichijou to your `flake.nix`:
-
-```nix
-{
-  inputs = {
-    nichijou.url = "github:yousiki/nichijou";
-    nichijou.inputs.nixpkgs.follows = "nixpkgs";
-  };
-
-  outputs = { self, nichijou }: {
-    # Use in your outputs
-  };
-}
-```
-
 ## 💾 Modules
 
 ## ⛰️ Giants
@@ -40,6 +25,7 @@ Add nichijou to your `flake.nix`:
 This repository stands on the shoulders of giants:
 
 - Awesome dotfiles
+  - [khaneliman/khanelinix](https://github.com/khaneliman/khanelinix)
   - [truelecter/hive](https://github.com/truelecter/hive)
   - [GTrunSec/hive](https://github.com/GTrunSec/hive)
   - [Ruixi-rebirth/flakes](https://github.com/Ruixi-rebirth/flakes)
@@ -48,6 +34,7 @@ This repository stands on the shoulders of giants:
   - [linuxmobile/hyprland-dots](https://github.com/linuxmobile/hyprland-dots)
   - and more ...
 - Awesome tools
+  - [snowfall/lib](https://github.com/snowfallorg/lib)
   - [divnix/hive](https://github.com/divnix/hive)
   - [divnix/std](https://github.com/divnix/std)
   - [nix-community/haumea](https://github.com/nix-community/haumea)
