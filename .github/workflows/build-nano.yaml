@@ -5,7 +5,7 @@ on:
   - workflow_dispatch
 jobs:
   call-workflow-passing-data:
-    uses: ./.github/workflows/build-macos.yaml
+    uses: ./.github/workflows/templates/build-macos.yaml
     with:
       hostname: nano
     secrets: inherit
