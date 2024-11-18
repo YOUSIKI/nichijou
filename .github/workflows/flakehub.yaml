@@ -16,11 +16,11 @@ jobs:
       id-token: "write"
       contents: "read"
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v4
         with:
           ref: "${{ (inputs.tag != null) && format('refs/tags/{0}', inputs.tag) || '' }}"
-      - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/flakehub-push@main
+      - uses: DeterminateSystems/nix-installer-action@v16
+      - uses: DeterminateSystems/flakehub-push@v5
         with:
           visibility: "public"
           name: "YOUSIKI/nichijou"

@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
       - name: Check flake.lock file
-        uses: DeterminateSystems/flake-checker-action@main
+        uses: DeterminateSystems/flake-checker-action@v9
       - name: Install nix and flakes
-        uses: DeterminateSystems/nix-installer-action@main
+        uses: DeterminateSystems/nix-installer-action@v16
       - name: Use magic nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
+        uses: DeterminateSystems/magic-nix-cache-action@v8
       - name: Use cachix nix cache
-        uses: cachix/cachix-action@master
+        uses: cachix/cachix-action@v15
         with:
           name: statix
       - name: Run statix
-        uses: jocelynthode/statix-action@master
+        uses: jocelynthode/statix-action@v1

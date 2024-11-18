@@ -14,15 +14,15 @@ jobs:
     environment: cachix
     steps:
       - name: Checkout repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
       - name: Check flake.lock file
-        uses: DeterminateSystems/flake-checker-action@main
+        uses: DeterminateSystems/flake-checker-action@v9
       - name: Install nix and flakes
-        uses: DeterminateSystems/nix-installer-action@main
+        uses: DeterminateSystems/nix-installer-action@v16
       - name: Use magic nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
+        uses: DeterminateSystems/magic-nix-cache-action@v8
       - name: Use cachix nix cache
-        uses: cachix/cachix-action@master
+        uses: cachix/cachix-action@v15
         with:
           name: nichijou
           extraPullNames: colmena,cuda-maintainers,deadnix,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
