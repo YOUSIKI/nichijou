@@ -34,11 +34,16 @@
     # Garbage collector
     gc.automatic = true;
     # List of directories to be searched for <...> file references.
-    nixPath = [
-      "nixpkgs=flake:nixpkgs"
-      "darwin=/etc/nix/inputs/darwin"
-      "home-manager=flake:home-manager"
-    ];
+    nixPath =
+      [
+        "nixpkgs=flake:nixpkgs"
+        "home-manager=flake:home-manager"
+      ]
+      ++ (
+        lib.optional
+        pkgs.stdenv.isDarwin
+        "darwin=/etc/nix/inputs/darwin"
+      );
     registry =
       lib.mapAttrs
       (_n: v: {flake = v;})
