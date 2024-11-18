@@ -1,5 +1,5 @@
 {
-  description = "Configurations for daily life";
+  description = "Nix configurations for daily life";
 
   inputs = {
     # Nixpkgs

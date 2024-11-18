@@ -1,4 +1,4 @@
-name: Build nano configuration
+name: Build nano
 on:
   - push
   - pull_request
