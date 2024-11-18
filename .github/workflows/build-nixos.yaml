@@ -29,7 +29,7 @@ jobs:
         uses: cachix/cachix-action@master
         with:
           name: nichijou
-          extraPullNames: colmena,cuda-maintainers,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
+          extraPullNames: colmena,cuda-maintainers,deadnix,hyprland,nix-community,nixpkgs-wayland,numtide,nrdxp
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build system configuration
         run: nix build ".#nixosConfigurations.${{ inputs.hostname }}.config.system.build.toplevel"
