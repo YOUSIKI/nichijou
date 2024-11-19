@@ -20,5 +20,11 @@ in {
       enable = true;
       package = pkgs.bottom;
     };
+
+    home.shellAliases = let
+      bottom = lib.getExe config.programs.bottom.package;
+    in {
+      bottom = lib.mkForce "${bottom}";
+    };
   };
 }
