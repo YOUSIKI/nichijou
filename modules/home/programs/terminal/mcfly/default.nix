@@ -20,6 +20,7 @@ in {
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
+      fzf.enable = true;
       fuzzySearchFactor = 3;
     };
   };
