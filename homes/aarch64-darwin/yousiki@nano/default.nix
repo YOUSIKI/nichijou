@@ -1,8 +1,8 @@
 _: {
   nichijou = {
     suites = {
-      common.enable = true;
-      desktop.enable = true;
+      graphical.enable = true;
+      terminal.enable = true;
     };
 
     themes.catppuccin.enable = true;
