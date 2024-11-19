@@ -5,9 +5,9 @@
   config,
   ...
 }: let
-  cfg = config.${namespace}.programs.terminal.wezterm;
+  cfg = config.${namespace}.programs.graphical.wezterm;
 in {
-  options.${namespace}.programs.terminal.wezterm = {
+  options.${namespace}.programs.graphical.wezterm = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;

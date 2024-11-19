@@ -4,20 +4,20 @@
   config,
   ...
 }: let
-  cfg = config.${namespace}.suites.desktop;
+  cfg = config.${namespace}.suites.graphical;
 in {
-  options.${namespace}.suites.desktop = {
+  options.${namespace}.suites.graphical = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Whether to enable desktop suite.";
+      description = "Whether to enable graphical suite.";
     };
   };
 
   config = lib.mkIf cfg.enable {
     ${namespace} = {
       programs = {
-        terminal = {
+        graphical = {
           wezterm.enable = true;
         };
       };

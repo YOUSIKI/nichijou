@@ -4,13 +4,13 @@
   config,
   ...
 }: let
-  cfg = config.${namespace}.suites.common;
+  cfg = config.${namespace}.suites.terminal;
 in {
-  options.${namespace}.suites.common = {
+  options.${namespace}.suites.terminal = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Whether to enable common suite.";
+      description = "Whether to enable terminal suite.";
     };
   };
 
