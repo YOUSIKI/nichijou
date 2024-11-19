@@ -19,6 +19,7 @@ in {
       programs = {
         terminal = {
           bat.enable = true;
+          bottom.enable = true;
           btop.enable = true;
           comma.enable = true;
           direnv.enable = true;
