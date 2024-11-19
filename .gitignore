@@ -73,8 +73,7 @@ flycheck_*.el
 .LSOverride
 
 # Icon must end with two \r
-Icon
-
+Icon
 # Thumbnails
 ._*
 
@@ -97,6 +96,10 @@ Temporary Items
 ### macOS Patch ###
 # iCloud generated files
 *.icloud
+
+### Nix ###
+result
+result-*
 
 ### Vim ###
 # Swap
@@ -164,4 +167,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,vim,emacs,windows,linux,macos
-
