@@ -23,6 +23,7 @@ in {
           btop.enable = true;
           comma.enable = true;
           direnv.enable = true;
+          duf.enable = true;
           eza.enable = true;
           fzf.enable = true;
           gdu.enable = true;
