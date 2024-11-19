@@ -24,7 +24,7 @@ in {
       # Enable mouse support
       mouse = true;
       # Set prefix to Ctrl-a (like screen)
-      prefix = "C-a";
+      prefix = "C-b";
       # Enable vi mode-keys
       keyMode = "vi";
       # Keep current path when creating new windows/panes
