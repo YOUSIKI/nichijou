@@ -29,6 +29,12 @@
     };
   };
 
+  nichijou = {
+    system = {
+      homebrew.enable = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     alejandra
     nodejs
