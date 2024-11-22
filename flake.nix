@@ -38,6 +38,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Git hooks
+    pre-commit-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "nixpkgs";
+      };
+    };
+
     # Catppuccin theme
     catppuccin.url = "github:catppuccin/nix";
     catppuccin-cursors = {
@@ -46,11 +55,7 @@
     };
   };
 
-  outputs = {
-    self,
-    snowfall-lib,
-    ...
-  } @ inputs:
+  outputs = {snowfall-lib, ...} @ inputs:
     snowfall-lib.mkFlake {
       inherit inputs;
 
@@ -86,7 +91,6 @@
         treefmtEval = inputs.treefmt-nix.lib.evalModule channels.nixpkgs ./treefmt.nix;
       in {
         formatter = treefmtEval.config.build.wrapper;
-        checks.formatting = treefmtEval.config.build.check self;
       };
     };
 
