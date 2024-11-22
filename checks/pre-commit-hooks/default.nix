@@ -5,7 +5,7 @@
   ...
 }:
 inputs.pre-commit-hooks.lib.${system}.run {
-  src = ./.;
+  src = inputs.self;
 
   hooks = {
     actionlint.enable = true;
