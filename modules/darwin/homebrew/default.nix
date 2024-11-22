@@ -1,4 +1,8 @@
-_: {
+{
+  lib,
+  system,
+  ...
+}: {
   # Enable Homebrew for casks.
   homebrew = {
     enable = true;
@@ -23,4 +27,7 @@ _: {
     HOMEBREW_CORE_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git";
     HOMEBREW_PIP_INDEX_URL = "https://pypi.tuna.tsinghua.edu.cn/simple";
   };
+
+  # Add homebrew to PATH.
+  environment.systemPath = lib.optional (system == "aarch64-darwin") "/opt/homebrew";
 }
