@@ -19,10 +19,6 @@
 🚧 STILL UNDER CONSTRUCTION 🚧
 </p>
 
-## 🧭 Usage
-
-## 💾 Modules
-
 ## ⛰️ Giants
 
 This repository stands on the shoulders of giants:
