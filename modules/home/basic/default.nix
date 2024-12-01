@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   # Whether to enable Home Manager.
@@ -27,4 +28,7 @@
     # TODO: remove after home-manager 25.05
     enableNixpkgsReleaseCheck = false;
   };
+
+  # Enable vscode server on NixOS
+  services.vscode-server.enable = pkgs.stdenv.isLinux;
 }

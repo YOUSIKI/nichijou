@@ -72,6 +72,9 @@
     openFirewall = true;
   };
 
+  # Enable VSCode server.
+  services.vscode-server.enable = true;
+
   # Set timezone.
   time.timeZone = "Asia/Shanghai";
 }

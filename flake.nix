@@ -44,6 +44,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # VSCode server on NixOS
+    nixos-vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Git hooks
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -82,6 +88,7 @@
       homes.modules = with inputs; [
         catppuccin.homeManagerModules.catppuccin
         nix-index-database.hmModules.nix-index
+        nixos-vscode-server.homeModules.default
         sops-nix.homeManagerModules.sops
       ];
 
@@ -92,6 +99,7 @@
         ];
         nixos = with inputs; [
           nix-index-database.nixosModules.nix-index
+          nixos-vscode-server.nixosModules.default
           sops-nix.nixosModules.sops
         ];
       };

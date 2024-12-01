@@ -1,0 +1,11 @@
+name: Build hakase
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/build-nixos.yaml
+    with:
+      hostname: hakase
+    secrets: inherit
