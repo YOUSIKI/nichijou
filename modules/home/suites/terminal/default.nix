@@ -29,6 +29,7 @@ in {
           gdu.enable = true;
           git.enable = true;
           mcfly.enable = true;
+          neovim.enable = true;
           starship.enable = true;
           tmux.enable = true;
           yazi.enable = true;
