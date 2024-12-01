@@ -38,6 +38,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Secrets management
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Git hooks
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -76,16 +82,25 @@
       homes.modules = with inputs; [
         catppuccin.homeManagerModules.catppuccin
         nix-index-database.hmModules.nix-index
+        sops-nix.homeManagerModules.sops
       ];
 
       systems.modules = {
         darwin = with inputs; [
           nix-index-database.darwinModules.nix-index
+          sops-nix.darwinModules.sops
         ];
         nixos = with inputs; [
           nix-index-database.nixosModules.nix-index
+          sops-nix.nixosModules.sops
         ];
       };
+
+      systems.hosts.hakase.modules = with inputs; [
+        nixos-hardware.nixosModules.common-cpu-intel-cpu-only
+        nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
+        nixos-hardware.nixosModules.common-pc-ssd
+      ];
 
       outputs-builder = channels: let
         treefmtEval = inputs.treefmt-nix.lib.evalModule channels.nixpkgs ./treefmt.nix;
