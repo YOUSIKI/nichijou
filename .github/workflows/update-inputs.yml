@@ -3,7 +3,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 jobs:
   update-flake-inputs:
     runs-on: ubuntu-latest
@@ -15,8 +15,8 @@ jobs:
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v24
         with:
-          pr-title: "Update flake.lock" 
-          pr-labels: |                  
+          pr-title: "Update flake.lock"
+          pr-labels: |
             dependencies
             automated
             merge-queue

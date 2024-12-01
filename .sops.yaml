@@ -3,12 +3,11 @@ keys:
   - &yousiki_sakamoto age1c8nt6m2vv9mcy50vgkvvgag2kl0x4fysdtjuevptxwh9gv54mgqqtzl8zn
   - &yousiki_nano age1yznykzrsa65lg50rtku2yaqq4mln4lk2u8hkyz4r4hy28tlvug8s3p88uh
   - &hakase age13m8rakh7w2zkawjuqgd29sp7wtceqt4mkw38mcg9fsrurs5x2urq9dgqg0
-
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
-    - age:
-      - *yousiki_hakase
-      - *yousiki_sakamoto
-      - *yousiki_nano
-      - *hakase
+      - age:
+          - *yousiki_hakase
+          - *yousiki_sakamoto
+          - *yousiki_nano
+          - *hakase

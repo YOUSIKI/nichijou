@@ -50,8 +50,9 @@
       (lib.filterAttrs (n: _v: !(lib.hasPrefix "nixpkgs" n) && n != "self") inputs);
   };
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true; # default shell
+  # Default user shell: zsh
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   # Home-manager automatically backup extension.
   home-manager.backupFileExtension = "bak";
