@@ -14,11 +14,13 @@
     htop
     jq
     man
+    neovim
     rclone
     ripgrep
     rsync
     tmux
     unzip
+    vim
     wget
     zellij
     zoxide
