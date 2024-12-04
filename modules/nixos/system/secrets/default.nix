@@ -35,6 +35,11 @@ in {
           format = "dotenv";
           key = "";
         };
+        "nas-yyp-credentials.env" = {
+          sopsFile = lib.snowfall.fs.get-file "secrets/nas-yyp-credentials.env";
+          format = "dotenv";
+          key = "";
+        };
       };
     };
   };

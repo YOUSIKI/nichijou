@@ -55,12 +55,20 @@
           enable = true;
           fileSystems = {
             "/mnt/mck/home" = {
-              device = "//nas-changping-4.ybh1998.space/home";
+              device = "//nas-mck-v4.siki.moe/home";
               credentials = config.sops.secrets."nas-mck-credentials.env".path;
             };
             "/mnt/mck/share" = {
-              device = "//nas-changping-4.ybh1998.space/share";
+              device = "//nas-mck-v4.siki.moe/share";
               credentials = config.sops.secrets."nas-mck-credentials.env".path;
+            };
+            "/mnt/yyp/home" = {
+              device = "//nas-yyp-v4.siki.moe/home";
+              credentials = config.sops.secrets."nas-yyp-credentials.env".path;
+            };
+            "/mnt/yyp/share" = {
+              device = "//nas-yyp-v4.siki.moe/share";
+              credentials = config.sops.secrets."nas-yyp-credentials.env".path;
             };
           };
         };
