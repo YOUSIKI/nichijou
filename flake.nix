@@ -50,6 +50,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Run dynamic binaries on NixOS
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Git hooks
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -99,6 +105,7 @@
         ];
         nixos = with inputs; [
           nix-index-database.nixosModules.nix-index
+          nix-ld.nixosModules.nix-ld
           nixos-vscode-server.nixosModules.default
           sops-nix.nixosModules.sops
         ];

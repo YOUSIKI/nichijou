@@ -32,6 +32,9 @@
   # Enable VSCode server.
   services.vscode-server.enable = true;
 
+  # Enable nix-ld.
+  programs.nix-ld.dev.enable = true;
+
   # Set timezone.
   time.timeZone = "Asia/Shanghai";
 }
