@@ -43,12 +43,26 @@
 
   nichijou = {
     system = {
-      bcachefs = {
-        enable = true;
-
-        fileSystems."/mnt/data" = {
-          devices = ["/dev/nvme0n1p3" "/dev/sda1" "/dev/sdb1"];
-          options = ["noatime"];
+      filesys = {
+        bcachefs = {
+          enable = true;
+          fileSystems."/mnt/data" = {
+            devices = ["/dev/nvme0n1p3" "/dev/sda1" "/dev/sdb1"];
+            options = ["noatime"];
+          };
+        };
+        cifs = {
+          enable = true;
+          fileSystems = {
+            "/mnt/mck/home" = {
+              device = "//nas-changping-4.ybh1998.space/home";
+              credentials = config.sops.secrets."nas-mck-credentials.env".path;
+            };
+            "/mnt/mck/share" = {
+              device = "//nas-changping-4.ybh1998.space/share";
+              credentials = config.sops.secrets."nas-mck-credentials.env".path;
+            };
+          };
         };
       };
       gpu.nvidia.enable = true;

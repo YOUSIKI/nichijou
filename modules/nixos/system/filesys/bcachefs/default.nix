@@ -51,9 +51,9 @@
     };
   };
 
-  cfg = config.${namespace}.system.bcachefs;
+  cfg = config.${namespace}.system.filesys.bcachefs;
 in {
-  options.${namespace}.system.bcachefs = {
+  options.${namespace}.system.filesys.bcachefs = {
     enable = lib.mkEnableOption "Whether to enable bcachefs.";
 
     fileSystems = lib.mkOption {

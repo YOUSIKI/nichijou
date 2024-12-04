@@ -30,6 +30,11 @@ in {
           sopsFile = lib.snowfall.fs.get-file "secrets/clash.yaml";
           key = "";
         };
+        "nas-mck-credentials.env" = {
+          sopsFile = lib.snowfall.fs.get-file "secrets/nas-mck-credentials.env";
+          format = "dotenv";
+          key = "";
+        };
       };
     };
   };
