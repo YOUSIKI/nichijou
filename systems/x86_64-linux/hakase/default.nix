@@ -41,6 +41,19 @@
     {device = "/dev/disk/by-uuid/9dc3e2ac-b63d-4dda-8b4c-7be566aa349a";}
   ];
 
+  # Enable docker and podman
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless.enable = true;
+      autoPrune.enable = true;
+    };
+    podman = {
+      enable = true;
+      autoPrune.enable = true;
+    };
+  };
+
   nichijou = {
     system = {
       filesys = {
