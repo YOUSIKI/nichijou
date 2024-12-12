@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   # Set the hostname and computer name
   networking = {
-    hostName = "nano";
-    computerName = "YouSiki's Mac Mini";
+    hostName = "satoshi";
+    computerName = "YouSiki's Macbook Pro";
   };
 
   # Add ability to used TouchID for sudo authentication
