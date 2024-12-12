@@ -33,7 +33,7 @@ in {
           };
         }
       '';
-      type = lib.types.attrsOf (lib.types.attrsOf lib.types.string);
+      type = lib.types.attrsOf (lib.types.attrsOf lib.types.str);
       description = lib.mdDoc "The cifs file systems to mount.";
     };
   };

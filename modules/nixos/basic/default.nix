@@ -30,7 +30,11 @@
   };
 
   # Enable VSCode server.
-  services.vscode-server.enable = true;
+  services.vscode-server = {
+    enable = true;
+    enableFHS = true;
+    installPath = "$HOME/.windsurf-server";
+  };
 
   # Enable nix-ld.
   programs.nix-ld.dev.enable = true;
