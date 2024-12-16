@@ -33,7 +33,6 @@
   services.vscode-server = {
     enable = true;
     enableFHS = true;
-    installPath = "$HOME/.windsurf-server";
   };
 
   # Enable nix-ld.
