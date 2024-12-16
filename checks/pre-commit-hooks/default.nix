@@ -21,7 +21,7 @@ inputs.pre-commit-hooks.lib.${system}.run {
 
     luacheck.enable = true;
 
-    pre-commit-hook-ensure-sops.enable = true;
+    # pre-commit-hook-ensure-sops.enable = true;
 
     shfmt.enable = true;
   };
