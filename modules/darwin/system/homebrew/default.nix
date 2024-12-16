@@ -42,6 +42,6 @@ in {
     };
 
     # Add homebrew to PATH.
-    environment.systemPath = lib.optional (system == "aarch64-darwin") "/opt/homebrew";
+    environment.systemPath = lib.optional (system == "aarch64-darwin") "/opt/homebrew/bin";
   };
 }
