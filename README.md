@@ -9,6 +9,8 @@
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/check.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/check.yaml/badge.svg"></a>
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/statix.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/statix.yaml/badge.svg"></a>
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build-nano.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build-nano.yaml/badge.svg"></a>
+<a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build-satoshi.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build-satoshi.yaml/badge.svg"></a>
+<a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build-hakase.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build-hakase.yaml/badge.svg"></a>
 </p>
 
 <p align="center">
