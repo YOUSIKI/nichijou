@@ -16,8 +16,10 @@ in {
 
   config = lib.mkIf cfg.enable {
     ${namespace}.languages = {
-      python.enable = true;
+      javascript.enable = true;
       nix.enable = true;
+      python.enable = true;
+      rust.enable = true;
     };
   };
 }
