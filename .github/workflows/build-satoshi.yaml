@@ -1,0 +1,11 @@
+name: Build satoshi
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/build-macos.yaml
+    with:
+      hostname: satoshi
+    secrets: inherit
