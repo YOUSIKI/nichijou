@@ -16,6 +16,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     ${namespace}.languages = {
+      cxx.enable = true;
       javascript.enable = true;
       nix.enable = true;
       python.enable = true;
