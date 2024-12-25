@@ -19,8 +19,6 @@ in {
         modesetting.enable = true; # Enable modesetting.
         nvidiaSettings = true; # Enable nvidia settings.
         open = false; # Use proprietary driver.
-        # TODO: remove this when https://github.com/NixOS/nixpkgs/issues/357643 is fixed.
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
       };
 
       graphics = {
