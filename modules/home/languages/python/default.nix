@@ -53,6 +53,7 @@ in {
         python3
         ruff
         rye
+        uv
       ];
       file = {
         ".condarc".text = condarc;
