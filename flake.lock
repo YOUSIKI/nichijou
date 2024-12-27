@@ -2,11 +2,11 @@
   "nodes": {
     "catppuccin": {
       "locked": {
-        "lastModified": 1735028008,
-        "narHash": "sha256-crbQNRVQgPH0hX5vZk8xL9JStXo74Es7zDBjRcc4i+A=",
+        "lastModified": 1735203532,
+        "narHash": "sha256-m7KAHLOeF93S8vhT5Mn+KxLfWnI6N7+S6H552tNUlYs=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "bfd20bcf45f1de0e97b551be51495abf8a727f1a",
+        "rev": "58d020d4c85416e2a75ec820e290d3d5b13b3427",
         "type": "github"
       },
       "original": {
@@ -42,11 +42,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1733570843,
-        "narHash": "sha256-sQJAxY1TYWD1UyibN/FnN97paTFuwBw3Vp3DNCyKsMk=",
+        "lastModified": 1735218083,
+        "narHash": "sha256-MoUAbmXz9TEr7zlKDRO56DBJHe30+7B5X7nhXm+Vpc8=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "a35b08d09efda83625bef267eb24347b446c80b8",
+        "rev": "bc03f7818771a75716966ce8c23110b715eff2aa",
         "type": "github"
       },
       "original": {
@@ -190,11 +190,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1735160596,
-        "narHash": "sha256-zD8ciZm42wi1ijHyS7J0dmBE3QXMA/qBfwW/SEXhiwI=",
+        "lastModified": 1735222882,
+        "narHash": "sha256-kWNi45/mRjQMG+UpaZQ7KyPavYrKfle3WgLn9YeBBVg=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "c8470746a9f4d1ab4c7563db7da995595ed64ca2",
+        "rev": "7e3246f6ad43b44bc1c16d580d7bf6467f971530",
         "type": "github"
       },
       "original": {
@@ -261,12 +261,12 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1734991663,
-        "narHash": "sha256-8T660guvdaOD+2/Cj970bWlQwAyZLKrrbkhYOFcY1YE=",
-        "rev": "6c90912761c43e22b6fb000025ab96dd31c971ff",
-        "revCount": 711867,
+        "lastModified": 1735141468,
+        "narHash": "sha256-VIAjBr1qGcEbmhLwQJD6TABppPMggzOvqFsqkDoMsAY=",
+        "rev": "4005c3ff7505313cbc21081776ad0ce5dfd7a3ce",
+        "revCount": 711934,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.2411.711867%2Brev-6c90912761c43e22b6fb000025ab96dd31c971ff/0193fcf7-90a6-754d-a0f2-c86bb705261d/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.2411.711934%2Brev-4005c3ff7505313cbc21081776ad0ce5dfd7a3ce/0194046c-1547-7874-b2f6-5966b9b73e1c/source.tar.gz"
       },
       "original": {
         "type": "tarball",
