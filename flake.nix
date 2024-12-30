@@ -3,7 +3,8 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
+    # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     # Nix-dariwn
     darwin = {
@@ -52,7 +53,7 @@
 
     # Run dynamic binaries on NixOS
     nix-ld = {
-      url = "github:Mic92/nix-ld";
+      url = "github:nix-community/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
