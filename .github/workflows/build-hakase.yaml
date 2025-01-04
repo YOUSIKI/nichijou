@@ -1,8 +1,12 @@
 name: Build hakase
 on:
-  - push
-  - pull_request
-  - workflow_dispatch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
+  workflow_dispatch:
 jobs:
   call-workflow-passing-data:
     uses: ./.github/workflows/build-nixos.yaml

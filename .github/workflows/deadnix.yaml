@@ -1,8 +1,12 @@
 name: Dead code analysis
 on:
-  - push
-  - pull_request
-  - workflow_dispatch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
+  workflow_dispatch:
 jobs:
   deadnix:
     name: Deadnix
@@ -20,7 +24,8 @@ jobs:
         uses: cachix/cachix-action@v15
         with:
           name: deadnix
-      - name: Run deadnix
-        uses: astro/deadnix-action@v1
-        with:
-          commit_message: "chore: remove dead code"
+    # TODO: Uncomment when deadnix fixed building issue
+    # - name: Run deadnix
+    #   uses: astro/deadnix-action@v1
+    #   with:
+    #     commit_message: "chore: remove dead code"
