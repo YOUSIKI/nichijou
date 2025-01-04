@@ -40,6 +40,11 @@ in {
           format = "dotenv";
           key = "";
         };
+        "nas-satoshi-credentials.env" = {
+          sopsFile = lib.snowfall.fs.get-file "secrets/nas-satoshi-credentials.env";
+          format = "dotenv";
+          key = "";
+        };
       };
     };
   };
