@@ -5,7 +5,7 @@
 
 <p align="center">
 <a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff"></a>
-<a href="https://flakehub.com/flake/YOUSIKI/nichijou"><img src="https://img.shields.io/endpoint?url=https://flakehub.com/f/YOUSIKI/nichijou/badge"></a>
+<a href="https://garnix.io/repo/YOUSIKI/nichijou"><img alt="built with garnix" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2FYOUSIKI%2Fnichijou%3Fbranch%3Dmain"></a>
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/check.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/check.yaml/badge.svg"></a>
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/statix.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/statix.yaml/badge.svg"></a>
 <a href="https://github.com/YOUSIKI/nichijou/actions/workflows/build-nano.yaml"><img src="https://github.com/YOUSIKI/nichijou/actions/workflows/build-nano.yaml/badge.svg"></a>
