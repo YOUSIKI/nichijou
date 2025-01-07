@@ -6,7 +6,7 @@ on:
       - update_flake_lock_action
   pull_request:
     branches:
-      - "*"
+      - update_flake_lock_action
   workflow_dispatch:
 jobs:
   call-workflow-passing-data:
