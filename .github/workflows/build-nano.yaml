@@ -1,4 +1,4 @@
-name: Build nano
+name: Build darwin host nano
 on:
   push:
     branches:

@@ -1,4 +1,4 @@
-name: Dead code analysis
+name: Check nix dead code
 on:
   push:
     branches:

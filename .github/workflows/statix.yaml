@@ -1,4 +1,4 @@
-name: Linting
+name: Lint nix code
 on:
   push:
     branches:

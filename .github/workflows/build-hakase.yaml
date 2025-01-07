@@ -1,4 +1,4 @@
-name: Build hakase
+name: Build nixos host hakase
 on:
   push:
     branches:

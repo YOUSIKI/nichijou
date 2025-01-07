@@ -1,4 +1,4 @@
-name: Build satoshi
+name: Build darwin host satoshi
 on:
   push:
     branches:

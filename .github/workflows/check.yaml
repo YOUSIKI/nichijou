@@ -1,4 +1,4 @@
-name: Check
+name: Check nix flake
 on:
   push:
     branches:
