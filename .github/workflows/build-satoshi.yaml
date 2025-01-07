@@ -3,9 +3,29 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "homes/x86_64-darwin/yousiki@satoshi/**"
+      - "modules/common/**"
+      - "modules/home/**"
+      - "modules/darwin/**"
+      - "secrets/**"
+      - "systems/x86_64-darwin/satoshi/**"
+      - ".sops.yaml"
+      - "flake.nix"
+      - "flake.lock"
   pull_request:
     branches:
       - main
+    paths:
+      - "homes/x86_64-darwin/yousiki@satoshi/**"
+      - "modules/common/**"
+      - "modules/home/**"
+      - "modules/darwin/**"
+      - "secrets/**"
+      - "systems/x86_64-darwin/satoshi/**"
+      - ".sops.yaml"
+      - "flake.nix"
+      - "flake.lock"
   workflow_dispatch:
 jobs:
   call-workflow-passing-data:

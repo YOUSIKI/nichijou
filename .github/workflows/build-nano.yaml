@@ -3,9 +3,29 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "homes/aarch64-darwin/yousiki@nano/**"
+      - "modules/common/**"
+      - "modules/home/**"
+      - "modules/darwin/**"
+      - "secrets/**"
+      - "systems/aarch64-darwin/nano/**"
+      - ".sops.yaml"
+      - "flake.nix"
+      - "flake.lock"
   pull_request:
     branches:
       - main
+    paths:
+      - "homes/aarch64-darwin/yousiki@nano/**"
+      - "modules/common/**"
+      - "modules/home/**"
+      - "modules/darwin/**"
+      - "secrets/**"
+      - "systems/aarch64-darwin/nano/**"
+      - ".sops.yaml"
+      - "flake.nix"
+      - "flake.lock"
   workflow_dispatch:
 jobs:
   call-workflow-passing-data:

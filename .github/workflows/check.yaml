@@ -3,9 +3,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "**.nix"
   pull_request:
     branches:
       - main
+    paths:
+      - "**.nix"
   workflow_dispatch:
 jobs:
   check:
