@@ -18,8 +18,8 @@ in {
   config = lib.mkIf cfg.enable {
     services.ollama = {
       enable = true;
-      acceleration = cfg.acceleration;
       openFirewall = true;
+      inherit (cfg) acceleration;
     };
   };
 }
