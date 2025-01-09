@@ -117,6 +117,7 @@
       proxy.enable = true;
       secrets.enable = true;
     };
+    programs.ollama.enable = true;
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
