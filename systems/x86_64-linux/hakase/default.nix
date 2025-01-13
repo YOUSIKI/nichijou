@@ -25,24 +25,24 @@
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d7bb32dc-4599-499c-913e-73660f0cf3c6";
-    fsType = "bcachefs";
-    options = ["noatime"];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/5764-78C1";
-    fsType = "vfat";
-  };
-
-  fileSystems."/var/lib/ollama/models" = {
-    depends = [
-      "/mnt/data"
-    ];
-    device = "/mnt/data/ollama/models";
-    fsType = "none";
-    options = ["bind"];
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/d7bb32dc-4599-499c-913e-73660f0cf3c6";
+      fsType = "bcachefs";
+      options = ["noatime"];
+    };
+    "/boot" = {
+      device = "/dev/disk/by-uuid/5764-78C1";
+      fsType = "vfat";
+    };
+    "/var/lib/ollama/models" = {
+      depends = [
+        "/mnt/data"
+      ];
+      device = "/mnt/data/ollama/models";
+      fsType = "none";
+      options = ["bind"];
+    };
   };
 
   swapDevices = [
