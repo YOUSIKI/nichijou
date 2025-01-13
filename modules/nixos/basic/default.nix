@@ -11,8 +11,12 @@
       "modules/common/packages/default.nix")
   ];
 
-  # Default user shell: zsh
-  users.defaultUserShell = pkgs.zsh;
+  users = {
+    # Default user shell: zsh.
+    defaultUserShell = pkgs.zsh;
+    # Add to group `docker`.
+    users.yousiki.extraGroups = ["docker"];
+  };
 
   # Home-manager automatically backup extension.
   home-manager.backupFileExtension = "bak";
