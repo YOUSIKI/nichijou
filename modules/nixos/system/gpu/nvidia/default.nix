@@ -32,5 +32,9 @@ in {
       # Enable nvidia container toolkit.
       nvidia-container-toolkit.enable = true;
     };
+
+    environment.sessionVariables = {
+      LD_LIBRARY_PATH = "/run/opengl-driver/lib";
+    };
   };
 }
