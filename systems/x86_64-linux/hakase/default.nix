@@ -36,6 +36,15 @@
     fsType = "vfat";
   };
 
+  fileSystems."/var/lib/ollama/models" = {
+    depends = [
+      "/mnt/data"
+    ];
+    device = "/mnt/data/ollama/models";
+    fsType = "none";
+    options = ["bind"];
+  };
+
   swapDevices = [
     {device = "/dev/disk/by-uuid/d1772975-d75b-4efa-aed1-3cb602761b56";}
     {device = "/dev/disk/by-uuid/9dc3e2ac-b63d-4dda-8b4c-7be566aa349a";}
