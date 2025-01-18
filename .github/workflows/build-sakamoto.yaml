@@ -1,15 +1,15 @@
-name: Build darwin host satoshi
+name: Build darwin host sakamoto
 on:
   push:
     branches:
       - main
     paths:
-      - "homes/x86_64-darwin/yousiki@satoshi/**"
+      - "homes/x86_64-darwin/yousiki@sakamoto/**"
       - "modules/common/**"
       - "modules/home/**"
       - "modules/darwin/**"
       - "secrets/**"
-      - "systems/x86_64-darwin/satoshi/**"
+      - "systems/x86_64-darwin/sakamoto/**"
       - ".sops.yaml"
       - "flake.nix"
       - "flake.lock"
@@ -17,12 +17,12 @@ on:
     branches:
       - main
     paths:
-      - "homes/x86_64-darwin/yousiki@satoshi/**"
+      - "homes/x86_64-darwin/yousiki@sakamoto/**"
       - "modules/common/**"
       - "modules/home/**"
       - "modules/darwin/**"
       - "secrets/**"
-      - "systems/x86_64-darwin/satoshi/**"
+      - "systems/x86_64-darwin/sakamoto/**"
       - ".sops.yaml"
       - "flake.nix"
       - "flake.lock"
@@ -31,5 +31,5 @@ jobs:
   call-workflow-passing-data:
     uses: ./.github/workflows/build-macos.yaml
     with:
-      hostname: satoshi
+      hostname: sakamoto
     secrets: inherit

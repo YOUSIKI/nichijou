@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # Set the hostname and computer name
   networking = {
-    hostName = "satoshi";
+    hostName = "sakamoto";
     computerName = "YouSiki's Macbook Pro";
   };
 
@@ -35,9 +35,4 @@
       secrets.enable = true;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    alejandra
-    nodejs
-  ];
 }
