@@ -56,14 +56,6 @@
       device = "/dev/disk/by-uuid/5764-78C1";
       fsType = "vfat";
     };
-    "/var/lib/ollama/models" = {
-      depends = [
-        "/mnt/data"
-      ];
-      device = "/mnt/data/ollama/models";
-      fsType = "none";
-      options = ["bind"];
-    };
   };
 
   swapDevices = [
@@ -151,7 +143,6 @@
       proxy.enable = true;
       secrets.enable = true;
     };
-    programs.ollama.enable = true;
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
