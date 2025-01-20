@@ -84,6 +84,8 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [libnfs nfs-utils];
+
   services = {
     xserver.enable = true;
     displayManager.sddm.enable = true;
