@@ -132,10 +132,6 @@
               device = "//satoshi.siki.moe/Videos";
               credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
             };
-            "/share/Container" = {
-              device = "//satoshi.siki.moe/Container";
-              credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
-            };
           };
         };
       };
