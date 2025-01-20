@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+_: {
   # Set the hostname and computer name
   networking = {
     hostName = "sakamoto";
