@@ -84,8 +84,6 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [libnfs nfs-utils];
-
   services = {
     xserver.enable = true;
     displayManager.sddm.enable = true;
@@ -121,6 +119,10 @@
             "/mnt/yyp/share" = {
               device = "//nas-yyp-v4.siki.moe/share";
               credentials = config.sops.secrets."nas-yyp-credentials.env".path;
+            };
+            "/mnt/satoshi/Container" = {
+              device = "//satoshi.siki.moe/Container";
+              credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
             };
             "/mnt/satoshi/Documents" = {
               device = "//satoshi.siki.moe/Documents";
