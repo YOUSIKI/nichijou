@@ -56,6 +56,42 @@
       device = "/dev/disk/by-uuid/5764-78C1";
       fsType = "vfat";
     };
+    "/share/Container" = {
+      device = "192.168.31.34:/share/Container";
+      fsType = "nfs";
+    };
+    "/share/Documents" = {
+      device = "192.168.31.34:/share/Documents";
+      fsType = "nfs";
+    };
+    "/share/Downloads" = {
+      device = "192.168.31.34:/share/Downloads";
+      fsType = "nfs";
+    };
+    "/share/Music" = {
+      device = "192.168.31.34:/share/Music";
+      fsType = "nfs";
+    };
+    "/share/Photos" = {
+      device = "192.168.31.34:/share/Photos";
+      fsType = "nfs";
+    };
+    "/share/Private" = {
+      device = "192.168.31.34:/share/Private";
+      fsType = "nfs";
+    };
+    "/share/Temporary" = {
+      device = "192.168.31.34:/share/Temporary";
+      fsType = "nfs";
+    };
+    "/share/Videos" = {
+      device = "192.168.31.34:/share/Videos";
+      fsType = "nfs";
+    };
+    "/share/Zotero" = {
+      device = "192.168.31.34:/share/Zotero";
+      fsType = "nfs";
+    };
   };
 
   swapDevices = [
@@ -111,10 +147,6 @@
             "/mnt/yyp/share" = {
               device = "//nas-yyp-v4.siki.moe/share";
               credentials = config.sops.secrets."nas-yyp-credentials.env".path;
-            };
-            "/mnt/satoshi/Container" = {
-              device = "//satoshi.siki.moe/Container";
-              credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
             };
             "/mnt/satoshi/Documents" = {
               device = "//satoshi.siki.moe/Documents";
