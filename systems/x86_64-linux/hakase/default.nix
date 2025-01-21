@@ -74,6 +74,24 @@
       enable = true;
       autoPrune.enable = true;
     };
+    oci-containers = {
+      backend = "docker";
+      containers = {
+        ollama = {
+          image = "docker.siki.moe/ollama/ollama:latest";
+          hostname = "ollama";
+          ports = ["11434:11434"];
+          volumes = [
+            "/mnt/satoshi/Container/docker-swarm/ollama/data:/root/.ollama"
+          ];
+          extraOptions = [
+            "--device=nvidia.com/gpu=all"
+            "--network=ollama"
+          ];
+          autoStart = true;
+        };
+      };
+    };
   };
 
   services = {
