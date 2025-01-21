@@ -112,6 +112,10 @@
               device = "//nas-yyp-v4.siki.moe/share";
               credentials = config.sops.secrets."nas-yyp-credentials.env".path;
             };
+            "/mnt/satoshi/Container" = {
+              device = "//satoshi.siki.moe/Container";
+              credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
+            };
             "/mnt/satoshi/Documents" = {
               device = "//satoshi.siki.moe/Documents";
               credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
@@ -120,12 +124,12 @@
               device = "//satoshi.siki.moe/Downloads";
               credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
             };
-            "/mnt/satoshi/Photos" = {
-              device = "//satoshi.siki.moe/Photos";
-              credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
-            };
             "/mnt/satoshi/Music" = {
               device = "//satoshi.siki.moe/Music";
+              credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
+            };
+            "/mnt/satoshi/Photos" = {
+              device = "//satoshi.siki.moe/Photos";
               credentials = config.sops.secrets."nas-satoshi-credentials.env".path;
             };
             "/mnt/satoshi/Videos" = {
