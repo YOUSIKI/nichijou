@@ -63,7 +63,13 @@
     };
 
     # Catppuccin theme
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "";
+      };
+    };
     catppuccin-cursors = {
       url = "github:catppuccin/cursors";
       inputs.nixpkgs.follows = "nixpkgs";
