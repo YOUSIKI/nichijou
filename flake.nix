@@ -65,10 +65,7 @@
     # Catppuccin theme
     catppuccin = {
       url = "github:catppuccin/nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin-cursors = {
       url = "github:catppuccin/cursors";
