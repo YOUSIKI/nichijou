@@ -15,7 +15,8 @@
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # Deprecated, nix-darwin now manages nix-daemon when `nix.enable` is on.
+  # services.nix-daemon.enable = true;
 
   # Home-manager automatically backup extension.
   home-manager.backupFileExtension = "bak";
