@@ -34,7 +34,7 @@ in {
     };
 
     environment.sessionVariables = {
-      LD_LIBRARY_PATH = "/run/opengl-driver/lib:${pkgs.glibc}/lib";
+      LD_LIBRARY_PATH = "/run/opengl-driver/lib:${pkgs.glibc}/lib:${pkgs.glib.out}/lib";
     };
   };
 }
