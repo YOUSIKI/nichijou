@@ -5,8 +5,8 @@ _: {
     computerName = "YouSiki's Macbook Pro";
   };
 
-  # Add ability to used TouchID for sudo authentication
-  security.pam.enableSudoTouchIdAuth = true;
+  # Add ability to use TouchID for sudo authentication
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # System configurations
   system.defaults = {
