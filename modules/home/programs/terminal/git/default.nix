@@ -35,7 +35,7 @@ in {
         inherit (cfg) userName userEmail;
 
         enable = true;
-        package = pkgs.gitFull;
+        package = pkgs.git;
 
         lfs.enable = true;
         delta.enable = true;
