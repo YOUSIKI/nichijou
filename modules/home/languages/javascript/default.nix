@@ -22,6 +22,9 @@ in {
         pnpm
         yarn-berry
       ];
+      file = {
+        ".npmrc".source = ./.npmrc;
+      };
     };
   };
 }

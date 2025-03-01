@@ -20,9 +20,12 @@ in {
       packages = with pkgs; [
         rustup
       ];
+      sessionPath = [
+        "$HOME/.cargo/bin"
+      ];
+      file = {
+        ".cargo/config.toml".source = ./config.toml;
+      };
     };
-    home.sessionPath = [
-      "$HOME/.cargo/bin"
-    ];
   };
 }
