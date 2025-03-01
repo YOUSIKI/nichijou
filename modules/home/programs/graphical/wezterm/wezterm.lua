@@ -21,6 +21,7 @@ end
 config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font_with_fallback({
+	"CaskaydiaCove Nerd Font Mono",
 	"CaskaydiaCove Nerd Font",
 	"Cascadia Code PL",
 	"Cascadia Code",

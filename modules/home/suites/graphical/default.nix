@@ -18,6 +18,7 @@ in {
     ${namespace} = {
       programs = {
         graphical = {
+          kitty.enable = true;
           wezterm.enable = true;
         };
       };
