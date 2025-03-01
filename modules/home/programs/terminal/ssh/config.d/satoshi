@@ -4,6 +4,8 @@ Host satoshi
   User yousiki
   ForwardAgent yes
   Compression no
+  RequestTTY yes
+  RemoteCommand zsh
 
 Host satoshi-ts
   HostName 100.106.54.87
@@ -11,3 +13,5 @@ Host satoshi-ts
   User yousiki
   ForwardAgent yes
   Compression yes
+  RequestTTY yes
+  RemoteCommand zsh
